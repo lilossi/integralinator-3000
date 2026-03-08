@@ -1,5 +1,10 @@
+from sympy import *
+from utils.converter_output import *
 def main():
-    print("Hello from integralinator-3000!")
+    x = symbols('x')
+    expr = sin(x) * exp(x)
+    integral = Integral(expr, x)
+    write_typst(integral)
 
 
 if __name__ == "__main__":

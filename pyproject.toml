@@ -3,8 +3,9 @@ name = "integralinator-3000"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "click>=8.3.1",
     "sympy>=1.14.0",
+    "typst-sympy-calculator>=0.6.2",
 ]
