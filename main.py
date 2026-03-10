@@ -1,6 +1,5 @@
 from sympy import *
-from evaluation.evaluation import print_entire_evaluation
-from evaluation.expression_depth import print_max_depth
+from evaluation.evaluation import bell_curve_score, print_entire_evaluation
 from evaluation.solvability import number_of_operations, solvability_score
 from utils.converter_output import *
 from utils.tree_solution import generate_tree, print_solution_score, print_solution_tree
