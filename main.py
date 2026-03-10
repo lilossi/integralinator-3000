@@ -1,9 +1,5 @@
 from sympy import *
-from evaluation.evaluation import bell_curve_score, print_entire_evaluation
-from evaluation.solvability import number_of_operations, solvability_score
-from utils.converter_output import *
-from utils.tree_solution import generate_tree, print_solution_score, print_solution_tree
-from sympy.integrals.manualintegrate import integral_steps
+from evaluation.evaluation import print_entire_evaluation
 
 def main():
     x = symbols('x')

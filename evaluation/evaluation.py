@@ -27,11 +27,12 @@ def get_evaluation_score(expr: Expr) -> float:
     controllability = get_controllability_score(expr)
     #optimal values and deviation defined here
     adjusted_scores = [
-        bell_curve_score(solvability, optimum=10, deviation=4),
+        bell_curve_score(solvability, optimum=20, deviation=4),
         bell_curve_score(depth, optimum=5, deviation=2),
         #very dependent on integral, either bestimmt or unbestimmt
         bell_curve_score(controllability, optimum=7, deviation=3)
     ]
+    # different maybe
     return hmean(adjusted_scores)
 
 def bell_curve_score(expr_score: int, optimum: float, deviation: float) -> float:
