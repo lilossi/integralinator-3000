@@ -2,7 +2,6 @@ from sympy import *
 from sympy.integrals.manualintegrate import manualintegrate
 from sympy.integrals.manualintegrate import integral_steps
 from sympy.abc import x
-from utils.solution_tree import *
 from utils.tree_solution import get_solution_score
 
 def number_of_operations(integral) -> int:
