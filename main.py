@@ -6,6 +6,6 @@ def main():
     x = symbols('x')
     print_entire_evaluation(chapter_1_1[4])
     print_entire_evaluation(chapter_1_7[5])
-    print_entire_evaluation(chapter_2_1[6])
+    print_entire_evaluation(chapter_2_1[2])
 if __name__ == "__main__":
     main()
