@@ -52,8 +52,8 @@ chapter_1_2: list[Expr] = [
     (csc(1 - x)*cot(1 - x)),
 ]
 
-chapter_1_3: list[Expr] = [
-]
+""" chapter_1_3: list[Expr] = [
+] """
 
 chapter_1_4: list[Expr] = [
     (exp(x)/(exp(x) + 2024)),
@@ -154,8 +154,8 @@ chapter_1_8: list[Expr] = [
     (x + 5)/(x**2 + x - 2),
 ]
 
-chapter_1_9: list[Expr] = [
-]
+""" chapter_1_9: list[Expr] = [
+] """
 
 chapter_1_10: list[Expr] = [
     (x**2/(x**2 + 1)),
@@ -193,8 +193,8 @@ chapter_1_11: list[Expr] = [
     (log(x) + 1)/(x*log(x) + 1),
 ]
 
-chapter_1_12: list[Expr] = [
-]
+""" chapter_1_12: list[Expr] = [
+] """
 
 chapter_1_13: list[Expr] = [
     (sin(x)/x + cos(x)*log(x)),
@@ -236,14 +236,14 @@ chapter_1_16: list[Expr] = [
     (exp(acos(x))),
 ]
 
-chapter_1_17: list[Expr] = [
+""" chapter_1_17: list[Expr] = [
 ]
 
 chapter_1_18: list[Expr] = [
 ]
 
 chapter_1_19: list[Expr] = [
-]
+] """
 
 chapter_1_20: list[Expr] = [
     (3*sin(x) + 4*cos(x))/(4*sin(x) + 3*cos(x)),
@@ -287,8 +287,8 @@ chapter_2_3: list[Expr] = [
     (sqrt(1 - sqrt(x))),
 ]
 
-chapter_2_4: list[Expr] = [
-]
+""" chapter_2_4: list[Expr] = [
+] """
 
 chapter_2_5: list[Expr] = [
     (x*log(x + 1)),
@@ -369,8 +369,8 @@ chapter_3_2: list[Expr] = [
     (x*(log(x)**2 + 1)*(log(x) + 1)**2),
 ]
 
-chapter_3_3: list[Expr] = [
-]
+""" chapter_3_3: list[Expr] = [
+] """
 
 chapter_3_4: list[Expr] = [
     (x + sqrt(2 - x**2))/((1 - x*sqrt(2 - x**2))*(1 - x**2)**Rational(1, 3)),
@@ -388,8 +388,8 @@ chapter_3_6: list[Expr] = [
     (1/((1 + x)**2*(4 + x))),
 ]
 
-chapter_3_7: list[Expr] = [
-]
+""" chapter_3_7: list[Expr] = [
+] """
 
 chapter_3_8: list[Expr] = [
     (x**5*exp(x)),
@@ -424,11 +424,11 @@ chapter_4_3: list[Expr] = [
     (1/(sec(x) + sin(x))),
 ]
 
-chapter_4_4: list[Expr] = [
+""" chapter_4_4: list[Expr] = [
 ]
 
 chapter_4_5: list[Expr] = [
-]
+] """
 
 chapter_4_6: list[Expr] = [
     (x*exp(2*x)/(2*x + 1)**2),
@@ -456,28 +456,28 @@ chapter_5_2: list[Expr] = [
     (log(sin(2*x)/(1 + cos(2*x)))*sec(x)**2),
 ]
 
-chapter_5_3: list[Expr] = [
+""" chapter_5_3: list[Expr] = [
 ]
 
 chapter_5_4: list[Expr] = [
-]
+] """
 
 # -------------------------------------------------------------------
 # Chapter 6
 # -------------------------------------------------------------------
 
-chapter_6_1: list[Expr] = [
+""" chapter_6_1: list[Expr] = [
 ]
 
 chapter_6_2: list[Expr] = [
-]
+] """
 
 chapter_6_3: list[Expr] = [
     (cos(x)**6),
     (exp(cos(x))*cos(x + sin(x))),
 ]
 
-chapter_6_4: list[Expr] = [
+""" chapter_6_4: list[Expr] = [
 ]
 
 chapter_6_5: list[Expr] = [
@@ -490,7 +490,7 @@ chapter_6_7: list[Expr] = [
 ]
 
 chapter_6_8: list[Expr] = [
-]
+] """
 
 chapter_6_9: list[Expr] = [
     (exp(exp(x))*exp(x)*(cos(exp(exp(x))) + cos(exp(x)))),
@@ -499,75 +499,44 @@ chapter_6_9: list[Expr] = [
     (x**3/(1 + x + x**2/2 + x**3/6)),
 ]
 
-# -------------------------------------------------------------------
-# Master dictionary
-# -------------------------------------------------------------------
 
-INTEGRALS_BY_CHAPTER = {
-    "1.1": chapter_1_1,
-    "1.2": chapter_1_2,
-    "1.3": chapter_1_3,
-    "1.4": chapter_1_4,
-    "1.5": chapter_1_5,
-    "1.6": chapter_1_6,
-    "1.7": chapter_1_7,
-    "1.8": chapter_1_8,
-    "1.9": chapter_1_9,
-    "1.10": chapter_1_10,
-    "1.11": chapter_1_11,
-    "1.12": chapter_1_12,
-    "1.13": chapter_1_13,
-    "1.14": chapter_1_14,
-    "1.15": chapter_1_15,
-    "1.16": chapter_1_16,
-    "1.17": chapter_1_17,
-    "1.18": chapter_1_18,
-    "1.19": chapter_1_19,
-    "1.20": chapter_1_20,
-    "2.1": chapter_2_1,
-    "2.2": chapter_2_2,
-    "2.3": chapter_2_3,
-    "2.4": chapter_2_4,
-    "2.5": chapter_2_5,
-    "2.6": chapter_2_6,
-    "2.7": chapter_2_7,
-    "2.8": chapter_2_8,
-    "2.9": chapter_2_9,
-    "2.10": chapter_2_10,
-    "3.1": chapter_3_1,
-    "3.2": chapter_3_2,
-    "3.3": chapter_3_3,
-    "3.4": chapter_3_4,
-    "3.5": chapter_3_5,
-    "3.6": chapter_3_6,
-    "3.7": chapter_3_7,
-    "3.8": chapter_3_8,
-    "4.1": chapter_4_1,
-    "4.2": chapter_4_2,
-    "4.3": chapter_4_3,
-    "4.4": chapter_4_4,
-    "4.5": chapter_4_5,
-    "4.6": chapter_4_6,
-    "5.1": chapter_5_1,
-    "5.2": chapter_5_2,
-    "5.3": chapter_5_3,
-    "5.4": chapter_5_4,
-    "6.1": chapter_6_1,
-    "6.2": chapter_6_2,
-    "6.3": chapter_6_3,
-    "6.4": chapter_6_4,
-    "6.5": chapter_6_5,
-    "6.6": chapter_6_6,
-    "6.7": chapter_6_7,
-    "6.8": chapter_6_8,
-    "6.9": chapter_6_9,
-}
-
-ALL_INTEGRALS = [I for chapter in INTEGRALS_BY_CHAPTER.values() for I in chapter]
-
-if __name__ == "__main__":
-    print(f"Loaded {len(INTEGRALS_BY_CHAPTER)} chapter groups")
-    print(f"Loaded {len(ALL_INTEGRALS)} total integrals")
-    for key in sorted(INTEGRALS_BY_CHAPTER.keys(), key=lambda s: [int(p) for p in s.split(".")]):
-        print(f"{key}: {len(INTEGRALS_BY_CHAPTER[key])}")
+ALL_EXPRESSIONS: list[Expr] = [
+    *chapter_1_1,
+    *chapter_1_2,
+    *chapter_1_4,
+    *chapter_1_5,
+    *chapter_1_6,
+    *chapter_1_7,
+    *chapter_1_8,
+    *chapter_1_10,
+    *chapter_1_11,
+    *chapter_1_13,
+    *chapter_1_14,
+    *chapter_1_15,
+    *chapter_1_16,
+    *chapter_1_20,
+    *chapter_2_1,
+    *chapter_2_2,
+    *chapter_2_3,
+    *chapter_2_5,
+    *chapter_2_6,
+    *chapter_2_7,
+    *chapter_2_8,
+    *chapter_2_9,
+    *chapter_2_10,
+    *chapter_3_1,
+    *chapter_3_2,
+    *chapter_3_4,
+    *chapter_3_5,
+    *chapter_3_6,
+    *chapter_3_8,
+    *chapter_4_1,
+    *chapter_4_2,
+    *chapter_4_3,
+    *chapter_4_6,
+    *chapter_5_1,
+    *chapter_5_2,
+    *chapter_6_3,
+    *chapter_6_9,
+]
 

@@ -1,11 +1,13 @@
 from sympy import *
+import random
 from evaluation.evaluation import print_entire_evaluation
 from test_suite.test_integrals import *
 
 def main():
-    x = symbols('x')
-    print_entire_evaluation(chapter_1_1[4])
-    print_entire_evaluation(chapter_1_7[5])
-    print_entire_evaluation(chapter_2_1[2])
+    sample = random.sample(ALL_EXPRESSIONS, 30)
+
+    for expr in sample:
+        print_entire_evaluation(expr)
+    
 if __name__ == "__main__":
     main()
