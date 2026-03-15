@@ -1,13 +1,11 @@
 from sympy import *
 from evaluation.evaluation import print_entire_evaluation
+from test_suite.test_integrals import *
 
 def main():
     x = symbols('x')
-    expr: Expr = sin(x) * exp(x)
-    expr2: Expr = exp(x) / (1 + exp(2 * x))
-    expr3: Expr = x**2 + 3*x + 2
-    print_entire_evaluation(expr)
-    print_entire_evaluation(expr2)
-    print_entire_evaluation(expr3)
+    print_entire_evaluation(chapter_1_1[4])
+    print_entire_evaluation(chapter_1_7[5])
+    print_entire_evaluation(chapter_2_1[6])
 if __name__ == "__main__":
     main()
