@@ -20,15 +20,9 @@ from scipy.stats import hmean, norm
 
 from evaluation.controllability import get_controllability_score
 from evaluation.expression_depth import get_expression_depth
-from evaluation.solvability import is_solvable, solvability_score
-from test_suite.test_integrals import ALL_EXPRESSIONS
+from evaluation.solvability import solvability_score
+from test_suite.test_integrals import SOLVABLE_EXPRESSIONS
 
-print("Pre-filtering expressions...")
-SOLVABLE_EXPRESSIONS = [
-    e for e in ALL_EXPRESSIONS
-    if is_solvable(e)
-]
-print(f"Using {len(SOLVABLE_EXPRESSIONS)}/{len(ALL_EXPRESSIONS)} solvable expressions.")
 
 # ── bell-curve param names and (lo, hi) bounds ───────────────────────────────
 BELL_PARAMS = [
