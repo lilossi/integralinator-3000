@@ -5,8 +5,7 @@ from evaluation.solvability import is_solvable
 from test_suite.test_integrals import *
 
 def main():
-    for expr in ALL_EXPRESSIONS:
-        print(repr(expr) + " is solvable: " + str(is_solvable(expr)))
+    print_entire_evaluation(SOLVABLE_EXPRESSIONS[-1])
             
 
 if __name__ == "__main__":
