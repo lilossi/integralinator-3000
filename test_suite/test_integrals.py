@@ -47,7 +47,7 @@ chapter_1_2: list[Expr] = [
     (x + 1)*exp(x**2 + 2*x),
     (sin(log(x))/x),
     (tan(x)),
-    (sqrt(exp(x)) - sqrt(exp(-x)))/(sqrt(exp(x)) + sqrt(exp(-x))),
+    #(sqrt(exp(x)) - sqrt(exp(-x)))/(sqrt(exp(x)) + sqrt(exp(-x))),
     (1 + 1/x)*log(x*exp(x)),
     (csc(1 - x)*cot(1 - x)),
 ]

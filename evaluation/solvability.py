@@ -10,3 +10,9 @@ def number_of_operations(integral) -> int:
 
 def solvability_score(expr) -> int:
     return get_solution_score(expr)
+
+def is_solvable(expr) -> bool:
+    solution = repr(integral_steps(expr, x))
+    if "DontKnowRule" in solution:
+        return False
+    return True
