@@ -230,9 +230,9 @@ def run_overnight(output_dir: str = "evaluation/optimization_runs", seed: int = 
             solvable_chapter_2_plus,
         ),
         (
-            "all_solvable_1000_trials.txt",
+            "all_solvable_500_trials.txt",
             "Random search on all solvable expressions",
-            1000,
+            500,
             None,
             seed + 2,
             SOLVABLE_EXPRESSIONS,
