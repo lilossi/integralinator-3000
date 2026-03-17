@@ -9,11 +9,13 @@ ALL_EXPRESSIONS (all known-good integration-bee integrals).
 Usage:
     python -m evaluation.optimize              # 100 trials, 20-expr sample
     python -m evaluation.optimize --trials 200 --sample 40 --seed 7
+    python -m evaluation.optimize --overnight  # 3 long runs, logs to text files
 """
 import argparse
 import random
 from contextlib import redirect_stdout
 from io import StringIO
+from pathlib import Path
 
 import utils.tree_solution as _ts
 from scipy.stats import hmean, norm
@@ -21,6 +23,7 @@ from scipy.stats import hmean, norm
 from evaluation.controllability import get_controllability_score
 from evaluation.expression_depth import get_expression_depth
 from evaluation.solvability import solvability_score
+from test_suite import test_integrals as _ti
 from test_suite.test_integrals import SOLVABLE_EXPRESSIONS
 
 
@@ -99,9 +102,21 @@ def _objective(params: list[float], exprs) -> float:
     return sum(scores) / len(scores) if scores else 0.0
 
 
-def random_search(n_trials: int = 100, sample_size: int = 20, seed: int = 42) -> list[float]:
+def random_search(
+    n_trials: int = 100,
+    sample_size: int | None = 20,
+    seed: int = 42,
+    expression_pool: list | None = None,
+) -> list[float]:
     rng = random.Random(seed)
-    sample = rng.sample(SOLVABLE_EXPRESSIONS, min(sample_size, len(SOLVABLE_EXPRESSIONS)))
+    pool = expression_pool if expression_pool is not None else SOLVABLE_EXPRESSIONS
+    if not pool:
+        raise ValueError("expression_pool must contain at least one expression")
+
+    if sample_size is None:
+        sample = list(pool)
+    else:
+        sample = rng.sample(pool, min(sample_size, len(pool)))
 
     best_params: list[float] = []
     best_score = -1.0
@@ -136,11 +151,123 @@ def random_search(n_trials: int = 100, sample_size: int = 20, seed: int = 42) ->
     return best_params
 
 
+def _collect_solvable_pools() -> tuple[list, list]:
+    chapter_1_exprs = []
+    chapter_2_plus_exprs = []
+
+    for name, value in vars(_ti).items():
+        if not name.startswith("chapter_") or not isinstance(value, list):
+            continue
+
+        parts = name.split("_")
+        if len(parts) != 3:
+            continue
+
+        try:
+            chapter_no = int(parts[1])
+        except ValueError:
+            continue
+
+        if chapter_no == 1:
+            chapter_1_exprs.extend(value)
+        elif chapter_no >= 2:
+            chapter_2_plus_exprs.extend(value)
+
+    chapter_1_set = set(chapter_1_exprs)
+    chapter_2_plus_set = set(chapter_2_plus_exprs)
+
+    solvable_chapter_1 = [expr for expr in SOLVABLE_EXPRESSIONS if expr in chapter_1_set]
+    solvable_chapter_2_plus = [expr for expr in SOLVABLE_EXPRESSIONS if expr in chapter_2_plus_set]
+    return solvable_chapter_1, solvable_chapter_2_plus
+
+
+def _run_random_search_to_file(
+    output_path: Path,
+    *,
+    n_trials: int,
+    sample_size: int | None,
+    seed: int,
+    expression_pool: list,
+    run_title: str,
+) -> None:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("w", encoding="utf-8") as f, redirect_stdout(f):
+        print(run_title)
+        print(f"trials={n_trials}, sample_size={sample_size}, seed={seed}, pool_size={len(expression_pool)}")
+        print("-" * 80)
+        random_search(
+            n_trials=n_trials,
+            sample_size=sample_size,
+            seed=seed,
+            expression_pool=expression_pool,
+        )
+
+
+def run_overnight(output_dir: str = "evaluation/optimization_runs", seed: int = 42) -> None:
+    solvable_chapter_1, solvable_chapter_2_plus = _collect_solvable_pools()
+
+    if not solvable_chapter_1:
+        raise ValueError("No solvable chapter 1 expressions found")
+    if not solvable_chapter_2_plus:
+        raise ValueError("No solvable chapter 2+ expressions found")
+
+    out_dir = Path(output_dir)
+    jobs = [
+        (
+            "chapter1_200_trials.txt",
+            "Random search on solvable chapter 1 expressions",
+            200,
+            None,
+            seed,
+            solvable_chapter_1,
+        ),
+        (
+            "chapter2plus_200_trials.txt",
+            "Random search on solvable chapter 2+ expressions",
+            200,
+            None,
+            seed + 1,
+            solvable_chapter_2_plus,
+        ),
+        (
+            "all_solvable_1000_trials.txt",
+            "Random search on all solvable expressions",
+            1000,
+            None,
+            seed + 2,
+            SOLVABLE_EXPRESSIONS,
+        ),
+    ]
+
+    for filename, title, n_trials, sample_size, run_seed, pool in jobs:
+        output_path = out_dir / filename
+        print(f"Running: {title} -> {output_path}")
+        _run_random_search_to_file(
+            output_path,
+            n_trials=n_trials,
+            sample_size=sample_size,
+            seed=run_seed,
+            expression_pool=pool,
+            run_title=title,
+        )
+
+    print(f"Overnight optimization completed. Logs written to: {out_dir}")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Random-search hyperparameter optimiser")
     parser.add_argument("--trials", type=int, default=100, help="number of random candidates (default 100)")
     parser.add_argument("--sample", type=int, default=20,  help="integrals evaluated per trial  (default 20)")
     parser.add_argument("--seed",   type=int, default=42,  help="RNG seed (default 42)")
+    parser.add_argument("--overnight", action="store_true", help="run 3 fixed overnight jobs and save full logs")
+    parser.add_argument(
+        "--output-dir",
+        default="evaluation/optimization_runs",
+        help="output directory for overnight logs",
+    )
     args = parser.parse_args()
 
-    random_search(n_trials=args.trials, sample_size=args.sample, seed=args.seed)
+    if args.overnight:
+        run_overnight(output_dir=args.output_dir, seed=args.seed)
+    else:
+        random_search(n_trials=args.trials, sample_size=args.sample, seed=args.seed)
