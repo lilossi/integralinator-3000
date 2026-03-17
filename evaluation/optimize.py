@@ -29,33 +29,33 @@ from test_suite.test_integrals import SOLVABLE_EXPRESSIONS
 
 # ── bell-curve param names and (lo, hi) bounds ───────────────────────────────
 BELL_PARAMS = [
-    ("solv_opt",  (1,  80)),
-    ("solv_dev",  (1,  25)),
+    ("solv_opt",  (1,  800)),
+    ("solv_dev",  (1,  250)),
     ("depth_opt", (1,  20)),
     ("depth_dev", (0.5, 10)),
-    ("ctrl_opt",  (1,  50)),
+    ("ctrl_opt",  (1,  70)),
     ("ctrl_dev",  (0.5, 20)),
 ]
 
 # ── rule score param names and (lo, hi) bounds ───────────────────────────────
 # Each weight is sampled as a float and rounded to the nearest integer [lo, hi].
 RULE_PARAMS = [
-    ("AddRule",           (0, 10)),
-    ("URule",             (0, 10)),
-    ("PartsRule",         (0, 15)),
-    ("CyclicPartsRule",   (0, 15)),
-    ("RewriteRule",       (0, 10)),
-    ("ConstantTimesRule", (0, 10)),
-    ("ConstantRule",      (0, 10)),
-    ("PowerRule",         (0, 10)),
-    ("SinRule",           (0, 10)),
-    ("CosRule",           (0, 10)),
-    ("TrigRule",          (0, 15)),
-    ("ExpRule",           (0, 10)),
-    ("ReciprocalRule",    (0, 10)),
-    ("ArctanRule",        (0, 10)),
-    ("AlternativeRule",   (0, 10)),
-    ("DontKnowRule",      (0, 20)),
+    ("AddRule",           (0, 100)),
+    ("URule",             (0, 100)),
+    ("PartsRule",         (0, 150)),
+    ("CyclicPartsRule",   (0, 150)),
+    ("RewriteRule",       (0, 100)),
+    ("ConstantTimesRule", (0, 100)),
+    ("ConstantRule",      (0, 100)),
+    ("PowerRule",         (0, 100)),
+    ("SinRule",           (0, 100)),
+    ("CosRule",           (0, 100)),
+    ("TrigRule",          (0, 150)),
+    ("ExpRule",           (0, 100)),
+    ("ReciprocalRule",    (0, 100)),
+    ("ArctanRule",        (0, 100)),
+    ("AlternativeRule",   (0, 100)),
+    ("DontKnowRule",      (0, 200)),
 ]
 
 ALL_PARAM_NAMES = [n for n, _ in BELL_PARAMS] + [n for n, _ in RULE_PARAMS]
