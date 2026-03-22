@@ -80,3 +80,13 @@ def get_solution_score(expr: Expr)  -> int:
 def print_solution_score(expr: Expr)  -> None:
     _, total_points = generate_tree(repr(integral_steps(expr, x)))
     print("Solvability Score:", total_points)
+
+def get_solution_vector(expr: Expr) -> list[int]:
+    tree, _ = generate_tree(repr(integral_steps(expr, x)))
+    rule_counts = {}
+    for node in tree.all_nodes():
+        rule_name = node.tag.split()[0] 
+        rule_counts[rule_name] = rule_counts.get(rule_name, 0) + 1
+    
+    # Return counts in order of points_table (maintains insertion order)
+    return [rule_counts.get(rule, 0) for rule in points_table.keys()]
