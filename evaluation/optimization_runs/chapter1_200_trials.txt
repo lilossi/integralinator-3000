@@ -1,0 +1,5 @@
+Random search on solvable chapter 1 expressions
+trials=200, sample_size=None, seed=42, pool_size=136
+--------------------------------------------------------------------------------
+[   1/200]  score=0.0038  {'solv_opt': 511.9, 'solv_dev': 7.23, 'depth_opt': 6.23, 'depth_dev': 2.62, 'ctrl_opt': 51.82, 'ctrl_dev': 13.7, 'AddRule': 89.22, 'URule': 8.69, 'PartsRule': 63.29, 'CyclicPartsRule': 4.47, 'RewriteRule': 21.86, 'ConstantTimesRule': 50.54, 'ConstantRule': 2.65, 'PowerRule': 19.88, 'SinRule': 64.99, 'CosRule': 54.49, 'TrigRule': 33.07, 'ExpRule': 58.93, 'ReciprocalRule': 80.94, 'ArctanRule': 0.65, 'AlternativeRule': 80.58, 'DontKnowRule': 139.63}
+           ^ new best

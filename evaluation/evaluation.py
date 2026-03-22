@@ -1,9 +1,11 @@
 from sympy import Expr, Integral, pprint
 from sympy.abc import x
+from sympy.integrals.manualintegrate import integral_steps, manualintegrate
 from evaluation.controllability import get_controllability_score
+from evaluation.controllability import get_symbol_count
 from evaluation.expression_depth import get_expression_depth
 from evaluation.solvability import solvability_score
-from utils.tree_solution import print_solution_tree
+from utils.tree_solution import print_solution_tree, generate_tree
 from scipy.stats import norm, hmean
 
 def print_entire_evaluation(expr: Expr) -> None:
@@ -22,9 +24,7 @@ def print_entire_evaluation(expr: Expr) -> None:
 
     
 def get_evaluation_score(expr: Expr) -> float:
-    solvability = solvability_score(expr)
-    depth = get_expression_depth(expr)
-    controllability = get_controllability_score(expr)
+    solvability, depth, controllability = get_evaluation_components(expr)
     #optimal values and deviation defined here
     adjusted_scores = [
         bell_curve_score(solvability, optimum=20, deviation=4),
@@ -34,6 +34,14 @@ def get_evaluation_score(expr: Expr) -> float:
     ]
     # different maybe
     return hmean(adjusted_scores)
+
+
+def get_evaluation_components(expr: Expr) -> tuple[int, int, int]:
+    # Compute the integration rule tree once and reuse it for solvability + depth.
+    tree, solvability = generate_tree(repr(integral_steps(expr, x)))
+    depth = tree.depth() + 1
+    controllability = get_symbol_count(manualintegrate(expr, x))
+    return solvability, depth, controllability
 
 def bell_curve_score(expr_score: int, optimum: float, deviation: float) -> float:
     #needs peak to normalize score
