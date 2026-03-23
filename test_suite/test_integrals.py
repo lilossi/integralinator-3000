@@ -499,6 +499,34 @@ chapter_6_9: list[Expr] = [
     (x**3/(1 + x + x**2/2 + x**3/6)),
 ]
 
+bad_integrals: list[Expr] = [
+    (13 * x**2 * (x - 1)**200),
+    ((x + 1) * (x**2 + 1)**100),
+    (5 * x**4 * (x - 2)**50 * (x + 3)**150),
+    (2 * x * (x**5 - 1)**40),
+    (8 * x**7 * (x**10 + x**5 + 1)**20),
+    (4 * (x**50 + 2*x**25 + 1)*(x**150 - 3)),
+    (11 * x**3 * (x**200 + x**100 + 1)),
+    (x**2 * (x - 5)**100 * (x + 5)**100),
+    (6 * x * (x**2 - 2*x + 1)**100),
+    (15 * x**5 * (x**4 + 1)**50),
+    ((x**25 - 1)**8),
+    ((x**8 - x**4 + 1)**25),
+    ((x - 1)*(x**199 + 1)),
+    ((x**2 + 3*x + 2)**100),
+    ((x**10 - 2)**20),
+    (x**199 * (x - 1)),
+    ((x**3 + 1)**66 * x**2),
+    ((x**40 - 1)*(x**160 + x**80 + 1)),
+    ((x - 7)**200),
+    ((x**100 - x**50 + 1)*(x**100 + x**50 + 1)),
+    (7 * (x - 1)**10),
+    (4 * x * (x**2 + 2)**5),
+    (9 * x**2 * (x**3 - x)**3),
+    (6 * x**3 * (x**5 + x**2 + 1)**2),
+    (3 * x**4 * (x**4 - 3*x**2 + 2)**2),
+]
+
 
 ALL_EXPRESSIONS: list[Expr] = [
     *chapter_1_1,
@@ -538,11 +566,16 @@ ALL_EXPRESSIONS: list[Expr] = [
     *chapter_5_2,
     *chapter_6_3,
     *chapter_6_9,
+    *bad_integrals,
 ]
 
 # Indices marked "is solvable: True" from the March 16, 2026 run output
 # that covered the first 181 expressions.
+_BAD_INTEGRALS_INDICES: list[int] = list(range(290, 315))
+
+# Indices marked "is solvable: True" from the March 16, 2026 run output
 _SOLVABLE_TRUE_INDICES: list[int] = [
+
     0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 17, 19, 20, 21, 22,
     23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 37, 38, 39, 40, 41,
     42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 58, 59, 60, 65,
@@ -558,6 +591,7 @@ _SOLVABLE_TRUE_INDICES: list[int] = [
     197, 199, 202, 203, 205, 207, 209, 210, 213, 218, 219, 225, 231, 233,
     234, 239, 243, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255,
     256, 257, 258, 259, 261, 265, 282, 283, 285, 289,
+    *_BAD_INTEGRALS_INDICES,
 ]
 
 SOLVABLE_EXPRESSIONS: list[Expr] = [
@@ -584,3 +618,5 @@ CHECKED_INDICES: set[int] = set(_SOLVABLE_TRUE_INDICES) | set(_UNSOLVABLE_FALSE_
 UNCHECKED_EXPRESSIONS: list[Expr] = [
     expr for i, expr in enumerate(ALL_EXPRESSIONS) if i not in CHECKED_INDICES
 ]
+
+BAD_INTEGRALS: list[Expr] = bad_integrals
