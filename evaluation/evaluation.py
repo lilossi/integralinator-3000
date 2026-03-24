@@ -56,9 +56,7 @@ def bell_curve_score(expr_score: int, optimum: float, deviation: float) -> float
     return norm.pdf(expr_score, loc=optimum, scale=deviation) / peak
 
 
-def print_vector_evaluation(expr: Expr) -> None:
-    print("is solvable:")
-    print(is_solvable(expr))
+def print_vector_evaluation(expr: Expr) -> None
     print("\nSolvability Score Components:")
     print(get_solution_vector(expr))
     print("\nMax Depth:")
