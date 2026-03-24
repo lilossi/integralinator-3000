@@ -59,7 +59,7 @@ def evaluate_params(df, params):
         cmp_scores = [norm_solv, norm_depth, norm_ctrl]
         cmp_weights = [bell_kwargs['solv_weight'], bell_kwargs['depth_weight'], bell_kwargs['ctrl_weight']]
 
-        if any(s == 0 for s in cmp_scores):
+        if any(s < 1e-150 for s in cmp_scores):
             base_score = 0.0
         else:
             base_score = hmean(cmp_scores, weights=cmp_weights)
