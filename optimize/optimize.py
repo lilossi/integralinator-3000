@@ -7,6 +7,7 @@ ALL_EXPRESSIONS (all known-good integration-bee integrals).
 import math
 from scipy.stats import norm
 from sklearn.model_selection import RandomizedSearchCV
+from scipy.optimize import minimize
 from sklearn.base import BaseEstimator
 import numpy as np
 from scipy.stats import uniform, randint
@@ -22,6 +23,9 @@ BELL_PARAMS = [
     ("depth_dev", (0.5, 10)),
     ("ctrl_opt",  (1,  70)),
     ("ctrl_dev",  (0.5, 20)),
+    ("solv_weight", (0.01, 10.0)),
+    ("depth_weight", (0.01, 10.0)),
+    ("ctrl_weight", (0.01, 10.0)),
 ]
 
 # ── rule score param names and (lo, hi) bounds ───────────────────────────────
@@ -46,6 +50,7 @@ RULE_PARAMS = [
 
 class IntegralEvaluator(BaseEstimator):
     def __init__(self, solv_opt=400, solv_dev=125, depth_opt=10, depth_dev=5.0, ctrl_opt=35, ctrl_dev=10,
+                 solv_weight=1.0, depth_weight=1.0, ctrl_weight=1.0,
                  AddRule=50, URule=50, PartsRule=75, CyclicPartsRule=75, RewriteRule=50, ConstantTimesRule=50,
                  ConstantRule=50, PowerRule=50, SinRule=50, CosRule=50, TrigRule=75, ExpRule=50,
                  ReciprocalRule=50, ArctanRule=50, AlternativeRule=50, DontKnowRule=100):
@@ -55,6 +60,9 @@ class IntegralEvaluator(BaseEstimator):
         self.depth_dev = depth_dev
         self.ctrl_opt = ctrl_opt
         self.ctrl_dev = ctrl_dev
+        self.solv_weight = solv_weight
+        self.depth_weight = depth_weight
+        self.ctrl_weight = ctrl_weight
         self.AddRule = AddRule
         self.URule = URule
         self.PartsRule = PartsRule
@@ -93,46 +101,25 @@ class IntegralEvaluator(BaseEstimator):
                 peak = norm.pdf(optimum, loc=optimum, scale=deviation)
                 return norm.pdf(value, loc=optimum, scale=deviation) / peak
 
-            adj = [
-                _bell(solv_score, self.solv_opt, self.solv_dev),
-                _bell(depth, self.depth_opt, self.depth_dev),
-                _bell(ctrl, self.ctrl_opt, self.ctrl_dev),
-            ]
+            norm_solv = _bell(solv_score, self.solv_opt, self.solv_dev)
+            norm_depth = _bell(depth, self.depth_opt, self.depth_dev)
+            norm_ctrl = _bell(ctrl, self.ctrl_opt, self.ctrl_dev)
             
-            if any(v <= 0 for v in adj):
-                # If it's a negative example (y=0) and gets a zero score, that's perfect!
-                is_negative = (getattr(row, "target_score", None) == 0) or (y is not None and y.iloc[i] == 0)
-                if is_negative:
-                    scores.append(1.0)
-                else:
-                    scores.append(0.0)
-                continue
+            raw_score = (norm_ctrl * self.ctrl_weight) + (norm_depth * self.depth_weight) + (norm_solv * self.solv_weight)
+            total_weight = self.ctrl_weight + self.depth_weight + self.solv_weight
+            base_score = raw_score / total_weight if total_weight > 0 else 0.0
 
-            # stable_hmean
-            neg_logs = [-math.log(v) for v in adj]
-            max_neg_log = max(neg_logs)
-            scaled_sum = sum(math.exp(v - max_neg_log) for v in neg_logs)
-            try:
-                base_score = math.exp(math.log(3) - (max_neg_log + math.log(scaled_sum)))
-                
-                is_negative = (getattr(row, "target_score", None) == 0) or (y is not None and y.iloc[i] == 0)
-                if is_negative:
-                    scores.append(1.0 - base_score)
-                else:
-                    scores.append(base_score)
-            except:
-                # If negative example and it fails to compute (gets 0), that is good!
-                is_negative = (getattr(row, "target_score", None) == 0) or (y is not None and y.iloc[i] == 0)
-                if is_negative:
-                    scores.append(1.0)
-                else:
-                    scores.append(0.0)
+            is_negative = (getattr(row, "target_score", None) == 0) or (y is not None and y.iloc[i] == 0)
+            if is_negative:
+                # We want base_score to be as low as possible for negative examples
+                scores.append(1.0 - base_score)
+            else:
+                # We want base_score to be as high as possible for positive examples
+                scores.append(base_score)
                 
         return sum(scores) / len(scores) if scores else 0.0
 
 if __name__ == "__main__":
-    from scipy.stats import uniform, randint
-    from test_suite.integral_data import INTEGRAL_DATA
     
     param_distributions = {}
     for name, (lo, hi) in BELL_PARAMS:
@@ -165,29 +152,51 @@ if __name__ == "__main__":
     X_subset = X.iloc[subset_indices].reset_index(drop=True)
     y_subset = y.iloc[subset_indices].reset_index(drop=True)
 
-    # We do a single split over the subset because RandomizedSearchCV requires it,
-    # but we really just want the single test score over the dataset
-    search = RandomizedSearchCV(
-        IntegralEvaluator(),
-        param_distributions=param_distributions,
-        n_iter=2000,
-        cv=[(np.arange(len(X_subset)), np.arange(len(X_subset)))], # Train and test on subset
-        n_jobs=-1,
-        verbose=1,
-        random_state=43
+    # Gradient Descent implementation using scipy optimize
+    def objective_function(params):
+        # Unpack parameters
+        bell_params_vals = params[:len(BELL_PARAMS)]
+        rule_params_vals = params[len(BELL_PARAMS):]
+        
+        kwargs = {}
+        for i, (name, _) in enumerate(BELL_PARAMS):
+            kwargs[name] = bell_params_vals[i]
+        for i, (name, _) in enumerate(RULE_PARAMS):
+            kwargs[name] = rule_params_vals[i]
+            
+        estimator = IntegralEvaluator(**kwargs)
+        # Minimize the negative score
+        return -estimator.score(X_subset, y_subset)
+
+    # Initial guess: midpoints of bounds
+    initial_guess = []
+    bounds = []
+    for name, (lo, hi) in BELL_PARAMS:
+        initial_guess.append((lo + hi) / 2.0)
+        bounds.append((lo, hi))
+    for name, (lo, hi) in RULE_PARAMS:
+        initial_guess.append((lo + hi) / 2.0)
+        bounds.append((lo, hi))
+
+    print("Starting optimization using L-BFGS-B (Gradient Descent)...")
+    res = minimize(
+        objective_function,
+        initial_guess,
+        method='L-BFGS-B',
+        bounds=bounds,
+        options={'disp': True, 'maxiter': 200}
     )
 
-    search.fit(X_subset, y_subset)
-    print("Best Score:", search.best_score_)
+    print("Best Score:", -res.fun)
     
     print("\nBell-curve params:")
-    bell_best = [search.best_params_[n] for n, _ in BELL_PARAMS]
-    print(f"    bell_curve_score(solvability,     optimum={round(bell_best[0], 2)}, deviation={round(bell_best[1], 2)}),")
-    print(f"    bell_curve_score(depth,           optimum={round(bell_best[2], 2)}, deviation={round(bell_best[3], 2)}),")
-    print(f"    bell_curve_score(controllability, optimum={round(bell_best[4], 2)}, deviation={round(bell_best[5], 2)}),")
+    bell_best = res.x[:len(BELL_PARAMS)]
+    print(f"    bell_curve_score(solvability,     optimum={round(bell_best[0], 2)}, deviation={round(bell_best[1], 2)}), weight={round(bell_best[6], 2)}")
+    print(f"    bell_curve_score(depth,           optimum={round(bell_best[2], 2)}, deviation={round(bell_best[3], 2)}), weight={round(bell_best[7], 2)}")
+    print(f"    bell_curve_score(controllability, optimum={round(bell_best[4], 2)}, deviation={round(bell_best[5], 2)}), weight={round(bell_best[8], 2)}")
     
     print("\nRule score params:")
-    rules_best = [search.best_params_[n] for n, _ in RULE_PARAMS]
+    rules_best = res.x[len(BELL_PARAMS):]
     for (name, _), val in zip(RULE_PARAMS, rules_best):
-        print(f'    "{name}": {val},')
+        print(f'    "{name}": {round(val)},')
 

@@ -574,8 +574,7 @@ ALL_EXPRESSIONS: list[Expr] = [
 _BAD_INTEGRALS_INDICES: list[int] = list(range(290, 315))
 
 # Indices marked "is solvable: True" from the March 16, 2026 run output
-_SOLVABLE_TRUE_INDICES: list[int] = [
-
+_SOLVABLE_TRUE_INDICES_CHAPTER_1: list[int] = [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 17, 19, 20, 21, 22,
     23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 37, 38, 39, 40, 41,
     42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 58, 59, 60, 65,
@@ -584,8 +583,10 @@ _SOLVABLE_TRUE_INDICES: list[int] = [
     107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120,
     121, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138,
     140, 141, 144, 145, 146, 148, 151, 152, 153, 154, 155, 156, 160, 167,
-    168, 171, 
-    #ab hier chapter 2
+    168, 171,
+]
+
+_SOLVABLE_TRUE_INDICES_CHAPTER_2_ONWARD: list[int] = [
     175, 176, 177, 178,
     182, 183, 184, 185, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196,
     197, 199, 202, 203, 205, 207, 209, 210, 213, 218, 219, 225, 231, 233,
@@ -594,8 +595,18 @@ _SOLVABLE_TRUE_INDICES: list[int] = [
     *_BAD_INTEGRALS_INDICES,
 ]
 
+_SOLVABLE_TRUE_INDICES: list[int] = _SOLVABLE_TRUE_INDICES_CHAPTER_1 + _SOLVABLE_TRUE_INDICES_CHAPTER_2_ONWARD
+
 SOLVABLE_EXPRESSIONS: list[Expr] = [
     ALL_EXPRESSIONS[i] for i in _SOLVABLE_TRUE_INDICES
+]
+
+SOLVABLE_EXPRESSIONS_CHAPTER_1: list[Expr] = [
+    ALL_EXPRESSIONS[i] for i in _SOLVABLE_TRUE_INDICES_CHAPTER_1
+]
+
+SOLVABLE_EXPRESSIONS_CHAPTER_2_ONWARD: list[Expr] = [
+    ALL_EXPRESSIONS[i] for i in _SOLVABLE_TRUE_INDICES_CHAPTER_2_ONWARD
 ]
 
 _UNSOLVABLE_FALSE_INDICES: list[int] = [
@@ -620,3 +631,5 @@ UNCHECKED_EXPRESSIONS: list[Expr] = [
 ]
 
 BAD_INTEGRALS: list[Expr] = bad_integrals
+
+_CHAPTER_1_INTEGRALS_INDICES: list[int] = list(range(0, 181))
