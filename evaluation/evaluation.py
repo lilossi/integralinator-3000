@@ -25,23 +25,30 @@ def print_entire_evaluation(expr: Expr) -> None:
     
 def get_evaluation_score(expr: Expr) -> float:
     solvability, depth, controllability = get_evaluation_components(expr)
-    #optimal values and deviation defined here
-    adjusted_scores = [
-        bell_curve_score(solvability, optimum=20, deviation=4),
-        bell_curve_score(depth, optimum=5, deviation=2),
-        #very dependent on integral, either bestimmt or unbestimmt
-        bell_curve_score(controllability, optimum=7, deviation=3)
-    ]
-    # different maybe
-    return hmean(adjusted_scores)
+    return calculate_score(solvability, depth, controllability)
 
 
 def get_evaluation_components(expr: Expr) -> tuple[int, int, int]:
-    # Compute the integration rule tree once and reuse it for solvability + depth.
+    #more efficient -> only one tree generation
     tree, solvability = generate_tree(repr(integral_steps(expr, x)))
     depth = tree.depth() + 1
     controllability = get_symbol_count(manualintegrate(expr, x))
     return solvability, depth, controllability
+
+def calculate_score(solvability: int, depth: int, controllability: int) -> float:
+    #these params can be tuned to adjust the importance of each component
+    solv_weight = 0.03
+    depth_weight = 0.13
+    ctrl_weight = 4.44
+    
+    norm_solv = bell_curve_score(solvability, optimum=400.74, deviation=80.04)
+    norm_depth = bell_curve_score(depth, optimum=2.91, deviation=1.21)
+    norm_ctrl = bell_curve_score(controllability, optimum=14.14, deviation=19.59)
+    
+    norm_scores = [norm_solv, norm_depth, norm_ctrl]
+    weights = [solv_weight, depth_weight, ctrl_weight]
+    
+    return hmean(norm_scores, weights=weights)
 
 def bell_curve_score(expr_score: int, optimum: float, deviation: float) -> float:
     #needs peak to normalize score

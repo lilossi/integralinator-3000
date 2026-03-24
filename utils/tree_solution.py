@@ -6,22 +6,22 @@ import re
 # rules gathered from gamma-sympy
 # points are guessed by me -.-
 points_table = {
-    "AddRule": 1,
-    "URule": 3,
-    "PartsRule": 5,
-    "CyclicPartsRule": 5,
-    "RewriteRule": 3,
-    "ConstantTimesRule": 1,
-    "ConstantRule": 1,
+    "AddRule": 96,
+    "URule": 98,
+    "PartsRule": 124,
+    "CyclicPartsRule": 17,
+    "RewriteRule": 16,
+    "ConstantTimesRule": 25,
+    "ConstantRule": 44,
     "PowerRule": 1,
-    "SinRule": 2,
-    "CosRule": 2,
-    "TrigRule": 5,
-    "ExpRule": 2,
-    "ReciprocalRule": 3,
-    "ArctanRule": 3,
-    "AlternativeRule": 3,
-    "DontKnowRule": 10
+    "SinRule": 76,
+    "CosRule": 17,
+    "TrigRule": 50,
+    "ExpRule": 46,
+    "ReciprocalRule": 76,
+    "ArctanRule": 33,
+    "AlternativeRule": 87,
+    "DontKnowRule": 90
 }
 
 _RULE_RE = re.compile(r'[A-Za-z]+Rule')
