@@ -1,8 +1,11 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from xgboost import XGBClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report, accuracy_score
+import joblib
 
 from test_suite.integral_data import create_integral_dataframe, RULE_NAMES
 
@@ -34,7 +37,7 @@ if __name__ == "__main__":
 
     # Train Logistic Regression
     print("--- Logistic Regression ---")
-    log_reg = LogisticRegression(max_iter=1000)
+    log_reg = LogisticRegression(max_iter=10000)
     log_reg.fit(X_train_scaled, y_train)
     
     # Predictions and evaluation
@@ -50,3 +53,53 @@ if __name__ == "__main__":
         "Weight": log_reg.coef_[0]
     }).sort_values(by="Weight", ascending=False)
     print(coefficients.to_string(index=False))
+
+    # --- Random Forest ---
+    print("\n--- Random Forest (Non-Linear) ---")
+    rf = RandomForestClassifier(n_estimators=200, random_state=42, max_depth=10)
+    rf.fit(X_train, y_train) # Random Forest doesn't need scaled data
+    
+    y_pred_rf = rf.predict(X_test)
+    print(f"Accuracy: {accuracy_score(y_test, y_pred_rf):.4f}")
+    print("\nClassification Report:")
+    print(classification_report(y_test, y_pred_rf))
+    print("\nFeature Importances (Random Forest):")
+    importances = pd.DataFrame({
+        "Feature": X.columns, 
+        "Importance": rf.feature_importances_
+    }).sort_values(by="Importance", ascending=False)
+    print(importances.to_string(index=False))
+
+    # --- XGBoost ---
+    print("\n--- XGBoost (Gradient Boosted Trees) ---")
+    xgb = XGBClassifier(
+        n_estimators=200, 
+        max_depth=6, 
+        learning_rate=0.1, 
+        random_state=42,
+        use_label_encoder=False,
+        eval_metric='logloss'
+    )
+    xgb.fit(X_train, y_train) # Also doesn't strictly need scaled data
+    
+    y_pred_xgb = xgb.predict(X_test)
+    print(f"Accuracy: {accuracy_score(y_test, y_pred_xgb):.4f}")
+    print("\nClassification Report:")
+    print(classification_report(y_test, y_pred_xgb))
+    
+    print("\nFeature Importances (XGBoost):")
+    xgb_importances = pd.DataFrame({
+        "Feature": X.columns, 
+        "Importance": xgb.feature_importances_
+    }).sort_values(by="Importance", ascending=False)
+    print(xgb_importances.to_string(index=False))
+
+    # --- Save the best model and scaler ---
+    # We save both the model and the scaler because any new data must be 
+    # scaled exactly the same way the training data was before making a prediction.
+    print("\nSaving models to disk...")
+    joblib.dump(log_reg, 'optimize/logistic_model.pkl')
+    joblib.dump(rf, 'optimize/random_forest_model.pkl')
+    joblib.dump(xgb, 'optimize/xgboost_model.pkl')
+    joblib.dump(scaler, 'optimize/scaler.pkl')
+    print("Saved as .pkl files in the optimize/ directory!")
