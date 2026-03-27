@@ -92,7 +92,7 @@ def random_search(df, num_iterations=1000):
 
 if __name__ == "__main__":
     mode = 0
-    num_iterations=200000
+    num_iterations=10000
     df = create_integral_dataframe(mode=mode)
     
     best_params, best_loss = random_search(df, num_iterations=num_iterations)

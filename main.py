@@ -9,7 +9,6 @@ from utils.tree_solution import get_solution_vector
 
 def main():
    df = create_integral_dataframe()
-   print(df.head())
    print(df.head(-5))
 
 if __name__ == "__main__":
