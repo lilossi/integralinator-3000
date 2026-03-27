@@ -42,10 +42,12 @@ def create_integral_dataframe(mode = 0) -> pd.DataFrame:
         "Expressions": SOLVABLE_EXPRESSIONS,
         "ExpressionDepth": EXPRESSION_DEPTHS,
         "SolvableControllabilityScore": SOLVABLE_CONTROLLABILITY_SCORES,
-        "SolvabilityResultVector": SOLVABILITY_RESULT_VECTORS,
         "Desirable": good_or_bad
     }
+    
+    # Expand SolvabilityResultVector into individual rule columns
+    for i, rule_name in enumerate(RULE_NAMES):
+        df_dict[rule_name] = [vector[i] for vector in SOLVABILITY_RESULT_VECTORS]
         
-
     return pd.DataFrame(df_dict)
 
