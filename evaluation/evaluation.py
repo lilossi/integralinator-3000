@@ -94,6 +94,8 @@ def get_entire_evaluation(expr: Expr) -> str:
         temp_dict[rule] = [rules_vector[i]]
         
     vector = pd.DataFrame(temp_dict)
+    if (rules_vector[-1] > 0):
+        vector = pd.DataFrame() #empty
     return f"""Expression:
 {pretty(Integral(expr, x))}
 Solution:
