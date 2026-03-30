@@ -83,18 +83,14 @@ def print_solution_score(expr: Expr)  -> None:
 
 def get_solution_vector(expr: Expr) -> list[int]:
     tree, _ = generate_tree(repr(integral_steps(expr, x)))
-    rule_counts = {}
-    for node in tree.all_nodes():
-        rule_name = node.tag.split()[0] 
-        rule_counts[rule_name] = rule_counts.get(rule_name, 0) + 1
-    
-    # Return counts in order of points_table (maintains insertion order)
-    return [rule_counts.get(rule, 0) for rule in points_table.keys()]
+    return get_solution_vector_from_tree(tree)
 
 def get_solution_vector_from_tree(tree: Tree) -> list[int]:
     rule_counts = {}
     for node in tree.all_nodes():
         rule_name = node.tag.split()[0] 
+        if rule_name not in points_table:
+            rule_name = "DontKnowRule"
         rule_counts[rule_name] = rule_counts.get(rule_name, 0) + 1
     
     # Return counts in order of points_table (maintains insertion order)

@@ -1,5 +1,5 @@
 import pandas as pd
-from sympy import Expr, Integral, pprint, pretty
+from sympy import Expr, Integral, pprint, pretty, vector
 from sympy.abc import x
 from sympy.integrals.manualintegrate import integral_steps, manualintegrate
 from evaluation.controllability import get_controllability_score
@@ -13,7 +13,7 @@ from scipy.stats import norm, hmean
 
 def print_entire_evaluation(expr: Expr) -> None:
     print(get_entire_evaluation(expr))
-    
+
 def get_evaluation_score_old(expr: Expr) -> float:
     solvability, depth, controllability = get_evaluation_components(expr)
     return calculate_score(solvability, depth, controllability)
@@ -45,7 +45,6 @@ def bell_curve_score(expr_score: int, optimum: float, deviation: float) -> float
     peak = norm.pdf(optimum, loc=optimum, scale=deviation)
     return norm.pdf(expr_score, loc=optimum, scale=deviation) / peak
 
-
 def print_vector_evaluation(expr: Expr) -> None:
     print("\nSolvability Score Components:")
     print(get_solution_vector(expr))
@@ -53,8 +52,6 @@ def print_vector_evaluation(expr: Expr) -> None:
     print(get_expression_depth(expr))
     print("Controllability Score:")
     print(get_controllability_score(expr))
-    print("\nOverall Evaluation Score:")
-    print(get_evaluation_score_old(expr))
 
 # IMPORTANT!!!! >.<
 def return_vector_evaluation(expr: Expr) -> pd.DataFrame:
@@ -64,6 +61,9 @@ def return_vector_evaluation(expr: Expr) -> pd.DataFrame:
     control_score = get_symbol_count(solution)
     rules_vector = get_solution_vector_from_tree(tree)
     
+    if (rules_vector[-1] > 0):
+        return pd.DataFrame() #empty
+
     temp_dict = {
         "ExpressionDepth": [depth],
         "SolvableControllabilityScore": [control_score]
@@ -74,7 +74,7 @@ def return_vector_evaluation(expr: Expr) -> pd.DataFrame:
         
     vector = pd.DataFrame(temp_dict)
     return vector
-
+# also important
 def get_entire_evaluation(expr: Expr) -> str:
     """
     Returns the entire evaluation suite (solution, tree, scores) as a formatted string.
@@ -113,3 +113,6 @@ Overall Evaluation Score (using xgboost):
 {get_evaluation_score_saved_model(vector)[0]:.4f}"""
 
 
+def get_solution_score(expr: Expr) -> float:
+    vector = return_vector_evaluation(expr)
+    return get_evaluation_score_saved_model(vector)
