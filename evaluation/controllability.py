@@ -11,6 +11,4 @@ def get_symbol_count(expr: Expr) -> int:
 
 def get_controllability_score(expr: Expr) -> int:
     result = manualintegrate(expr, x)
-    #print("Result of integration:")
-    #pprint(result)
     return get_symbol_count(result)

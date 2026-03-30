@@ -1,34 +1,22 @@
+import pandas as pd
 from sympy import Expr, Integral, pprint, pretty
 from sympy.abc import x
 from sympy.integrals.manualintegrate import integral_steps, manualintegrate
 from evaluation.controllability import get_controllability_score
 from evaluation.controllability import get_symbol_count
+from evaluation.evaluation_score import get_evaluation_score_saved_model
 from evaluation.expression_depth import get_expression_depth
 from evaluation.solvability import is_solvable, solvability_score
-from utils.tree_solution import get_solution_vector, print_solution_tree, generate_tree, get_solution_tree
+from test_suite.integral_data import RULE_NAMES
+from utils.tree_solution import get_solution_vector, get_solution_vector_from_tree, print_solution_tree, generate_tree, get_solution_tree
 from scipy.stats import norm, hmean
 
 def print_entire_evaluation(expr: Expr) -> None:
-    print("Expression:")
-    pprint(Integral(expr, x))
-    print("Solution:")
-    pprint(manualintegrate(expr, x))
-    print("\nSolution Tree:")
-    print_solution_tree(expr)
-    print("\nSolvability Score:")
-    print(solvability_score(expr))
-    print("\nMax Depth:")
-    print(get_expression_depth(expr))
-    print("Controllability Score:")
-    print(get_controllability_score(expr))
-    print("\nOverall Evaluation Score:")
-    print(get_evaluation_score(expr))
-
+    print(get_entire_evaluation(expr))
     
-def get_evaluation_score(expr: Expr) -> float:
+def get_evaluation_score_old(expr: Expr) -> float:
     solvability, depth, controllability = get_evaluation_components(expr)
     return calculate_score(solvability, depth, controllability)
-
 
 def get_evaluation_components(expr: Expr) -> tuple[int, int, int]:
     #more efficient -> only one tree generation
@@ -66,29 +54,62 @@ def print_vector_evaluation(expr: Expr) -> None:
     print("Controllability Score:")
     print(get_controllability_score(expr))
     print("\nOverall Evaluation Score:")
-    print(get_evaluation_score(expr))
+    print(get_evaluation_score_old(expr))
+
+# IMPORTANT!!!! >.<
+def return_vector_evaluation(expr: Expr) -> pd.DataFrame:
+    tree = generate_tree(repr(integral_steps(expr, x)))[0]
+    depth = tree.depth() + 1
+    solution = manualintegrate(expr, x)
+    control_score = get_symbol_count(solution)
+    rules_vector = get_solution_vector_from_tree(tree)
+    
+    temp_dict = {
+        "ExpressionDepth": [depth],
+        "SolvableControllabilityScore": [control_score]
+    }
+    
+    for i, rule in enumerate(RULE_NAMES):
+        temp_dict[rule] = [rules_vector[i]]
+        
+    vector = pd.DataFrame(temp_dict)
+    return vector
 
 def get_entire_evaluation(expr: Expr) -> str:
     """
     Returns the entire evaluation suite (solution, tree, scores) as a formatted string.
     """
+    tree = generate_tree(repr(integral_steps(expr, x)))[0]
+    depth = tree.depth() + 1
+    solution = manualintegrate(expr, x)
+    control_score = get_symbol_count(solution)
+    rules_vector = get_solution_vector_from_tree(tree)
+    
+    temp_dict = {
+        "ExpressionDepth": [depth],
+        "SolvableControllabilityScore": [control_score]
+    }
+    
+    for i, rule in enumerate(RULE_NAMES):
+        temp_dict[rule] = [rules_vector[i]]
+        
+    vector = pd.DataFrame(temp_dict)
     return f"""Expression:
 {pretty(Integral(expr, x))}
 Solution:
-{pretty(manualintegrate(expr, x))}
+{solution}
 
 Solution Tree:
-{get_solution_tree(expr).strip()}
-
-Solvability Score:
-{solvability_score(expr)}
+{tree.to_string(with_data=False).strip()}
 
 Max Depth:
-{get_expression_depth(expr)}
+{depth}
 Controllability Score:
-{get_controllability_score(expr)}
+{control_score}
+Solution Rule Vector:
+{rules_vector}
 
-Overall Evaluation Score:
-{get_evaluation_score(expr)}"""
+Overall Evaluation Score (using xgboost):
+{get_evaluation_score_saved_model(vector)[0]:.4f}"""
 
 

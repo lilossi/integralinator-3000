@@ -90,3 +90,12 @@ def get_solution_vector(expr: Expr) -> list[int]:
     
     # Return counts in order of points_table (maintains insertion order)
     return [rule_counts.get(rule, 0) for rule in points_table.keys()]
+
+def get_solution_vector_from_tree(tree: Tree) -> list[int]:
+    rule_counts = {}
+    for node in tree.all_nodes():
+        rule_name = node.tag.split()[0] 
+        rule_counts[rule_name] = rule_counts.get(rule_name, 0) + 1
+    
+    # Return counts in order of points_table (maintains insertion order)
+    return [rule_counts.get(rule, 0) for rule in points_table.keys()]
