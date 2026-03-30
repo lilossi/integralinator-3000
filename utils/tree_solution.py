@@ -44,7 +44,7 @@ def generate_tree(string: str) -> tuple[Tree, int]:
             parent_id = stack[-1][0] if stack else None
             points_rule = points_table.get(rule_name, 0)
             total_points += points_rule
-            tree.create_node(rule_name + " [" + str(points_rule) + "]", node_id, parent=parent_id)
+            tree.create_node(rule_name, node_id, parent=parent_id)
             i = match.end() #advance to '('
             paren_depth += 1
             stack.append((node_id, paren_depth))
@@ -67,7 +67,7 @@ def generate_tree(string: str) -> tuple[Tree, int]:
 
 def get_solution_tree(expr: Expr) -> str:
     tree, _ = generate_tree(repr(integral_steps(expr, x)))
-    return tree.to_string(with_data=False)
+    return str(tree.show(stdout=False))
 
 def print_solution_tree(expr: Expr)  -> None:
     tree, _ = generate_tree(repr(integral_steps(expr, x)))

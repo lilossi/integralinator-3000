@@ -2,7 +2,6 @@ import joblib
 import pandas as pd
 from sympy import *
 from evaluation.controllability import get_controllability_score
-from evaluation.evaluation import get_solution_score
 from evaluation.expression_depth import get_expression_depth
 from evaluation.solvability import is_solvable
 from test_suite.integral_data import RULE_NAMES
@@ -23,13 +22,3 @@ def get_evaluation_score_saved_model(df: pd.DataFrame) -> float:
     df_features = df[feature_cols]
     
     return model.predict_proba(df_features)[0][1]
-
-if __name__ == "__main__":
-    x = Symbol('x')
-    test_expr = exp(-x**2) # Example expression; replace with any SymPy expression you want to test
-    
-    is_desirable = get_solution_score(test_expr)
-    
-    print(f"Expression: {test_expr}")
-    print(f"is solvable?: {is_solvable(test_expr)}", )
-    print(f"Predicted Desirable: {is_desirable}")

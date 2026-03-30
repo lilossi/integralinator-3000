@@ -100,7 +100,7 @@ Solution:
 {solution}
 
 Solution Tree:
-{tree.to_string(with_data=False).strip()}
+{str(tree.show(stdout=False)).strip()}
 
 Max Depth:
 {depth}
@@ -110,7 +110,7 @@ Solution Rule Vector:
 {rules_vector}
 
 Overall Evaluation Score (using xgboost):
-{get_evaluation_score_saved_model(vector)[0]:.4f}"""
+{get_evaluation_score_saved_model(vector)}"""
 
 
 def get_solution_score(expr: Expr) -> float:
