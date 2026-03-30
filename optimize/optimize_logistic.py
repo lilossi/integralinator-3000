@@ -28,7 +28,7 @@ if __name__ == "__main__":
     X, y = prepare_data(df)
 
     # Split the dataset into training and testing sets (80% train, 20% test)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=44)
 
     # Scale the features
     scaler = StandardScaler()
@@ -37,7 +37,11 @@ if __name__ == "__main__":
 
     # Train Logistic Regression
     print("--- Logistic Regression ---")
-    log_reg = LogisticRegression(max_iter=10000)
+    log_reg = LogisticRegression(
+        C=10.0,
+        max_iter=1000,
+        random_state=42
+    )
     log_reg.fit(X_train_scaled, y_train)
     
     # Predictions and evaluation
@@ -56,7 +60,7 @@ if __name__ == "__main__":
 
     # --- Random Forest ---
     print("\n--- Random Forest (Non-Linear) ---")
-    rf = RandomForestClassifier(n_estimators=200, random_state=43, max_depth=10)
+    rf = RandomForestClassifier(n_estimators=200, random_state=42, max_depth=10)
     rf.fit(X_train, y_train) # Random Forest doesn't need scaled data
     
     y_pred_rf = rf.predict(X_test)
@@ -73,10 +77,10 @@ if __name__ == "__main__":
     # --- XGBoost ---
     print("\n--- XGBoost (Gradient Boosted Trees) ---")
     xgb = XGBClassifier(
-        n_estimators=200, 
+        n_estimators=50, 
         max_depth=2, 
         learning_rate=0.1, 
-        random_state=43,
+        random_state=44,
         use_label_encoder=False,
         eval_metric='logloss'
     )

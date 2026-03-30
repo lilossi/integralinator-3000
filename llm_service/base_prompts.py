@@ -1,0 +1,1 @@
+BASE_PROMPT_GENERATE = """You are an expert in mathematics and symbolic computation. Your task is to generate a dataset of mathematical expressions along with their integrals. The dataset should be diverse and cover a wide range of functions, including polynomials, trigonometric functions, exponential functions, logarithmic functions, and combinations thereof."""

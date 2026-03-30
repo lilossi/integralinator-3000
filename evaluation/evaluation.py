@@ -1,16 +1,18 @@
-from sympy import Expr, Integral, pprint
+from sympy import Expr, Integral, pprint, pretty
 from sympy.abc import x
 from sympy.integrals.manualintegrate import integral_steps, manualintegrate
 from evaluation.controllability import get_controllability_score
 from evaluation.controllability import get_symbol_count
 from evaluation.expression_depth import get_expression_depth
 from evaluation.solvability import is_solvable, solvability_score
-from utils.tree_solution import get_solution_vector, print_solution_tree, generate_tree
+from utils.tree_solution import get_solution_vector, print_solution_tree, generate_tree, get_solution_tree
 from scipy.stats import norm, hmean
 
 def print_entire_evaluation(expr: Expr) -> None:
     print("Expression:")
     pprint(Integral(expr, x))
+    print("Solution:")
+    pprint(manualintegrate(expr, x))
     print("\nSolution Tree:")
     print_solution_tree(expr)
     print("\nSolvability Score:")
@@ -65,3 +67,28 @@ def print_vector_evaluation(expr: Expr) -> None:
     print(get_controllability_score(expr))
     print("\nOverall Evaluation Score:")
     print(get_evaluation_score(expr))
+
+def get_entire_evaluation(expr: Expr) -> str:
+    """
+    Returns the entire evaluation suite (solution, tree, scores) as a formatted string.
+    """
+    return f"""Expression:
+{pretty(Integral(expr, x))}
+Solution:
+{pretty(manualintegrate(expr, x))}
+
+Solution Tree:
+{get_solution_tree(expr).strip()}
+
+Solvability Score:
+{solvability_score(expr)}
+
+Max Depth:
+{get_expression_depth(expr)}
+Controllability Score:
+{get_controllability_score(expr)}
+
+Overall Evaluation Score:
+{get_evaluation_score(expr)}"""
+
+
