@@ -67,6 +67,6 @@ if __name__ == "__main__":
     print(xgb_importances.to_string(index=False))
 
     print("\nSaving models to disk...")
-    joblib.dump(log_reg, 'optimize/logistic_model.pkl')
-    joblib.dump(scaler, 'optimize/scaler.pkl')
-    joblib.dump(xgb, 'optimize/xgboost_model.pkl')
+    joblib.dump(log_reg, 'optimize/optimization_runs/saved_models/logistic_model.pkl')
+    joblib.dump(scaler, 'optimize/optimization_runs/saved_models/scaler.pkl')
+    joblib.dump(xgb, 'optimize/optimization_runs/saved_models/xgboost_model.pkl')
