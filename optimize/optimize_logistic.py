@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
     # --- Random Forest ---
     print("\n--- Random Forest (Non-Linear) ---")
-    rf = RandomForestClassifier(n_estimators=200, random_state=42, max_depth=10)
+    rf = RandomForestClassifier(n_estimators=200, random_state=43, max_depth=10)
     rf.fit(X_train, y_train) # Random Forest doesn't need scaled data
     
     y_pred_rf = rf.predict(X_test)
@@ -74,17 +74,22 @@ if __name__ == "__main__":
     print("\n--- XGBoost (Gradient Boosted Trees) ---")
     xgb = XGBClassifier(
         n_estimators=200, 
-        max_depth=6, 
+        max_depth=2, 
         learning_rate=0.1, 
-        random_state=42,
+        random_state=43,
         use_label_encoder=False,
         eval_metric='logloss'
     )
     xgb.fit(X_train, y_train) # Also doesn't strictly need scaled data
     
+    # Check for overfitting by comparing train vs test
+    y_pred_train_xgb = xgb.predict(X_train)
     y_pred_xgb = xgb.predict(X_test)
-    print(f"Accuracy: {accuracy_score(y_test, y_pred_xgb):.4f}")
-    print("\nClassification Report:")
+    
+    print(f"Training Accuracy: {accuracy_score(y_train, y_pred_train_xgb):.4f}")
+    print(f"Testing Accuracy: {accuracy_score(y_test, y_pred_xgb):.4f}")
+    
+    print("\nClassification Report (Test Data):")
     print(classification_report(y_test, y_pred_xgb))
     
     print("\nFeature Importances (XGBoost):")
