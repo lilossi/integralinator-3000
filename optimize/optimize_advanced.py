@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report, accuracy_score
 import joblib
 
 from test_suite.integral_data import create_integral_dataframe, RULE_NAMES
-
+#uv run -m optimize.optimize_advanced
 def prepare_data(df: pd.DataFrame):
     feature_cols = ["ExpressionDepth", "SolvableControllabilityScore"] + RULE_NAMES
     X = df[feature_cols]

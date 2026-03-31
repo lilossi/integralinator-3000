@@ -9,6 +9,7 @@ dependencies = [
     "langchain>=1.2.13",
     "langchain-openai>=1.1.12",
     "pandas>=3.0.1",
+    "python-dotenv>=1.2.2",
     "scikit-learn>=1.6.0",
     "scipy>=1.17.1",
     "sympy>=1.14.0",

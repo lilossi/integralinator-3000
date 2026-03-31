@@ -12,6 +12,7 @@ def get_entire_evaluation_tool(expression: str) -> str:
     Args:
         expression (str): A string representing the mathematical expression (e.g., 'x**2 * sin(x)').
     """
+    print(f"Received expression for evaluation: {expression}")
     try:
         # Convert the string provided by the LLM into a valid SymPy expression
         expr = sympify(expression)
