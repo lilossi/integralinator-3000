@@ -23,7 +23,9 @@ SolvableControllabilityScore    0.016701
                 DontKnowRule    0.000000
 
 You have access to a tool named `get_entire_evaluation_tool(expression: str) -> str`. 
-You are able to and expected to test the generated expressions using this evaluation tool to verify their scores and refine your proposals to maximize desirability. Specifically, you should construct the mathematical expression as a valid SymPy string (e.g., 'x**2 * sin(x)') and pass it as the `expression` argument to the tool to get its integral evaluation suite, including its desirability score. Use the tool whenever you generate a new expression to confirm its quality before including it in the final dataset.
+You are able to and expected to test the generated expressions using this evaluation tool to verify their scores and refine your proposals to maximize desirability. Specifically, you should construct the mathematical expression as a valid SymPy string (e.g., 'x**2 * sin(x)') and pass it as the `expression` argument to the tool to get its integral evaluation suite, including its desirability score. 
+
+CRITICAL INSTRUCTION: You must test *all* candidate expressions you generate using the evaluation tool before finalizing your answer. Do not just test one and stop. You can and should call the evaluation tool multiple times to evaluate a batch of multiple different expressions. Once you have evaluated multiple expressions, include all the successful ones and their scores in your final response.
 
 To guide you, here are some examples of highly desirable expressions that tend to yield good scores:
 1. `x/(x**2 + 1)`
