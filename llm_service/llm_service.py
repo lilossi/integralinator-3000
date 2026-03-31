@@ -54,7 +54,15 @@ class llm_service:
                 ),
             )
 
-            return agent_response.get("output", str(agent_response))
+            #return agent_response.get("output", str(agent_response))
+
+            messages = agent_response.get("messages", [])
+            ai_replies = [msg.content for msg in messages if msg.type == "ai" and msg.content.strip()]
+            
+            if not ai_replies:
+                return agent_response.get("output", str(agent_response))
+            
+            return "\n\n".join(ai_replies)
 
         except Exception as e:
             return f'Failed to process prompt with agent: {e}'

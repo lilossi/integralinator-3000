@@ -22,4 +22,5 @@ SolvableControllabilityScore    0.016701
                   ArctanRule    0.000000
                 DontKnowRule    0.000000
 
-You are able to and expected to test the generated expressions using the evaluation_tool to verify their scores and refine your proposals to maximize desirability. Specifically, you should construct the mathematical expression as a valid SymPy string (e.g., 'x**2 * sin(x)') and pass it to the evaluation tool to get its desirability score. Use the tool whenever you generate a new expression to confirm its quality before including it in the final dataset."""
+You have access to a tool named `get_entire_evaluation_tool(expression: str) -> str`. 
+You are able to and expected to test the generated expressions using this evaluation tool to verify their scores and refine your proposals to maximize desirability. Specifically, you should construct the mathematical expression as a valid SymPy string (e.g., 'x**2 * sin(x)') and pass it as the `expression` argument to the tool to get its integral evaluation suite, including its desirability score. Use the tool whenever you generate a new expression to confirm its quality before including it in the final dataset."""
