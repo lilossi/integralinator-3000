@@ -6,7 +6,7 @@ import asyncio
 from langchain_openai import ChatOpenAI
 from langchain.agents import create_agent
 
-from llm_service.base_prompts import BASE_PROMPT_GENERATE
+from llm_service.base_prompts import BASE_PROMPT_GENERATE, USER_PROMPT_TEMPLATE
 from llm_service.tools.evaluation_tool import get_entire_evaluation_tool
 from llm_service.tools.middleware import AgentTools
 
@@ -41,20 +41,19 @@ class llm_service:
                 print(f'Failed to initialize LLM: {e}')
                 self.model = None
 
-    async def generate_expression(self) -> str:
+    async def generate_expression(self, num_expressions: int) -> str:
         if self.model is None or self.agent is None:
             return 'LLM not configured. Check the API key.'
 
         try:
             loop = asyncio.get_event_loop()
+            prompt = USER_PROMPT_TEMPLATE.format(num_expressions=num_expressions)
             agent_response = await loop.run_in_executor(
                 None,
                 lambda: self.agent.invoke(
-                    {"input": "Generate a mathematical expression."}
+                    {"input": prompt}
                 ),
             )
-
-            #return agent_response.get("output", str(agent_response))
 
             messages = agent_response.get("messages", [])
             ai_replies = [msg.content for msg in messages if msg.type == "ai" and msg.content.strip()]

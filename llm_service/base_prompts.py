@@ -53,3 +53,9 @@ To guide you, here are some examples of highly desirable expressions that tend t
 6. `x*log(x + 1)`
 7. `sin(log(x))/x**3`
 8. `x*exp(x)/sqrt(exp(x) - 1)`"""
+# aufgabe
+USER_PROMPT_TEMPLATE = """You must generate EXACTLY {num_expressions} highly desirable mathematical expressions.
+CRITICAL: Do NOT just write out the expressions as text and wait. You MUST immediately invoke the `get_entire_evaluation_tool` to test them IN THE VERY SAME RESPONSE. If you write 'Let me evaluate these...' and don't call the tool, the program will terminate early.
+Generate candidate expressions, evaluate them using the tool immediately, ensure exactly {num_expressions} integrals are returned at the end with the highest scores.
+Do not return more or fewer than requested.
+When providing your final chosen expressions, you must output ONLY a valid JSON list of strings, with each string being one expression (e.g. `["x*sin(x)", "x**2"]`). Do NOT include any other conversational text or markdown blocks like ```json in your final output!"""
