@@ -42,7 +42,8 @@ You are able to and expected to test the generated expressions using this evalua
 CRITICAL INSTRUCTION: You must test *all* candidate expressions you generate using the evaluation tool 
 before finalizing your answer. Do not just test one and stop. You can and should call the evaluation tool 
 multiple times to evaluate a batch of multiple different expressions. Once you have evaluated multiple
-expressions, include all the successful ones and their scores in your final response.
+expressions, you must select the best ones and return them EXACTLY in the JSON format requested by the user prompt.
+Never return conversational summaries or scores in your final output, ONLY the JSON array of strings.
 
 To guide you, here are some examples of highly desirable expressions that tend to yield good scores:
 1. `x/(x**2 + 1)`
@@ -57,5 +58,11 @@ To guide you, here are some examples of highly desirable expressions that tend t
 USER_PROMPT_TEMPLATE = """You must generate EXACTLY {num_expressions} highly desirable mathematical expressions.
 CRITICAL: Do NOT just write out the expressions as text and wait. You MUST immediately invoke the `get_entire_evaluation_tool` to test them IN THE VERY SAME RESPONSE. If you write 'Let me evaluate these...' and don't call the tool, the program will terminate early.
 Generate candidate expressions, evaluate them using the tool immediately, ensure exactly {num_expressions} integrals are returned at the end with the highest scores.
-Do not return more or fewer than requested.
-When providing your final chosen expressions, you must output ONLY a valid JSON list of strings, with each string being one expression (e.g. `["x*sin(x)", "x**2"]`). Do NOT include any other conversational text or markdown blocks like ```json in your final output!"""
+
+VERY IMPORTANT: You MUST return EXACTLY {num_expressions} expressions in your final JSON output. 
+Do not return more than {num_expressions}. Do not return fewer than {num_expressions}. The length of your final JSON array must be exactly {num_expressions} or your response will be rejected.
+
+CRITICAL INSTRUCTIONS FOR FINAL OUTPUT:
+{format_instructions}
+
+Your final answer MUST be ONLY the JSON object described above with EXACTLY {num_expressions} string items. Do not include any conversational text, explanations, or summaries in your final response. Just the JSON object."""
