@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 class IntegralList(BaseModel):
     expressions: list[str] = Field(description="A list of mathematical expressions for the integrals.")
 
-# Global store for submitted integrals so other tools can access them
+# global storage
 submitted_integrals: set[str] = set()
 
 @tool
@@ -27,8 +27,8 @@ def submit_generated_integrals(expressions: list[str]) -> str:
     added_count = len(submitted_integrals) - old_count
     
     print(f"Submitting the following expressions:\n{expressions}")
-    print(f"Added {added_count} new unique expressions.\n")
+    print(f"Added {added_count} unique expressions.\n")
     
-    return f"SUCCESS: {added_count} new unique expressions have been saved successfully. You must now end the conversation."
+    return f"SUCCESS: {added_count} unique expressions have been saved successfully. You must now end the conversation."
 
 
