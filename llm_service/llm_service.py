@@ -48,16 +48,17 @@ class llm_service:
         try:
             loop = asyncio.get_event_loop()
             prompt = USER_PROMPT_TEMPLATE
+            global submitted_integrals
             
             while len(submitted_integrals) < target_num:
-                print(f"Submissions so far: {len(submitted_integrals)}/{target_num}")
+                print(f"Submissions so far: {len(submitted_integrals)}/{target_num}, new loop:")
                 agent_response = await loop.run_in_executor(
                     None,
                     lambda: self.agent.invoke(
                         {"input": prompt}
                     ),
                 )
-                print(agent_response.get("messages", []))
+                #print(agent_response.get("messages", []))
 
             return list(submitted_integrals)
 

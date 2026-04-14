@@ -12,6 +12,8 @@ def get_previously_submitted_integrals() -> list[str]:
     """Retrieve the list of all submitted integrals.
     Use this tool to check existing submissions and ensure your newly generated 
     integrals are diverse and do not duplicate these."""
+    global submitted_integrals
+    print(f"Retrieving previously submitted integrals: {submitted_integrals}")
     return list(submitted_integrals)
 
 @tool(args_schema=IntegralList)
