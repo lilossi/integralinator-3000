@@ -1,5 +1,6 @@
 import click
 import asyncio
+from baseline_integrals.random_integrals import generate_random_function, generate_solvable_function
 from llm_service.llm_service import llm_service
 
 @click.group()
@@ -30,6 +31,7 @@ def generate(method, num_integrals):
     click.echo(f"Total Integrals: {num_integrals}")
     
     if method.lower() == 'llm':
+        # uv run -m cli.main generate --method llm --num-integrals 5
         service = llm_service()
         click.echo("LLM Service initialized.")
         click.echo(f"Generating {num_integrals} integrals...")
@@ -39,6 +41,22 @@ def generate(method, num_integrals):
         click.echo("\n--- Final Curated Expressions ---")
         for i, expr in enumerate(results, 1):
             click.echo(f"[{i}] {expr}")
+
+    elif method.lower() == 'baseline':
+        # uv run -m cli.main generate --method baseline --num-integrals 5
+        click.echo("Baseline initialized.")
+        click.echo(f"Generating {num_integrals} integrals...")
+        for i in range(1, num_integrals + 1):
+            click.echo(f"[{i}] {generate_random_function(n_ops=7)}")
+
+    elif method.lower() == 'baseline_solvable':
+        click.echo("Baseline Solvable initialized.")
+        click.echo(f"Generating {num_integrals} integrals...")
+        for i in range(1, num_integrals + 1):
+            F = generate_solvable_function(n_ops=6)
+            if F is None:
+                continue
+            click.echo(f"[{i}] {F}")
     else:
         click.echo(f"Warning: Method '{method}' isn't fully implemented yet.")
 
