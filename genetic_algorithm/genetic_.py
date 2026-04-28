@@ -12,7 +12,8 @@ from test_suite.integral_data import RULE_NAMES
 from utils.tree_solution import get_solution_vector
 from evaluation.evaluation import get_solution_score
 from evaluation.evaluation_score import get_evaluation_score_saved_model
-from baseline_integrals.random_integrals import generate_random_function, random_expression
+from baseline_integrals.random_integrals import generate_random_function
+from baseline_integrals.utils import random_expression
 from func_timeout import FunctionTimedOut
 
 POPULATION_EXPRS: list[Expr] = []

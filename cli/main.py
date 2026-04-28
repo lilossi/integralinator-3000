@@ -1,6 +1,7 @@
 import click
 import asyncio
-from baseline_integrals.random_integrals import generate_random_function, generate_solvable_function
+from baseline_integrals.random_integrals import generate_random_function
+from baseline_integrals.solvable_integrals import generate_solvable_function
 from llm_service.llm_service import llm_service
 
 @click.group()
