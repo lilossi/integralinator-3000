@@ -4,10 +4,8 @@
 from __future__ import annotations
 
 import random
-import threading
-import _thread
-from contextlib import contextmanager
 from functools import lru_cache
+from func_timeout import func_set_timeout, FunctionTimedOut
 
 from sympy import Expr, Integer, Integral, nan, oo, zoo, diff, simplify
 from sympy.abc import x
@@ -48,10 +46,14 @@ def _build_tree_counts_table(max_internal_ops: int) -> tuple[tuple[int, ...], ..
     internal operators remaining to place.
 
     Recurrence:
-        tree_counts[open_leaf_slots][remaining_internal_ops] = tree_counts[open_leaf_slots-1][remaining_internal_ops]  +  tree_counts[open_leaf_slots][remaining_internal_ops-1]  +  tree_counts[open_leaf_slots+1][remaining_internal_ops-1]
-                  └ leaf ┘    └ unary op ┘    └ binary op ┘
+        tree_counts[open_leaf_slots][remaining_internal_ops] = 
+        tree_counts[open_leaf_slots-1][remaining_internal_ops]  (leaf)
+        +  tree_counts[open_leaf_slots][remaining_internal_ops-1]  (unary op)
+        +  tree_counts[open_leaf_slots+1][remaining_internal_ops-1]  (binary op)
 
-    Boundary: tree_counts[open_leaf_slots][0] = 1 for all open_leaf_slots >= 0; tree_counts[0][remaining_internal_ops] = 0 for remaining_internal_ops > 0.
+
+    Boundary: tree_counts[open_leaf_slots][0] = 1 for all open_leaf_slots >= 0; 
+        tree_counts[0][remaining_internal_ops] = 0 for remaining_internal_ops > 0.
     """
     max_open_slots = 2 * max_internal_ops + 2
     tree_counts = [[0] * (max_internal_ops + 1) for _ in range(max_open_slots + 1)]
@@ -99,7 +101,7 @@ def _build_expr(arity_sequence: list[int]) -> Expr:
             return _random_leaf()
         elif arity == 1:
             return random.choice(UNARY_OPS)(build_subtree())
-        else:  # arity == 2
+        else:
             left_child, right_child = build_subtree(), build_subtree()
             return random.choice(BINARY_OPS)(left_child, right_child)
 
@@ -109,22 +111,6 @@ def _build_expr(arity_sequence: list[int]) -> Expr:
 def random_expression(num_internal_ops: int) -> Expr:
     """Random SymPy expression in x with exactly `num_internal_ops` internal nodes."""
     return _build_expr(_sample_tree_arity_sequence(num_internal_ops))
-
-class _Timeout(Exception):
-    #print("Timeout!")
-    pass
-
-
-@contextmanager
-def _time_limit(seconds: float):
-    timer = threading.Timer(seconds, lambda: _thread.interrupt_main())
-    timer.start()
-    try:
-        yield
-    except KeyboardInterrupt:
-        raise _Timeout()
-    finally:
-        timer.cancel()
 
 def _is_valid_integrand(f: Expr) -> bool:
     if f is None:
@@ -141,56 +127,66 @@ def _is_valid_integrand(f: Expr) -> bool:
     return True
 
 
-def _safe_simplify(f: Expr, timeout: float) -> Expr:
+def _safe_simplify(f: Expr) -> Expr:
     try:
-        with _time_limit(timeout):
-            return simplify(f)
+        return simplify(f)
     except Exception:
         return f
 
+
+@func_set_timeout(2.0)
+def try_generate_random_function(
+    num_internal_ops: int = 7,
+    simplify_flag: bool = True,
+) -> Expr | None:
+    integrand = random_expression(num_internal_ops)
+    if simplify_flag:
+        integrand = _safe_simplify(integrand)
+    if not _is_valid_integrand(integrand):
+        return None
+    return integrand
 
 def generate_random_function(
     num_internal_ops: int = 7,
     max_attempts: int = 50,
     simplify_flag: bool = True,
-    timeout: float = 2.0,
 ) -> Expr | None:
     for _ in range(max_attempts):
         try:
-            with _time_limit(timeout):
-                integrand = random_expression(num_internal_ops)
-                if simplify_flag:
-                    integrand = _safe_simplify(integrand, timeout=timeout / 2)
-                if not _is_valid_integrand(integrand):
-                    continue
+            integrand = try_generate_random_function(num_internal_ops, simplify_flag)
+            if integrand is not None:
                 return integrand
-        except (_Timeout, ZeroDivisionError, ValueError,
-                TypeError, OverflowError, RecursionError):
+        except (FunctionTimedOut, ZeroDivisionError, ValueError, TypeError, OverflowError, RecursionError):
             continue
     return None
 
+@func_set_timeout(2.0)
+def try_generate_solvable_function(
+    num_internal_ops: int = 7,
+    simplify_flag: bool = True,
+) -> Expr | None:
+    antiderivative = random_expression(num_internal_ops)
+    if simplify_flag:
+        antiderivative = _safe_simplify(antiderivative)
+    if antiderivative.free_symbols != {x} or antiderivative.is_constant():
+        return None
+    integrand = diff(antiderivative, x)
+    if simplify_flag:
+        integrand = _safe_simplify(integrand)
+    if not _is_valid_integrand(integrand):
+        return None
+    return integrand
 
 def generate_solvable_function(
     num_internal_ops: int = 7,
     max_attempts: int = 50,
     simplify_flag: bool = True,
-    timeout: float = 2.0,
 ) -> Expr | None:
     for _ in range(max_attempts):
         try:
-            with _time_limit(timeout):
-                antiderivative = random_expression(num_internal_ops)
-                if simplify_flag:
-                    antiderivative = _safe_simplify(antiderivative, timeout=timeout / 2)
-                if antiderivative.free_symbols != {x} or antiderivative.is_constant():
-                    continue
-                integrand = diff(antiderivative, x)
-                if simplify_flag:
-                    integrand = _safe_simplify(integrand, timeout=timeout / 2)
-                if not _is_valid_integrand(integrand):
-                    continue
+            integrand = try_generate_solvable_function(num_internal_ops, simplify_flag)
+            if integrand is not None:
                 return integrand
-        except (_Timeout, ZeroDivisionError, ValueError,
-                TypeError, OverflowError, RecursionError):
+        except (FunctionTimedOut, ZeroDivisionError, ValueError, TypeError, OverflowError, RecursionError):
             continue
     return None

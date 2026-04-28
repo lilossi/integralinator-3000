@@ -50,6 +50,7 @@ def generate(method, num_integrals):
             click.echo(f"[{i}] {generate_random_function(num_internal_ops=7)}")
 
     elif method.lower() == 'baseline_solvable':
+        # uv run -m cli.main generate --method baseline_solvable --num-integrals 5
         click.echo("Baseline Solvable initialized.")
         click.echo(f"Generating {num_integrals} integrals...")
         for i in range(1, num_integrals + 1):
