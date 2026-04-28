@@ -2,6 +2,7 @@ import click
 import asyncio
 from baseline_integrals.random_integrals import generate_random_function
 from baseline_integrals.solvable_integrals import generate_solvable_function
+from genetic_algorithm.genetic_algorithm import run_genetic_algorithm
 from llm_service.llm_service import llm_service
 
 @click.group()
@@ -59,6 +60,22 @@ def generate(method, num_integrals):
             if F is None:
                 continue
             click.echo(f"[{i}] {F}")
+    elif method.lower() == 'genetic':
+        # uv run -m cli.main generate --method genetic --num-integrals 1
+        click.echo("Genetic Algorithm initialized.")
+        click.echo("Running Genetic Algorithm to collect high-fitness expressions...")
+        
+        all_collected_integrals = []
+        for i in range(1, num_integrals + 1):
+            click.echo(f"Run {i}/{num_integrals}...")
+            collected = run_genetic_algorithm(population_size=20, generations=10)
+            all_collected_integrals.extend(collected)
+        
+        unique_integrals = list(set(all_collected_integrals))
+        
+        click.echo("\n--- Collected High-Fitness Expressions ---")
+        for i, expr in enumerate(unique_integrals, 1):
+            click.echo(f"[{i}] {expr}")
     else:
         click.echo(f"Warning: Method '{method}' isn't fully implemented yet.")
 

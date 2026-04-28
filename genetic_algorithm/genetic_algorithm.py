@@ -2,11 +2,12 @@ import pygad
 import numpy as np
 from sympy.abc import x
 from baseline_integrals.random_integrals import generate_random_function
-from genetic_algorithm.ga_operators import POPULATION_EXPRS, register_expr, crossover_func, mutation_func
+from genetic_algorithm.ga_operators import POPULATION_EXPRS, HIGH_FITNESS_INTEGRALS, register_expr, crossover_func, mutation_func
 from genetic_algorithm.fitness import fitness_func, on_generation
 
 def run_genetic_algorithm(population_size: int = 50, generations: int = 30):
     POPULATION_EXPRS.clear()
+    HIGH_FITNESS_INTEGRALS.clear()
     
     initial_pop_indices = []
     print(f"Generating initial population of {population_size} expressions...")
@@ -39,7 +40,7 @@ def run_genetic_algorithm(population_size: int = 50, generations: int = 30):
     print(f"Parameters of the best solution: {best_expr}")
     print(f"Fitness value of the best solution: {solution_fitness}")
     
-    return best_expr, solution_fitness
+    return list(HIGH_FITNESS_INTEGRALS)
 
 if __name__ == "__main__":
     run_genetic_algorithm()

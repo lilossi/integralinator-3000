@@ -2,14 +2,25 @@ import random
 import numpy as np
 from sympy import preorder_traversal, Expr
 from baseline_integrals.utils import random_expression
+from utils.validation import _safe_simplify, _is_valid_integrand
+from sympy.abc import x
 
 # Common registry for expressions to share indices across GA components
 POPULATION_EXPRS: list[Expr] = []
+# Registry for high-fitness expressions found during evaluation
+HIGH_FITNESS_INTEGRALS: set[Expr] = set()
 
 def register_expr(expr: Expr) -> int:
     """Adds an expression to the registry and returns its index."""
     POPULATION_EXPRS.append(expr)
     return len(POPULATION_EXPRS) - 1
+
+def clean_and_validate(expr: Expr, fallback: Expr) -> Expr:
+    """Simplifies and validates an expression, returning fallback if invalid."""
+    expr = _safe_simplify(expr)
+    if _is_valid_integrand(expr):
+        return expr
+    return fallback
 
 def get_random_subtree(expr: Expr) -> Expr:
     """Extracts a random node (subtree) from the syntax tree using traversal."""
@@ -32,6 +43,7 @@ def crossover_func(parents, offspring_size, ga_instance):
         p1_sub = get_random_subtree(p1_expr)
         
         child_expr = p1_expr.subs(p1_sub, p2_sub)
+        child_expr = clean_and_validate(child_expr, p1_expr)
         
         offspring[k, 0] = register_expr(child_expr)
 
@@ -51,6 +63,8 @@ def mutation_func(offspring, ga_instance):
             new_sub = random_expression(num_internal_ops=random.randint(1, 4))
             
             mutated = expr.subs(target_sub, new_sub)
+            mutated = clean_and_validate(mutated, expr)
+            
             offspring[idx_in_offspring, 0] = register_expr(mutated)
             
     return offspring
