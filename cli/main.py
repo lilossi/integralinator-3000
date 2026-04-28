@@ -47,13 +47,13 @@ def generate(method, num_integrals):
         click.echo("Baseline initialized.")
         click.echo(f"Generating {num_integrals} integrals...")
         for i in range(1, num_integrals + 1):
-            click.echo(f"[{i}] {generate_random_function(n_ops=7)}")
+            click.echo(f"[{i}] {generate_random_function(num_internal_ops=7)}")
 
     elif method.lower() == 'baseline_solvable':
         click.echo("Baseline Solvable initialized.")
         click.echo(f"Generating {num_integrals} integrals...")
         for i in range(1, num_integrals + 1):
-            F = generate_solvable_function(n_ops=6)
+            F = generate_solvable_function(num_internal_ops=6)
             if F is None:
                 continue
             click.echo(f"[{i}] {F}")

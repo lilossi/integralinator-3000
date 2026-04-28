@@ -41,73 +41,74 @@ def _random_leaf(p_var: float = 0.5) -> Expr:
 
 
 @lru_cache(maxsize=None)
-def _build_D(max_n: int) -> tuple[tuple[int, ...], ...]:
+def _build_tree_counts_table(max_internal_ops: int) -> tuple[tuple[int, ...], ...]:
     """
-    D[e][n] = number of tree skeletons with e open leaf-slots and n
+    tree_counts[open_leaf_slots][remaining_internal_ops] = number of tree skeletons
+    with open_leaf_slots open leaf-slots and remaining_internal_ops
     internal operators remaining to place.
 
     Recurrence:
-        D[e][n] = D[e-1][n]  +  D[e][n-1]  +  D[e+1][n-1]
+        tree_counts[open_leaf_slots][remaining_internal_ops] = tree_counts[open_leaf_slots-1][remaining_internal_ops]  +  tree_counts[open_leaf_slots][remaining_internal_ops-1]  +  tree_counts[open_leaf_slots+1][remaining_internal_ops-1]
                   └ leaf ┘    └ unary op ┘    └ binary op ┘
 
-    Boundary: D[e][0] = 1 for all e >= 0; D[0][n] = 0 for n > 0.
+    Boundary: tree_counts[open_leaf_slots][0] = 1 for all open_leaf_slots >= 0; tree_counts[0][remaining_internal_ops] = 0 for remaining_internal_ops > 0.
     """
-    max_e = 2 * max_n + 2
-    D = [[0] * (max_n + 1) for _ in range(max_e + 1)]
-    for e in range(max_e + 1):
-        D[e][0] = 1
-    for n in range(1, max_n + 1):
-        for e in range(1, max_e):
-            D[e][n] = D[e - 1][n] + D[e][n - 1] + D[e + 1][n - 1]
-    return tuple(tuple(row) for row in D)
+    max_open_slots = 2 * max_internal_ops + 2
+    tree_counts = [[0] * (max_internal_ops + 1) for _ in range(max_open_slots + 1)]
+    for open_leaf_slots in range(max_open_slots + 1):
+        tree_counts[open_leaf_slots][0] = 1
+    for remaining_internal_ops in range(1, max_internal_ops + 1):
+        for open_leaf_slots in range(1, max_open_slots):
+            tree_counts[open_leaf_slots][remaining_internal_ops] = tree_counts[open_leaf_slots - 1][remaining_internal_ops] + tree_counts[open_leaf_slots][remaining_internal_ops - 1] + tree_counts[open_leaf_slots + 1][remaining_internal_ops - 1]
+    return tuple(tuple(row) for row in tree_counts)
 
 
-def _sample_shape(n_ops: int) -> list[int]:
+def _sample_tree_arity_sequence(num_internal_ops: int) -> list[int]:
     """
     Sample a tree shape uniformly at random among all trees with exactly
-    `n_ops` internal nodes. Returns a pre-order list of arities:
+    `num_internal_ops` internal nodes. Returns a pre-order list of arities:
         0 = leaf, 1 = unary op, 2 = binary op.
     """
-    D = _build_D(n_ops)
-    shape: list[int] = []
-    e, n = 1, n_ops
-    while e > 0:
-        if n == 0: # no ops left -> fill with leaves
-            shape.extend([0] * e)
+    tree_counts = _build_tree_counts_table(num_internal_ops)
+    arity_sequence: list[int] = []
+    open_leaf_slots, remaining_internal_ops = 1, num_internal_ops
+    while open_leaf_slots > 0:
+        if remaining_internal_ops == 0: # no ops left -> fill with leaves
+            arity_sequence.extend([0] * open_leaf_slots)
             break
-        w_leaf   = D[e - 1][n]
-        w_unary  = D[e][n - 1]
-        w_binary = D[e + 1][n - 1]
-        r = random.random() * (w_leaf + w_unary + w_binary)
-        if r < w_leaf:
-            shape.append(0); e -= 1
-        elif r < w_leaf + w_unary:
-            shape.append(1); n -= 1 # e unchanged (1 slot -> 1 slot)
+        weight_leaf   = tree_counts[open_leaf_slots - 1][remaining_internal_ops]
+        weight_unary  = tree_counts[open_leaf_slots][remaining_internal_ops - 1]
+        weight_binary = tree_counts[open_leaf_slots + 1][remaining_internal_ops - 1]
+        rand_val = random.random() * (weight_leaf + weight_unary + weight_binary)
+        if rand_val < weight_leaf:
+            arity_sequence.append(0); open_leaf_slots -= 1
+        elif rand_val < weight_leaf + weight_unary:
+            arity_sequence.append(1); remaining_internal_ops -= 1 # e unchanged (1 slot -> 1 slot)
         else:
-            shape.append(2); n -= 1; e += 1 # 1 slot -> 2 slots
-    return shape
+            arity_sequence.append(2); remaining_internal_ops -= 1; open_leaf_slots += 1 # 1 slot -> 2 slots
+    return arity_sequence
 
 
-def _build_expr(shape: list[int]) -> Expr:
+def _build_expr(arity_sequence: list[int]) -> Expr:
     """Decorate a pre-order arity sequence with random ops and leaves."""
-    it = iter(shape)
+    iterator = iter(arity_sequence)
 
-    def rec() -> Expr:
-        a = next(it)
-        if a == 0:
+    def build_subtree() -> Expr:
+        arity = next(iterator)
+        if arity == 0:
             return _random_leaf()
-        elif a == 1:
-            return random.choice(UNARY_OPS)(rec())
-        else:  # a == 2
-            left, right = rec(), rec()
-            return random.choice(BINARY_OPS)(left, right)
+        elif arity == 1:
+            return random.choice(UNARY_OPS)(build_subtree())
+        else:  # arity == 2
+            left_child, right_child = build_subtree(), build_subtree()
+            return random.choice(BINARY_OPS)(left_child, right_child)
 
-    return rec()
+    return build_subtree()
 
 
-def random_expression(n_ops: int) -> Expr:
-    """Random SymPy expression in x with exactly `n_ops` internal nodes."""
-    return _build_expr(_sample_shape(n_ops))
+def random_expression(num_internal_ops: int) -> Expr:
+    """Random SymPy expression in x with exactly `num_internal_ops` internal nodes."""
+    return _build_expr(_sample_tree_arity_sequence(num_internal_ops))
 
 class _Timeout(Exception):
     #print("Timeout!")
@@ -149,7 +150,7 @@ def _safe_simplify(f: Expr, timeout: float) -> Expr:
 
 
 def generate_random_function(
-    n_ops: int = 7,
+    num_internal_ops: int = 7,
     max_attempts: int = 50,
     simplify_flag: bool = True,
     timeout: float = 2.0,
@@ -157,12 +158,12 @@ def generate_random_function(
     for _ in range(max_attempts):
         try:
             with _time_limit(timeout):
-                f = random_expression(n_ops)
+                integrand = random_expression(num_internal_ops)
                 if simplify_flag:
-                    f = _safe_simplify(f, timeout=timeout / 2)
-                if not _is_valid_integrand(f):
+                    integrand = _safe_simplify(integrand, timeout=timeout / 2)
+                if not _is_valid_integrand(integrand):
                     continue
-                return f
+                return integrand
         except (_Timeout, ZeroDivisionError, ValueError,
                 TypeError, OverflowError, RecursionError):
             continue
@@ -170,7 +171,7 @@ def generate_random_function(
 
 
 def generate_solvable_function(
-    n_ops: int = 7,
+    num_internal_ops: int = 7,
     max_attempts: int = 50,
     simplify_flag: bool = True,
     timeout: float = 2.0,
@@ -178,17 +179,17 @@ def generate_solvable_function(
     for _ in range(max_attempts):
         try:
             with _time_limit(timeout):
-                F = random_expression(n_ops)
+                antiderivative = random_expression(num_internal_ops)
                 if simplify_flag:
-                    F = _safe_simplify(F, timeout=timeout / 2)
-                if F.free_symbols != {x} or F.is_constant():
+                    antiderivative = _safe_simplify(antiderivative, timeout=timeout / 2)
+                if antiderivative.free_symbols != {x} or antiderivative.is_constant():
                     continue
-                f = diff(F, x)
+                integrand = diff(antiderivative, x)
                 if simplify_flag:
-                    f = _safe_simplify(f, timeout=timeout / 2)
-                if not _is_valid_integrand(f):
+                    integrand = _safe_simplify(integrand, timeout=timeout / 2)
+                if not _is_valid_integrand(integrand):
                     continue
-                return f
+                return integrand
         except (_Timeout, ZeroDivisionError, ValueError,
                 TypeError, OverflowError, RecursionError):
             continue

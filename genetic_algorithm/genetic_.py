@@ -23,9 +23,11 @@ def register_expr(expr: Expr) -> int:
 
 def evaluate_expression(expr: Expr) -> float:
     """Calculates fitness by passing the expression features to the pre-trained model."""
-    print(f"Evaluating: {expr}")
     try:
+        print(f"Evaluating: {expr}")
         return float(get_solution_score(expr))
+    except ValueError:
+        return 0.0
     except FunctionTimedOut:
         return 0.0
     except Exception as e:
@@ -78,7 +80,7 @@ def mutation_func(offspring, ga_instance):
             
             target_sub = get_random_subtree(expr)
 
-            new_sub = random_expression(n_ops=random.randint(1, 4))
+            new_sub = random_expression(num_internal_ops=random.randint(1, 4))
             
             mutated = expr.subs(target_sub, new_sub)
             
@@ -93,7 +95,7 @@ def run_genetic_algorithm(population_size: int = 50, generations: int = 30):
     initial_pop_indices = []
     print(f"Generating initial population of {population_size} expressions...")
     for _ in range(population_size):
-        expr = generate_random_function(n_ops=7, max_attempts=10)
+        expr = generate_random_function(num_internal_ops=7, max_attempts=10)
         if expr is None: expr = x
         idx = register_expr(expr)
         initial_pop_indices.append([idx])
