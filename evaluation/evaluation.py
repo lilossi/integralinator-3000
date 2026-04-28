@@ -10,6 +10,7 @@ from evaluation.solvability import is_solvable, solvability_score
 from test_suite.integral_data import RULE_NAMES
 from utils.tree_solution import get_solution_vector, get_solution_vector_from_tree, print_solution_tree, generate_tree, get_solution_tree
 from scipy.stats import norm, hmean
+from func_timeout import FunctionTimedOut
 
 def print_entire_evaluation(expr: Expr) -> None:
     print(get_entire_evaluation(expr))
@@ -116,5 +117,10 @@ Overall Evaluation Score (using xgboost):
 
 
 def get_solution_score(expr: Expr) -> float:
-    vector = return_vector_evaluation(expr)
-    return get_evaluation_score_saved_model(vector)
+    try:
+        vector = return_vector_evaluation(expr)
+        return get_evaluation_score_saved_model(vector)
+    except FunctionTimedOut:
+        return 0.0
+    except Exception:
+        return 0.0

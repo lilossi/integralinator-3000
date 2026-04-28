@@ -3,6 +3,7 @@ from sympy import *
 from sympy.integrals.manualintegrate import integral_steps
 from sympy.abc import x
 import re
+from func_timeout import func_set_timeout, FunctionTimedOut
 # rules gathered from gamma-sympy
 # points are guessed by me -.-
 points_table = {
@@ -73,6 +74,7 @@ def print_solution_tree(expr: Expr)  -> None:
     tree, _ = generate_tree(repr(integral_steps(expr, x)))
     tree.show()
 
+@func_set_timeout(5)
 def get_solution_score(expr: Expr)  -> int:
     _, total_points = generate_tree(repr(integral_steps(expr, x)))
     return total_points

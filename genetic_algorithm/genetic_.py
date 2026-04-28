@@ -1,3 +1,5 @@
+import subprocess
+import sys
 import pygad
 import numpy as np
 import pandas as pd
@@ -10,9 +12,9 @@ from test_suite.integral_data import RULE_NAMES
 from utils.tree_solution import get_solution_score, get_solution_vector
 from evaluation.evaluation_score import get_evaluation_score_saved_model
 from baseline_integrals.random_integrals import generate_random_function, random_expression
+from func_timeout import FunctionTimedOut
 
 POPULATION_EXPRS: list[Expr] = []
-
 
 def register_expr(expr: Expr) -> int:
     """Adds an expression to the registry and returns its index."""
@@ -21,7 +23,13 @@ def register_expr(expr: Expr) -> int:
 
 def evaluate_expression(expr: Expr) -> float:
     """Calculates fitness by passing the expression features to the pre-trained model."""
-    return get_solution_score(expr)
+    print(f"Evaluating: {expr}")
+    try:
+        return float(get_solution_score(expr))
+    except FunctionTimedOut:
+        return 0.0
+    except Exception as e:
+        return 0.0
 
 
 def fitness_func(ga_instance, solution, solution_idx):
