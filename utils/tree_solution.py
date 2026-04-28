@@ -74,11 +74,6 @@ def print_solution_tree(expr: Expr)  -> None:
     tree, _ = generate_tree(repr(integral_steps(expr, x)))
     tree.show()
 
-@func_set_timeout(5)
-def get_solution_score(expr: Expr)  -> int:
-    _, total_points = generate_tree(repr(integral_steps(expr, x)))
-    return total_points
-
 def print_solution_score(expr: Expr)  -> None:
     _, total_points = generate_tree(repr(integral_steps(expr, x)))
     print("Solvability Score:", total_points)

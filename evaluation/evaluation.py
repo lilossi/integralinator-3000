@@ -6,11 +6,11 @@ from evaluation.controllability import get_controllability_score
 from evaluation.controllability import get_symbol_count
 from evaluation.evaluation_score import get_evaluation_score_saved_model
 from evaluation.expression_depth import get_expression_depth
-from evaluation.solvability import is_solvable, solvability_score
+from evaluation.solvability import is_solvable
 from test_suite.integral_data import RULE_NAMES
 from utils.tree_solution import get_solution_vector, get_solution_vector_from_tree, print_solution_tree, generate_tree, get_solution_tree
 from scipy.stats import norm, hmean
-from func_timeout import FunctionTimedOut
+from func_timeout import FunctionTimedOut, func_set_timeout
 
 def print_entire_evaluation(expr: Expr) -> None:
     print(get_entire_evaluation(expr))
@@ -115,7 +115,7 @@ Solution Rule Vector:
 Overall Evaluation Score (using xgboost):
 {get_evaluation_score_saved_model(vector)}"""
 
-
+@func_set_timeout(5)
 def get_solution_score(expr: Expr) -> float:
     try:
         vector = return_vector_evaluation(expr)

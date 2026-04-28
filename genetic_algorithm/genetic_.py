@@ -9,7 +9,8 @@ from sympy.abc import x
 from evaluation.controllability import get_controllability_score
 from evaluation.expression_depth import get_expression_depth
 from test_suite.integral_data import RULE_NAMES
-from utils.tree_solution import get_solution_score, get_solution_vector
+from utils.tree_solution import get_solution_vector
+from evaluation.evaluation import get_solution_score
 from evaluation.evaluation_score import get_evaluation_score_saved_model
 from baseline_integrals.random_integrals import generate_random_function, random_expression
 from func_timeout import FunctionTimedOut
@@ -88,6 +89,13 @@ def mutation_func(offspring, ga_instance):
             
     return offspring
 
+def on_generation(ga_instance):
+    generation = ga_instance.generations_completed
+    fitnesses = ga_instance.last_generation_fitness
+    if fitnesses is not None:
+        avg_fitness = np.mean(fitnesses)
+        print(f"Generation {generation} - Average Fitness: {avg_fitness:.4f}")
+
 def run_genetic_algorithm(population_size: int = 50, generations: int = 30):
     global POPULATION_EXPRS
     POPULATION_EXPRS.clear()
@@ -111,7 +119,8 @@ def run_genetic_algorithm(population_size: int = 50, generations: int = 30):
         parallel_processing=8, 
         crossover_type=crossover_func,
         mutation_type=mutation_func,
-        keep_elitism=1
+        keep_elitism=1,
+        on_generation=on_generation
     )
 
     print("Starting optimization...")
