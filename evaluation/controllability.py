@@ -1,6 +1,7 @@
-from sympy import Expr, Symbol, preorder_traversal, pprint
+from sympy import Expr, Symbol, preorder_traversal
 from sympy.abc import x
 from sympy.integrals.manualintegrate import manualintegrate
+
 def get_symbol_count(expr: Expr) -> int:
     count = 0
     for node in preorder_traversal(expr): #returns all possible nodes

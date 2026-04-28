@@ -1,11 +1,7 @@
 import joblib
 import pandas as pd
 from sympy import *
-from evaluation.controllability import get_controllability_score
-from evaluation.expression_depth import get_expression_depth
-from evaluation.solvability import is_solvable
 from test_suite.integral_data import RULE_NAMES
-from utils.tree_solution import get_solution_vector
 
 
 def get_evaluation_score_saved_model(df: pd.DataFrame) -> float:

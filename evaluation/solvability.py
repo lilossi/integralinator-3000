@@ -2,7 +2,6 @@ from sympy import *
 from sympy.integrals.manualintegrate import manualintegrate
 from sympy.integrals.manualintegrate import integral_steps
 from sympy.abc import x
-from func_timeout import FunctionTimedOut
 
 def number_of_operations(integral) -> int:
     print(repr(integral_steps(integral, x)))
