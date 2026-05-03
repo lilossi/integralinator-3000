@@ -1,14 +1,14 @@
 import random
 import numpy as np
+from openai import timeout
 from sympy import preorder_traversal, Expr
 from baseline_integrals.solvable_integrals import generate_solvable_function
 from utils.validation import _safe_simplify, _is_valid_integrand
 from sympy.abc import x
 
-# Common registry for expressions to share indices across GA components
 POPULATION_EXPRS: list[Expr] = []
-# Registry for high-fitness expressions found during evaluation
 HIGH_FITNESS_INTEGRALS: set[Expr] = set()
+LIMIT_OPS = 50
 
 def register_expr(expr: Expr) -> int:
     """Adds an expression to the registry and returns its index."""
@@ -18,16 +18,20 @@ def register_expr(expr: Expr) -> int:
 
 def clean_and_validate(expr: Expr, fallback: Expr) -> Expr:
     """Simplifies and validates an expression, returning fallback if invalid."""
+    if expr.count_ops() > LIMIT_OPS:
+        return fallback
+        
     expr = _safe_simplify(expr)
     if _is_valid_integrand(expr):
         return expr
     return fallback
 
-def get_random_subtree(expr: Expr) -> Expr:
+def get_random_subtree_from_parent(expr: Expr) -> Expr:
     """Extracts a random node (subtree) from the syntax tree using traversal."""
     nodes = list(preorder_traversal(expr))
     return random.choice(nodes) if nodes else expr
 
+@timeout(5)
 def crossover_func(parents, offspring_size, ga_instance):
     """
     Subtree crossover: Pick two parents, swap one's subtree with the other's.
@@ -40,8 +44,8 @@ def crossover_func(parents, offspring_size, ga_instance):
         p1_expr = POPULATION_EXPRS[parent1_idx]
         p2_expr = POPULATION_EXPRS[parent2_idx]
         
-        p2_sub = get_random_subtree(p2_expr)
-        p1_sub = get_random_subtree(p1_expr)
+        p2_sub = get_random_subtree_from_parent(p2_expr)
+        p1_sub = get_random_subtree_from_parent(p1_expr)
         
         child_expr = p1_expr.subs(p1_sub, p2_sub)
         child_expr = clean_and_validate(child_expr, p1_expr)
@@ -60,7 +64,7 @@ def mutation_func(offspring, ga_instance):
             expr_id = int(offspring[idx_in_offspring, 0])
             expr = POPULATION_EXPRS[expr_id]
             
-            target_sub = get_random_subtree(expr)
+            target_sub = get_random_subtree_from_parent(expr)
             # Replace random_expression with generate_solvable_function to ensure solvability
             new_sub = generate_solvable_function(num_internal_ops=random.randint(1, 4), max_attempts=5)
             if new_sub is None:
