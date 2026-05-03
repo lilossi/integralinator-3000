@@ -1,7 +1,7 @@
 import pygad
 import numpy as np
 from sympy.abc import x
-from baseline_integrals.random_integrals import generate_random_function
+from baseline_integrals.solvable_integrals import generate_solvable_function
 from genetic_algorithm.ga_operators import POPULATION_EXPRS, HIGH_FITNESS_INTEGRALS, register_expr, crossover_func, mutation_func
 from genetic_algorithm.fitness import fitness_func, on_generation
 
@@ -12,7 +12,7 @@ def run_genetic_algorithm(population_size: int = 50, generations: int = 30):
     initial_pop_indices = []
     print(f"Generating initial population of {population_size} expressions...")
     for _ in range(population_size):
-        expr = generate_random_function(num_internal_ops=7, max_attempts=10)
+        expr = generate_solvable_function(num_internal_ops=7, max_attempts=10)
         if expr is None: expr = x
         idx = register_expr(expr)
         initial_pop_indices.append([idx])

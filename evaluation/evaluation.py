@@ -70,14 +70,9 @@ Solution Rule Vector:
 Overall Evaluation Score (using xgboost):
 {get_evaluation_score_saved_model(vector)}"""
 
-@func_set_timeout(5)
+@func_set_timeout(100.0)
 def get_solution_score(expr: Expr) -> float:
-    try:
-        vector = return_vector_evaluation(expr)
-        if vector.empty:
-            return 0.0
-        return get_evaluation_score_saved_model(vector)
-    except FunctionTimedOut:
+    vector = return_vector_evaluation(expr)
+    if vector.empty:
         return 0.0
-    except Exception:
-        return 0.0
+    return get_evaluation_score_saved_model(vector)

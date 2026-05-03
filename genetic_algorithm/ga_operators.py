@@ -1,7 +1,7 @@
 import random
 import numpy as np
 from sympy import preorder_traversal, Expr
-from baseline_integrals.utils import random_expression
+from baseline_integrals.solvable_integrals import generate_solvable_function
 from utils.validation import _safe_simplify, _is_valid_integrand
 from sympy.abc import x
 
@@ -13,6 +13,7 @@ HIGH_FITNESS_INTEGRALS: set[Expr] = set()
 def register_expr(expr: Expr) -> int:
     """Adds an expression to the registry and returns its index."""
     POPULATION_EXPRS.append(expr)
+    print(f"Registered new expression: {expr} (Total: {len(POPULATION_EXPRS)})")
     return len(POPULATION_EXPRS) - 1
 
 def clean_and_validate(expr: Expr, fallback: Expr) -> Expr:
@@ -60,7 +61,10 @@ def mutation_func(offspring, ga_instance):
             expr = POPULATION_EXPRS[expr_id]
             
             target_sub = get_random_subtree(expr)
-            new_sub = random_expression(num_internal_ops=random.randint(1, 4))
+            # Replace random_expression with generate_solvable_function to ensure solvability
+            new_sub = generate_solvable_function(num_internal_ops=random.randint(1, 4), max_attempts=5)
+            if new_sub is None:
+                new_sub = x
             
             mutated = expr.subs(target_sub, new_sub)
             mutated = clean_and_validate(mutated, expr)
