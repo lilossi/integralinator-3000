@@ -89,21 +89,21 @@ def _sample_tree_arity_sequence(num_internal_ops: int) -> list[int]:
     return arity_sequence
 
 
+def _build_subtree(iterator) -> Expr:
+    """Recursively build a subtree from a pre-order arity sequence."""
+    arity = next(iterator)
+    if arity == 0:
+        return _random_leaf()
+    elif arity == 1:
+        return random.choice(UNARY_OPS)(_build_subtree(iterator))
+    else:
+        left_child, right_child = _build_subtree(iterator), _build_subtree(iterator)
+        return random.choice(BINARY_OPS)(left_child, right_child)
+
 def _build_expr(arity_sequence: list[int]) -> Expr:
     """Decorate a pre-order arity sequence with random ops and leaves."""
     iterator = iter(arity_sequence)
-
-    def build_subtree() -> Expr:
-        arity = next(iterator)
-        if arity == 0:
-            return _random_leaf()
-        elif arity == 1:
-            return random.choice(UNARY_OPS)(build_subtree())
-        else:
-            left_child, right_child = build_subtree(), build_subtree()
-            return random.choice(BINARY_OPS)(left_child, right_child)
-
-    return build_subtree()
+    return _build_subtree(iterator)
 
 
 def random_expression(num_internal_ops: int) -> Expr:
