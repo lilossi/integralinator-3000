@@ -29,7 +29,8 @@ def run_genetic_algorithm(population_size: int = 50, generations: int = 30):
         crossover_type=crossover_func,
         mutation_type=mutation_func,
         keep_elitism=1,
-        on_generation=on_generation
+        on_generation=on_generation,
+        mutation_num_genes=1
     )
 
     print("Starting optimization...")

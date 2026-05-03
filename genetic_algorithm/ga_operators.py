@@ -31,7 +31,6 @@ def get_random_subtree_from_parent(expr: Expr) -> Expr:
     nodes = list(preorder_traversal(expr))
     return random.choice(nodes) if nodes else expr
 
-@timeout(5)
 def crossover_func(parents, offspring_size, ga_instance):
     """
     Subtree crossover: Pick two parents, swap one's subtree with the other's.
