@@ -1,10 +1,8 @@
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pcfg import PCFG
-from sympy import SympifyError, sympify
-from sympy.abc import x
-from sympy import sympify
+from sympy import Expr
+from utils.validation import process_string_to_expression
 
-from utils.validation import _is_valid_integrand, _safe_simplify
 #rules just like in baseline
 grammar_string = """
 S -> E [1.0]
@@ -23,28 +21,33 @@ E -> "("E"/"E")" [0.0357] | "("E"**"E")" [0.0361]
 
 grammar = PCFG.fromstring(grammar_string)
 
-def process_sentence(sentence):
-    try:
-        # Convert the string provided by the grammar generation into a valid SymPy expression
-        expr = sympify(sentence)
-    except SympifyError as e:
-        return f"SympifyError for '{sentence}': {e}"
-    except Exception as e:
-        return f"Unexpected error for '{sentence}': {e}"
-
-    expr = _safe_simplify(expr)
-    if expr.free_symbols != {x} or expr.is_constant():
-        return f"Invalid expression (not a function of x or constant): {expr}"
-    if not _is_valid_integrand(expr):
-        return f"Invalid expression (contains singularities or invalid symbols): {expr}"
-    return expr
+def generate_valid_expressions(num_expressions: int):
+    valid_exprs = []
+    
+    with ThreadPoolExecutor() as executor:
+        while len(valid_exprs) < num_expressions:
+            batch_size = num_expressions * 4  # Generate more than needed to increase chances of valid ones
+            sentences = list(grammar.generate(batch_size))
+            
+            futures = [executor.submit(process_string_to_expression, sentence) for sentence in sentences]
+            
+            for future in as_completed(futures):
+                result = future.result()
+                if isinstance(result, Expr):
+                    valid_exprs.append(result)
+                    if len(valid_exprs) >= num_expressions:
+                        break
+                        
+    return valid_exprs[:num_expressions]
 
 def main():
-    sentences = list(grammar.generate(100))
-    with ThreadPoolExecutor() as executor:
-        futures = [executor.submit(process_sentence, sentence) for sentence in sentences]
-        for future in as_completed(futures):
-            print(future.result())
+    target_count = 100
+    print(f"Generating exactly {target_count} valid expressions...")
+    expressions = generate_valid_expressions(target_count)
+    
+    print("\n--- Final Valid Expressions ---")
+    for i, expr in enumerate(expressions, 1):
+        print(f"{i}: {expr}")
 
 if __name__ == "__main__":
     main()

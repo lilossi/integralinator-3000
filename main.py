@@ -1,9 +1,7 @@
 from sympy import *
 import asyncio
 from sympy.abc import x
-from evaluation.evaluation import get_solution_score, print_entire_evaluation
-from llm_service.llm_service import llm_service
-from test_suite.integral_data import create_integral_dataframe
+from evaluation.evaluation import get_entire_evaluation
 
 async def main():
    #ex = x * atan(x)
@@ -18,8 +16,9 @@ async def main():
    #ex = x + atan(cosh(sinh(cos(x)) - 2))
    #ex =  2**(2*x)/1024 + x - 15/(4*x)
 
-   ex = -exp(x)*log(27)*cos(exp(x))/27**sin(exp(x))
-   print_entire_evaluation(ex)
+   #ex = -exp(x)*log(27)*cos(exp(x))/27**sin(exp(x))
+   ex = x**2+2*x+1
+   print(get_entire_evaluation(ex))
    
    #ai = llm_service()
    #print(await ai.generate_expression(5))
