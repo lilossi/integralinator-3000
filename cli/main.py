@@ -4,6 +4,7 @@ from baseline_integrals.random_integrals import generate_random_function
 from baseline_integrals.solvable_integrals import generate_solvable_function
 from genetic_algorithm.genetic_algorithm import run_genetic_algorithm
 from llm_service.llm_service import llm_service
+from probabilistic_grammar.grammar import generate_valid_expressions
 
 @click.group()
 def cli():
@@ -75,6 +76,16 @@ def generate(method, num_integrals):
         
         click.echo("\n--- Collected High-Fitness Expressions ---")
         for i, expr in enumerate(unique_integrals, 1):
+            click.echo(f"[{i}] {expr}")
+    elif method.lower() == 'grammar':
+        # uv run -m cli.main generate --method grammar --num-integrals 5
+        click.echo("Probabilistic Grammar initialized.")
+        click.echo(f"Generating {num_integrals} integrals...")
+        
+        expressions = generate_valid_expressions(num_integrals)
+        
+        click.echo("\n--- Final Valid Expressions ---")
+        for i, expr in enumerate(expressions, 1):
             click.echo(f"[{i}] {expr}")
     else:
         click.echo(f"Warning: Method '{method}' isn't fully implemented yet.")
