@@ -1,4 +1,3 @@
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from pcfg import PCFG
 from sympy import Expr
 from utils.validation import process_string_to_expression
@@ -23,29 +22,31 @@ grammar = PCFG.fromstring(grammar_string)
 
 def generate_valid_expressions(num_expressions: int):
     valid_exprs = []
+    attempt_count = 0
     
-    with ThreadPoolExecutor(max_workers=8) as executor:
-        while len(valid_exprs) < num_expressions:
-            batch_size = num_expressions * 4  # Generate more than needed to increase chances of valid ones
-            sentences = list(grammar.generate(batch_size))
-            
-            futures = [executor.submit(process_string_to_expression, sentence) for sentence in sentences]
-            
-            for future in as_completed(futures):
-                result = future.result()
-                if isinstance(result, Expr):
-                    valid_exprs.append(result)
-                    if len(valid_exprs) >= num_expressions:
-                        break
-                        
+    while len(valid_exprs) < num_expressions:
+        batch_size = num_expressions * 4  # Generate more than needed to increase chances of valid ones
+        print(f"Generating batch of {batch_size} sentences...")
+        sentences = list(grammar.generate(batch_size))
+        
+        for sentence in sentences:
+            attempt_count += 1
+            if attempt_count % 100 == 0:
+                print(f"Attempted {attempt_count} expressions, found {len(valid_exprs)} valid ones...")
+                
+            result = process_string_to_expression(sentence)
+            if isinstance(result, Expr):
+                valid_exprs.append(result)
+                if len(valid_exprs) >= num_expressions:
+                    break
+                    
+    print(f"Total attempts needed: {attempt_count}")
     return valid_exprs[:num_expressions]
 
 def main():
     target_count = 100
-    print(f"Generating exactly {target_count} valid expressions...")
     expressions = generate_valid_expressions(target_count)
     
-    print("\n--- Final Valid Expressions ---")
     for i, expr in enumerate(expressions, 1):
         print(f"{i}: {expr}")
 

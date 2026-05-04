@@ -46,10 +46,10 @@ def process_string_to_expression(sentence: str) -> Expr:
     try:
         expr = sympify(sentence)
     except SympifyError as e:
-        print(f"SympifyError for '{sentence}': {e}")
+        #print(f"SympifyError for '{sentence}': {e}")
         return None
     except Exception as e:
-        print(f"Unexpected error for '{sentence}': {e}")
+        #print(f"Unexpected error for '{sentence}': {e}")
         return None
     valid_expr = clean_and_validate(expr, None, 50, use_safe_simplify=False)
     
