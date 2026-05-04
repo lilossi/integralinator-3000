@@ -24,3 +24,14 @@ def _safe_simplify(f: Expr) -> Expr:
         return func_timeout(3, simplify, args=(f,))
     except (Exception, FunctionTimedOut):
         return f
+
+def clean_and_validate(expr: Expr, fallback: Expr, limit_ops:int) -> Expr:
+    """Simplifies and validates an expression, returning fallback if invalid."""
+    if expr.count_ops() > limit_ops:
+        # might be a mistake here
+        return fallback
+        
+    expr = _safe_simplify(expr)
+    if _is_valid_integrand(expr):
+        return expr
+    return fallback

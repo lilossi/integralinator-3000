@@ -1,9 +1,8 @@
 import random
 import numpy as np
-from openai import timeout
 from sympy import preorder_traversal, Expr
 from baseline_integrals.solvable_integrals import generate_solvable_function
-from utils.validation import _safe_simplify, _is_valid_integrand
+from utils.validation import clean_and_validate
 from sympy.abc import x
 
 POPULATION_EXPRS: list[Expr] = []
@@ -15,16 +14,6 @@ def register_expr(expr: Expr) -> int:
     POPULATION_EXPRS.append(expr)
     print(f"Registered new expression: {expr} (Total: {len(POPULATION_EXPRS)})")
     return len(POPULATION_EXPRS) - 1
-
-def clean_and_validate(expr: Expr, fallback: Expr) -> Expr:
-    """Simplifies and validates an expression, returning fallback if invalid."""
-    if expr.count_ops() > LIMIT_OPS:
-        return fallback
-        
-    expr = _safe_simplify(expr)
-    if _is_valid_integrand(expr):
-        return expr
-    return fallback
 
 def get_random_subtree_from_parent(expr: Expr) -> Expr:
     """Extracts a random node (subtree) from the syntax tree using traversal."""
@@ -47,7 +36,7 @@ def crossover_func(parents, offspring_size, ga_instance):
         p1_sub = get_random_subtree_from_parent(p1_expr)
         
         child_expr = p1_expr.subs(p1_sub, p2_sub)
-        child_expr = clean_and_validate(child_expr, p1_expr)
+        child_expr = clean_and_validate(child_expr, p1_expr, LIMIT_OPS)
         
         offspring[k, 0] = register_expr(child_expr)
 

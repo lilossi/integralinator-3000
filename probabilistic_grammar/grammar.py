@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pcfg import PCFG
 from sympy import SympifyError, sympify
 from sympy.abc import x
@@ -22,24 +23,28 @@ E -> "("E"/"E")" [0.0357] | "("E"**"E")" [0.0361]
 
 grammar = PCFG.fromstring(grammar_string)
 
-def main():
-    for sentence in grammar.generate(100):
-        # PCFG automatically joins tokens with spaces, so we strip them
-        #print(sentence.replace(" ", ""))
-        try:
-        # Convert the string provided by the LLM into a valid SymPy expression
-            expr = sympify(sentence)
-        except SympifyError as e:
-            continue
-        except Exception as e:
-            continue
+def process_sentence(sentence):
+    try:
+        # Convert the string provided by the grammar generation into a valid SymPy expression
+        expr = sympify(sentence)
+    except SympifyError as e:
+        return f"SympifyError for '{sentence}': {e}"
+    except Exception as e:
+        return f"Unexpected error for '{sentence}': {e}"
 
-        expr = _safe_simplify(expr)
-        if expr.free_symbols != {x} or expr.is_constant():
-            continue
-        if not _is_valid_integrand(expr):
-            continue
-        print(expr)
+    expr = _safe_simplify(expr)
+    if expr.free_symbols != {x} or expr.is_constant():
+        return f"Invalid expression (not a function of x or constant): {expr}"
+    if not _is_valid_integrand(expr):
+        return f"Invalid expression (contains singularities or invalid symbols): {expr}"
+    return expr
+
+def main():
+    sentences = list(grammar.generate(100))
+    with ThreadPoolExecutor() as executor:
+        futures = [executor.submit(process_sentence, sentence) for sentence in sentences]
+        for future in as_completed(futures):
+            print(future.result())
 
 if __name__ == "__main__":
     main()
