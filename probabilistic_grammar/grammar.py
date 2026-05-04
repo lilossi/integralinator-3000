@@ -24,7 +24,7 @@ grammar = PCFG.fromstring(grammar_string)
 def generate_valid_expressions(num_expressions: int):
     valid_exprs = []
     
-    with ThreadPoolExecutor() as executor:
+    with ThreadPoolExecutor(max_workers=8) as executor:
         while len(valid_exprs) < num_expressions:
             batch_size = num_expressions * 4  # Generate more than needed to increase chances of valid ones
             sentences = list(grammar.generate(batch_size))
