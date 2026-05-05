@@ -21,7 +21,7 @@ E -> "("E"/"E")" [0.0357] | "("E"**"E")" [0.0361]
 grammar = PCFG.fromstring(grammar_string)
 
 def generate_valid_expressions(num_expressions: int):
-    valid_exprs = []
+    valid_exprs = set()
     attempt_count = 0
     
     while len(valid_exprs) < num_expressions:
@@ -36,9 +36,9 @@ def generate_valid_expressions(num_expressions: int):
                 
             result = process_string_to_expression(sentence)
             if isinstance(result, Expr):
-                valid_exprs.append(result)
+                valid_exprs.add(result)
                 if len(valid_exprs) >= num_expressions:
                     break
                     
     print(f"Total attempts needed: {attempt_count}")
-    return valid_exprs[:num_expressions]
+    return list(valid_exprs)
