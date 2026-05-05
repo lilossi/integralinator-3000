@@ -42,13 +42,3 @@ def generate_valid_expressions(num_expressions: int):
                     
     print(f"Total attempts needed: {attempt_count}")
     return valid_exprs[:num_expressions]
-
-def main():
-    target_count = 100
-    expressions = generate_valid_expressions(target_count)
-    
-    for i, expr in enumerate(expressions, 1):
-        print(f"{i}: {expr}")
-
-if __name__ == "__main__":
-    main()
