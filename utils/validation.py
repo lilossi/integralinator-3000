@@ -44,8 +44,8 @@ def process_string_to_expression(sentence: str) -> Expr:
         #print(f"Skipping overly long sentence: {sentence}")
         return None
     try:
-        expr = sympify(sentence)
-    except SympifyError as e:
+        expr = func_timeout(2.0, sympify, args=(sentence,))
+    except (SympifyError, FunctionTimedOut, Exception) as e:
         #print(f"SympifyError for '{sentence}': {e}")
         return None
     except Exception as e:
