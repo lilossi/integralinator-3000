@@ -1,4 +1,4 @@
-from sympy import Expr, nan, zoo, oo, simplify, sympify, SympifyError
+from sympy import I, Expr, nan, zoo, oo, simplify, sympify, SympifyError
 from sympy.abc import x
 from func_timeout import func_timeout, FunctionTimedOut
 
@@ -6,7 +6,7 @@ def _is_valid_integrand(f: Expr) -> bool:
     """Checks if an expression is a valid integrand: must be a function of x, not constant, and free of singularities."""
     if f is None:
         return False
-    if any(f.has(b) for b in (nan, zoo, oo, -oo)):
+    if any(f.has(b) for b in (nan, zoo, oo, -oo, I, -I)):
         return False
     if f.free_symbols != {x}:
         return False
