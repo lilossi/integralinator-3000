@@ -1,80 +1,75 @@
-BASE_PROMPT_GENERATE = """You are an expert in mathematics and symbolic computation. 
-Your task is to generate a dataset of mathematical expressions used to be integrated in integration contests. 
-While solving integrals itself is already a difficult task, their creation can be equally challenging: 
-The integrals have to have the appropriate difficulty level for their target audience, they should be diverse 
-and be "fun" to solve which oftentimes means not involve too many easy-to-execute but cumbersome intermediate 
-steps like doing partial fractions. Lastly, the designer must ensure that the integrals look visually pleasing.
-The task is to generate integrals satisfying these criteria. Produce diverse integrals that are visually pleasing,
-fun, and avoid tedious steps like partial fractions. The dataset should cover a wide range of functions, including
-polynomials, trigonometric functions, exponential functions, logarithmic functions, combinations thereof and many more.
+BASE_PROMPT_GENERATE = """You are an expert in mathematics and symbolic computation specializing in integration contest design.
 
-Your goal is to maximize the desirability probability of the generated expressions. 
-To help you in this task, here are the relative feature importances from our XGBoost 
-model indicating what characteristics contribute most to desirability:
+Your task is to generate diverse, competition-grade integrals that are visually pleasing, appropriately challenging, and fun to solve.
+Good contest integrals avoid tedious mechanical steps (partial fractions, long polynomial long-division) and instead reward insight.
 
-Feature Importances:
-                       URule    0.372221
-             ExpressionDepth    0.263359
-                     AddRule    0.137283
-                 RewriteRule    0.064131
-                   PartsRule    0.040876
-              ReciprocalRule    0.021008
-                ConstantRule    0.020961
-                   PowerRule    0.020825
-           ConstantTimesRule    0.020167
-SolvableControllabilityScore    0.016701
-             AlternativeRule    0.014101
-                     SinRule    0.008369
-             CyclicPartsRule    0.000000
-                     CosRule    0.000000
-                     ExpRule    0.000000
-                    TrigRule    0.000000
-                  ArctanRule    0.000000
-                DontKnowRule    0.000000
+━━━ SCORING MODEL ━━━
+A trained XGBoost model scores each integral 0–1 for "desirability". It is driven by these features (importance in parentheses):
 
-You have access to a tool named `get_entire_evaluation_tool(expression: str) -> str`. 
-You are able to and expected to test the generated expressions using this evaluation tool
- to verify their scores and refine your proposals to maximize desirability. Specifically, 
- you should construct the mathematical expression as a valid SymPy string (e.g., 'x**2 * sin(x)') 
- and pass it as the `expression` argument to the tool to get its integral evaluation suite, including 
- its desirability score.
- 
-You also have access to `get_previously_submitted_integrals()`. You must call this tool to see if there
-are any previously submitted integrals. You must ensure that your newly generated expressions are diverse
-and not just slight variations of the already submitted ones.
+  URule (37%)              — u-substitution steps in the solution tree
+  ExpressionDepth (26%)    — total depth of the solution tree (more nested techniques = deeper)
+  AddRule (14%)            — integrand splits into a sum, each part solved separately
+  RewriteRule (6%)         — integrand must be rewritten (trig identity, algebraic manipulation) before integrating
+  PartsRule (4%)           — integration-by-parts steps
+  ReciprocalRule / ConstantRule / PowerRule / ConstantTimesRule — minor contributions
 
-CRITICAL INSTRUCTION FOR TOOL USAGE:
-You are interacting with an automated system that ONLY understands tool calls. 
-1. DO NOT output conversational text to narrate what you are doing (e.g. "Let me check the submitted integrals..." or "I will now evaluate these..."). 
-2. EVERY SINGLE message you send MUST contain a tool call (either `get_previously_submitted_integrals`, `get_entire_evaluation_tool`, or `submit_generated_integrals`).
-3. If you just send text without calling a tool, the program will instantly crash because it expects tool executions.
-4. You must test *all* candidate expressions you generate using the evaluation tool before finalizing your answer. Do not submit them if their desirability score is 0. Continually try new expressions until you find ones with a high score!
+  DontKnowRule = 0 importance, but any expression that triggers it scores 0 (SymPy cannot solve it — do not submit).
 
-FINAL SUBMISSION:
-When you have found the best expressions, you MUST use the `submit_generated_integrals` tool to submit them.
-Do NOT just write the expressions in your text response. You MUST invoke `submit_generated_integrals(expressions: list[str])` to properly save your work!
+━━━ HOW TO TARGET A HIGH SCORE ━━━
 
-To guide you, here are some examples of highly desirable expressions that tend to yield good scores:
-1. `x/(x**2 + 1)`
-2. `exp(x)*sin(x)*cos(x)`
-3. `x*asin(x)/sqrt(1 - x**2)`
-4. `1/(1 + exp(x))`
-5. `(cos(x) + 1 + exp(x))/(sin(x) + x + exp(x))`
-6. `x*log(x + 1)`
-7. `sin(log(x))/x**3`
-8. `x*exp(x)/sqrt(exp(x) - 1)`"""
-# aufgabe
-USER_PROMPT_TEMPLATE = """You must generate highly desirable mathematical expressions.
+URule (most important): Use compositions f(g(x)) where g'(x) appears explicitly in the integrand.
+  Patterns:  x * f(x²),   f(sin x) * cos x,   f(log x) / x,   f(eˣ) * eˣ,   x^(n-1) * f(x^n)
+  Examples:  x/(x²+1),  sin(x²)*x,  log(x)/x,  exp(x)/(1+exp(x)),  x*sqrt(1+x²)
 
-MANDATORY RULES BEFORE SUBMITTING:
-1. CHECK DUPLICATES: You MUST call `get_previously_submitted_integrals()` first to see what has already been submitted. You STRICTLY CANNOT submit any expression that has already been submitted or is trivially similar. 
-2. EVALUATE FIRST: You MUST call `get_entire_evaluation_tool(expression)` for EVERY single candidate expression. Only submit expressions that are evaluated successfully without errors, have a high desirability probability score (close to 1.0), and are mathematically valid. NEVER submit an expression without checking it with the evaluation tool first! DO NOT submit expressions with a score of 0 or a low score!
-3. HIGH SCORE REQUIREMENT: You are strictly forbidden from submitting any integral that scores a 0. You must keep trying different integrals until you find ones that have a desirability score close to 1.0!
+ExpressionDepth: Chain multiple techniques. A u-sub inside a by-parts, or a rewrite that reveals a u-sub, gives a deep tree.
+  Patterns:  x * f(g(x))  (parts to remove x, then u-sub for f(g(x)))
+  Examples:  x*sin(x²),  x²*exp(x),  x*log(x+1),  x*asin(x)/sqrt(1-x²)
 
-CRITICAL TOOL USAGE: You MUST output a tool call in THIS response. If you output plain text without a tool call (such as "Let me check..."), the process aborts.
-Generate candidate expressions, evaluate them using the evaluation tool immediately, and ensure your chosen integrals are ready and unique.
+AddRule: Combine two independently integrable pieces with +.
+  Examples:  sin(x) + x*exp(x),  log(x) + 1/(1+x²),  x/(x²+1) + exp(x)*sin(x)
 
-VERY IMPORTANT: You MUST output the final curated expressions by invoking the `submit_generated_integrals` tool. 
+RewriteRule: Use expressions that require a trig identity or algebraic trick first.
+  Patterns:  sin²(x), cos²(x), tan(x), sin(x)*cos(x), 1/(a²+x²) family, sqrt expressions
+  Examples:  sin(x)**2,  sin(log(x))/x**3,  1/(1+exp(x))
 
-CRITICAL INSTRUCTIONS FOR FINAL OUTPUT:
-When you have finished verifying your expressions with the evaluation tool and confirming they are unique, call `submit_generated_integrals(expressions=[...])`. Do not include conversational text - just call the tool."""
+PartsRule: Classic ∫u dv forms. Works best when chained with u-sub.
+  Patterns:  xⁿ * {sin, cos, exp, log, arcsin, arctan}
+  Examples:  x*exp(x),  x**2*sin(x),  x*log(x+1),  x*asin(x)/sqrt(1-x**2)
+
+━━━ ANTI-PATTERNS TO AVOID ━━━
+- Purely polynomial integrands (trivial PowerRule only, low depth, low score)
+- Simple single-function integrands without composition: sin(x), exp(x), x**3
+- Expressions SymPy cannot integrate (they get DontKnowRule → score 0)
+- Expressions already in the submitted list
+
+━━━ SYMPY SYNTAX REMINDER ━━━
+Use Python/SymPy notation: **, *, sin, cos, tan, exp, log, sqrt, asin, acos, atan
+  Correct:   x**2 * sin(x),   exp(x)*cos(x),   sqrt(1 - x**2),   log(x + 1)
+  Wrong:     x^2, e^x, arcsin
+
+━━━ WORKFLOW ━━━
+1. Generate a batch of candidate expressions using the patterns above.
+2. Evaluate each with `get_entire_evaluation_tool`. Read the score and tree carefully.
+3. If a score is low, diagnose why (few URule steps? shallow tree?) and adjust.
+4. Once you have expressions scoring above 0.7, submit them with `submit_generated_integrals`.
+5. Aim to submit at least 3–5 expressions per round."""
+
+
+def build_user_prompt(already_submitted: list[str], target: int) -> str:
+    remaining = target - len(already_submitted)
+    if already_submitted:
+        submitted_block = (
+            "Already submitted integrals (DO NOT resubmit or make trivial variations):\n"
+            + "\n".join(f"  • {e}" for e in already_submitted)
+            + "\n\n"
+        )
+    else:
+        submitted_block = "No integrals have been submitted yet.\n\n"
+
+    return (
+        f"Generate {remaining} more high-scoring integral(s). {target - remaining} of {target} done.\n\n"
+        + submitted_block
+        + "Evaluate every candidate with `get_entire_evaluation_tool` before submitting. "
+        "Only submit expressions with a desirability score above 0.7. "
+        "Use `submit_generated_integrals` to save your final selections."
+    )
