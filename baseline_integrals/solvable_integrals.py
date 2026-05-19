@@ -34,6 +34,6 @@ def generate_solvable_function(
             integrand = try_generate_solvable_function(num_internal_ops, simplify_flag)
             if integrand is not None:
                 return integrand
-        except (FunctionTimedOut, ZeroDivisionError, ValueError, TypeError, OverflowError, RecursionError):
+        except (FunctionTimedOut, ZeroDivisionError, ValueError, TypeError, OverflowError, RecursionError, AttributeError):
             continue
     return None
