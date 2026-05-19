@@ -4,7 +4,7 @@ from func_timeout import FunctionTimedOut
 from sympy import Expr
 from genetic_algorithm.ga_operators import POPULATION_EXPRS, HIGH_FITNESS_INTEGRALS
 
-THRESHOLD = 0.8 # Define a reasonable threshold
+THRESHOLD = 0.8
 
 def evaluate_expression(expr: Expr) -> float:
     """Calculates fitness by passing the expression features to the pre-trained model."""
@@ -27,7 +27,6 @@ def fitness_func(ga_instance, solution, solution_idx):
     fitness = evaluate_expression(expr)
     
     # Save if fitness is above threshold
-     # Define a reasonable threshold
     if fitness >= THRESHOLD:
         HIGH_FITNESS_INTEGRALS.add(expr)
         print(f"High-fitness integral found: {expr} (Fitness: {fitness:.4f})")

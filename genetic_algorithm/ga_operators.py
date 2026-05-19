@@ -3,6 +3,7 @@ import numpy as np
 from sympy import preorder_traversal, Expr
 from baseline_integrals.solvable_integrals import generate_solvable_function
 from utils.validation import clean_and_validate
+from func_timeout import func_timeout, FunctionTimedOut
 from sympy.abc import x
 
 POPULATION_EXPRS: list[Expr] = []
@@ -35,7 +36,10 @@ def crossover_func(parents, offspring_size, ga_instance):
         p2_sub = get_random_subtree_from_parent(p2_expr)
         p1_sub = get_random_subtree_from_parent(p1_expr)
         
-        child_expr = p1_expr.subs(p1_sub, p2_sub)
+        try:
+            child_expr = func_timeout(3.0, p1_expr.subs, args=(p1_sub, p2_sub))
+        except (FunctionTimedOut, Exception):
+            child_expr = p1_expr
         child_expr = clean_and_validate(child_expr, p1_expr, LIMIT_OPS)
         
         offspring[k, 0] = register_expr(child_expr)
@@ -58,8 +62,11 @@ def mutation_func(offspring, ga_instance):
             if new_sub is None:
                 new_sub = x
             
-            mutated = expr.subs(target_sub, new_sub)
-            mutated = clean_and_validate(mutated, expr)
+            try:
+                mutated = func_timeout(3.0, expr.subs, args=(target_sub, new_sub))
+            except (FunctionTimedOut, Exception):
+                mutated = expr
+            mutated = clean_and_validate(mutated, expr, LIMIT_OPS)
             
             offspring[idx_in_offspring, 0] = register_expr(mutated)
             

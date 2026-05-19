@@ -10,11 +10,11 @@ from llm_service.tools.middleware import handle_tool_errors
 from llm_service.tools.submit_tool import submit_generated_integrals, submitted_integrals
 
 
-class llm_service:
+class LLMService:
     def __init__(self):
         load_dotenv()
-        self.model_name = "deepseek/deepseek-v4-pro"
-        self.api_key = os.getenv("OPENROUTER_API_KEY_OSCAR")
+        self.model_name = "deepseek/deepseek-v4-flash" #"deepseek/deepseek-v4-flash" #"openrouter/owl-alpha", "deepseek/deepseek-v4-pro"
+        self.api_key = os.getenv("OPENROUTER_API_KEY")
         self.agent = None
 
         if self.api_key:
@@ -23,6 +23,7 @@ class llm_service:
                     model_name=self.model_name,
                     api_key=self.api_key,
                     base_url="https://openrouter.ai/api/v1",
+                    #reasoning={"effort": "xhigh", "summary": "auto"},
                 )
 
                 self.agent = create_agent(

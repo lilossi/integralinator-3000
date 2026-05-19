@@ -3,7 +3,7 @@ import asyncio
 from baseline_integrals.random_integrals import generate_random_function
 from baseline_integrals.solvable_integrals import generate_solvable_function
 from genetic_algorithm.genetic_algorithm import run_genetic_algorithm
-from llm_service.llm_service import llm_service
+from llm_service.llm_service import LLMService
 from probabilistic_grammar.grammar import generate_valid_expressions
 
 @click.group()
@@ -35,7 +35,7 @@ def generate(method, num_integrals):
     
     if method.lower() == 'llm':
         # uv run -m cli.main generate --method llm --num-integrals 5
-        service = llm_service()
+        service = LLMService()
         click.echo("LLM Service initialized.")
         click.echo(f"Generating {num_integrals} integrals...")
         
@@ -66,16 +66,16 @@ def generate(method, num_integrals):
         click.echo("Genetic Algorithm initialized.")
         click.echo("Running Genetic Algorithm to collect high-fitness expressions...")
         
-        all_collected_integrals = []
-        for i in range(1, num_integrals + 1):
-            click.echo(f"Run {i}/{num_integrals}...")
-            collected = run_genetic_algorithm(population_size=20, generations=10)
-            all_collected_integrals.extend(collected)
-        
-        unique_integrals = list(set(all_collected_integrals))
-        
+        results = set()
+        run = 0
+        while len(results) < num_integrals:
+            run += 1
+            click.echo(f"GA run {run} — {len(results)}/{num_integrals} collected so far...")
+            collected = run_genetic_algorithm(population_size=50, generations=30)
+            results.update(collected)
+
         click.echo("\n--- Collected High-Fitness Expressions ---")
-        for i, expr in enumerate(unique_integrals, 1):
+        for i, expr in enumerate(list(results), 1):
             click.echo(f"[{i}] {expr}")
     elif method.lower() == 'grammar':
         # uv run -m cli.main generate --method grammar --num-integrals 5

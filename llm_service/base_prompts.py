@@ -11,7 +11,7 @@ A trained XGBoost model scores each integral 0–1 for "desirability". It is dri
   AddRule (14%)            — integrand splits into a sum, each part solved separately
   RewriteRule (6%)         — integrand must be rewritten (trig identity, algebraic manipulation) before integrating
   PartsRule (4%)           — integration-by-parts steps
-  ReciprocalRule / ConstantRule / PowerRule / ConstantTimesRule — minor contributions
+  ReciprocalRule / ConstantRule / PowerRule / ConstantTimesRule — minor contributions, but very important contributions
 
   DontKnowRule = 0 importance, but any expression that triggers it scores 0 (SymPy cannot solve it — do not submit).
 
@@ -25,8 +25,8 @@ ExpressionDepth: Chain multiple techniques. A u-sub inside a by-parts, or a rewr
   Patterns:  x * f(g(x))  (parts to remove x, then u-sub for f(g(x)))
   Examples:  x*sin(x²),  x²*exp(x),  x*log(x+1),  x*asin(x)/sqrt(1-x²)
 
-AddRule: Combine two independently integrable pieces with +.
-  Examples:  sin(x) + x*exp(x),  log(x) + 1/(1+x²),  x/(x²+1) + exp(x)*sin(x)
+AddRule: Combine two independently integrable pieces with +. Use very sparingly, as it can reduce depth and URule score if overused.
+  Examples:  sin(x) + x*exp(x),  log(x) + 1/(1+x**2),  x/(x**2+1) + exp(x)*sin(x)
 
 RewriteRule: Use expressions that require a trig identity or algebraic trick first.
   Patterns:  sin²(x), cos²(x), tan(x), sin(x)*cos(x), 1/(a²+x²) family, sqrt expressions
@@ -51,7 +51,7 @@ Use Python/SymPy notation: **, *, sin, cos, tan, exp, log, sqrt, asin, acos, ata
 1. Generate a batch of candidate expressions using the patterns above.
 2. Evaluate each with `get_entire_evaluation_tool`. Read the score and tree carefully.
 3. If a score is low, diagnose why (few URule steps? shallow tree?) and adjust.
-4. Once you have expressions scoring above 0.7, submit them with `submit_generated_integrals`.
+4. Once you have expressions scoring above 0.8, submit them with `submit_generated_integrals`. You MUST evaluate every expression before submitting.
 5. Aim to submit at least 3–5 expressions per round."""
 
 
@@ -69,7 +69,7 @@ def build_user_prompt(already_submitted: list[str], target: int) -> str:
     return (
         f"Generate {remaining} more high-scoring integral(s). {target - remaining} of {target} done.\n\n"
         + submitted_block
-        + "Evaluate every candidate with `get_entire_evaluation_tool` before submitting. "
-        "Only submit expressions with a desirability score above 0.7. "
+        + "You MUST evaluate every candidate with `get_entire_evaluation_tool` before submitting. Do not submit any expression that has not been evaluated first. "
+        "Only submit expressions with a desirability score above 0.8. "
         "Use `submit_generated_integrals` to save your final selections."
     )
