@@ -17,7 +17,8 @@ async def main():
    #ex =  2**(2*x)/1024 + x - 15/(4*x)
 
    #ex = -exp(x)*log(27)*cos(exp(x))/27**sin(exp(x))
-   ex = x**2+2*x+1
+   #ex = x**2+2*x+1
+   ex = 4*(x*sinh(x) + cosh(x))*sin(sinh(x*cosh(x)) + 1)*cosh(x*cosh(x))
    print(get_entire_evaluation(ex))
    
    #ai = llm_service()

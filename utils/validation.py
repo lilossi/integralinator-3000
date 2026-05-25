@@ -1,6 +1,7 @@
+import time
 from sympy import I, Expr, nan, zoo, oo, simplify, sympify, SympifyError
 from sympy.abc import x
-from func_timeout import func_timeout, FunctionTimedOut
+from func_timeout import func_timeout, func_set_timeout, FunctionTimedOut
 
 def _is_valid_integrand(f: Expr) -> bool:
     """Checks if an expression is a valid integrand: must be a function of x, not constant, and free of singularities."""
@@ -20,17 +21,25 @@ def _is_valid_integrand(f: Expr) -> bool:
 
 def _safe_simplify(f: Expr) -> Expr:
     """Attempts to simplify an expression, returning the original if it fails or takes too long (3 seconds)."""
+    t0 = time.time()
+    print(f"    [SIMPLIFY] start: {f}")
     try:
-        return func_timeout(3, simplify, args=(f,))
-    except (Exception, FunctionTimedOut):
+        result = func_timeout(3, simplify, args=(f,))
+        print(f"    [SIMPLIFY] done ({time.time()-t0:.2f}s) -> {result}")
+        return result
+    except FunctionTimedOut:
+        print(f"    [SIMPLIFY] timed out ({time.time()-t0:.2f}s)")
+        return f
+    except Exception as e:
+        print(f"    [SIMPLIFY] exception {type(e).__name__} ({time.time()-t0:.2f}s): {e}")
         return f
 
+@func_set_timeout(18.0)
 def clean_and_validate(expr: Expr, fallback: Expr, limit_ops: int, use_safe_simplify: bool = True) -> Expr:
     """Simplifies and validates an expression, returning fallback if invalid."""
     if expr.count_ops() > limit_ops:
-        #return Expr(x)  # Return a simple valid expression instead of fallback
         return fallback
-        
+
     if use_safe_simplify:
         expr = _safe_simplify(expr)
     if _is_valid_integrand(expr):

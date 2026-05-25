@@ -71,7 +71,7 @@ def generate(method, num_integrals):
         while len(results) < num_integrals:
             run += 1
             click.echo(f"GA run {run} — {len(results)}/{num_integrals} collected so far...")
-            collected = run_genetic_algorithm(population_size=50, generations=30)
+            collected = run_genetic_algorithm(population_size=30, generations=30)
             results.update(collected)
 
         click.echo("\n--- Collected High-Fitness Expressions ---")

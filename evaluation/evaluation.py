@@ -1,3 +1,4 @@
+import time
 import pandas as pd
 from sympy import Expr, Integral, pretty
 from sympy.abc import x
@@ -10,12 +11,19 @@ from func_timeout import FunctionTimedOut, func_set_timeout
 
 # IMPORTANT!!!! >.<
 def return_vector_evaluation(expr: Expr) -> pd.DataFrame:
+    t0 = time.time()
+    print(f"  [EVAL] integral_steps start: {expr}")
     tree = generate_tree(repr(integral_steps(expr, x)))
     depth = tree.depth() + 1
+    print(f"  [EVAL] integral_steps done ({time.time()-t0:.2f}s)")
+
+    t1 = time.time()
+    print(f"  [EVAL] manualintegrate start")
     solution = manualintegrate(expr, x)
+    print(f"  [EVAL] manualintegrate done ({time.time()-t1:.2f}s)")
     control_score = get_symbol_count(solution)
     rules_vector = get_solution_vector_from_tree(tree)
-    
+
     if (rules_vector[-1] > 0):
         return pd.DataFrame()
 
@@ -23,10 +31,10 @@ def return_vector_evaluation(expr: Expr) -> pd.DataFrame:
         "ExpressionDepth": [depth],
         "SolvableControllabilityScore": [control_score]
     }
-    
+
     for i, rule in enumerate(RULE_NAMES):
         temp_dict[rule] = [rules_vector[i]]
-        
+
     vector = pd.DataFrame(temp_dict)
     return vector
 
@@ -40,15 +48,15 @@ def get_entire_evaluation(expr: Expr) -> str:
     solution = manualintegrate(expr, x)
     control_score = get_symbol_count(solution)
     rules_vector = get_solution_vector_from_tree(tree)
-    
+
     temp_dict = {
         "ExpressionDepth": [depth],
         "SolvableControllabilityScore": [control_score]
     }
-    
+
     for i, rule in enumerate(RULE_NAMES):
         temp_dict[rule] = [rules_vector[i]]
-        
+
     vector = pd.DataFrame(temp_dict)
     if (rules_vector[-1] > 0):
         vector = pd.DataFrame()

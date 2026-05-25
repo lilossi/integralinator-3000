@@ -3,11 +3,12 @@ import numpy as np
 from sympy.abc import x
 from baseline_integrals.solvable_integrals import generate_solvable_function
 from genetic_algorithm.ga_operators import POPULATION_EXPRS, HIGH_FITNESS_INTEGRALS, register_expr, crossover_func, mutation_func
-from genetic_algorithm.fitness import fitness_func, on_generation
+from genetic_algorithm.fitness import fitness_func, on_generation, _score_cache
 
 def run_genetic_algorithm(population_size: int = 50, generations: int = 30):
     POPULATION_EXPRS.clear()
     HIGH_FITNESS_INTEGRALS.clear()
+    _score_cache.clear()
     
     initial_pop_indices = []
     print(f"Generating initial population of {population_size} expressions...")
