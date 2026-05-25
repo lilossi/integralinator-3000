@@ -1,4 +1,5 @@
 import time
+from datetime import datetime
 import numpy as np
 from evaluation.evaluation import get_solution_score
 from func_timeout import FunctionTimedOut
@@ -43,7 +44,7 @@ def fitness_func(ga_instance, solution, solution_idx):
 
     if fitness >= THRESHOLD:
         HIGH_FITNESS_INTEGRALS.add(expr)
-        print(f"High-fitness integral found: {expr} (Fitness: {fitness:.4f})")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] High-fitness integral found: {expr} (Fitness: {fitness:.4f})")
     return fitness
 
 
