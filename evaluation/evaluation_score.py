@@ -3,7 +3,7 @@ import pandas as pd
 from sympy import *
 from test_suite.integral_data import RULE_NAMES
 
-MODEL = None
+_MODEL = None
 
 def _load_model():
     global _MODEL
@@ -19,7 +19,6 @@ def _load_model():
 
 def get_evaluation_score_saved_model(df: pd.DataFrame) -> float:
     if df.empty:
-        print("not solvable!")
         return 0.0
     try:
         model = _load_model()
