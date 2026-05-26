@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=integralinator
-#SBATCH --output=/home/philippo/logs/integralinator/run_%A_%a.out
-#SBATCH --error=/home/philippo/logs/integralinator/run_%A_%a.err
+#SBATCH --output=/home/philippo/integralinator-3000/logs/run_%A_%a.out
+#SBATCH --error=/home/philippo/integralinator-3000/logs/run_%A_%a.err
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
@@ -11,7 +11,7 @@
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate integralinator-env
 
-REPO=/home/philippo/projects/integralinator-3000
+REPO=/home/philippo/integralinator-3000
 OUTDIR=$REPO/outputs
 mkdir -p $OUTDIR
 
