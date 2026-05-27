@@ -1,0 +1,37 @@
+[12:42:03] Initializing generation process...
+[12:42:03] Method: baseline
+[12:42:03] Total Integrals: 10
+[12:42:03] Baseline initialized.
+[12:42:03] Generating 10 integrals...
+    [SIMPLIFY] start: 2*x + x/cosh(2 + 3/x) + 3
+    [SIMPLIFY] done (0.51s) -> 2*x + x/cosh(2 + 3/x) + 3
+[12:42:05] [1] 2*x + x/cosh(2 + 3/x) + 3
+    [SIMPLIFY] start: (x + 3)**cos(tan((-3 - 5/x)**x))
+    [SIMPLIFY] done (0.07s) -> (x + 3)**cos(tan((-3 - 5/x)**x))
+[12:42:05] [2] (x + 3)**cos(tan((-3 - 5/x)**x))
+    [SIMPLIFY] start: -sinh(3*x + asin(x)/4 + 1/64)
+    [SIMPLIFY] done (0.06s) -> -sinh(3*x + asin(x)/4 + 1/64)
+[12:42:05] [3] -sinh(3*x + asin(x)/4 + 1/64)
+    [SIMPLIFY] start: -13*x/15 + 2*tanh(x**x)/15
+    [SIMPLIFY] done (0.06s) -> -13*x/15 + 2*tanh(x**x)/15
+[12:42:05] [4] -13*x/15 + 2*tanh(x**x)/15
+    [SIMPLIFY] start: 4**x/(log(x)**sinh(x) - 5)**5
+    [SIMPLIFY] done (0.05s) -> 4**x/(log(x)**sinh(x) - 5)**5
+[12:42:05] [5] 4**x/(log(x)**sinh(x) - 5)**5
+    [SIMPLIFY] start: x - sin(1) + 1
+    [SIMPLIFY] done (0.01s) -> x - sin(1) + 1
+[12:42:05] [6] x - sin(1) + 1
+    [SIMPLIFY] start: -3**(x**(x**x)/2)*sqrt(x) + x
+    [SIMPLIFY] done (0.01s) -> -3**(x**(x**x)/2)*sqrt(x) + x
+[12:42:05] [7] -3**(x**(x**x)/2)*sqrt(x) + x
+    [SIMPLIFY] start: x/tan((cosh(x)/x)**tan(x) - 3)
+    [SIMPLIFY] done (0.11s) -> x/tan((cosh(x)/x)**tan(x) - 3)
+[12:42:06] [8] x/tan((cosh(x)/x)**tan(x) - 3)
+    [SIMPLIFY] start: 2*x + sqrt(log(5) + I*pi) + exp(-2*x)
+    [SIMPLIFY] done (0.03s) -> 2*x + sqrt(log(5) + I*pi) + exp(-2*x)
+    [SIMPLIFY] start: x - (-sin(3))**(sin(4)/x) - 6
+    [SIMPLIFY] done (0.05s) -> x - (-sin(3))**(sin(4)/x) - 6
+[12:42:06] [9] x - (-sin(3))**(sin(4)/x) - 6
+    [SIMPLIFY] start: cosh(x*log(x**x) + atan(2*x))
+    [SIMPLIFY] done (0.02s) -> cosh(x*log(x**x) + atan(2*x))
+[12:42:06] [10] cosh(x*log(x**x) + atan(2*x))

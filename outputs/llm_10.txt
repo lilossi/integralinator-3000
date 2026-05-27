@@ -1,0 +1,54 @@
+[12:42:03] Initializing generation process...
+[12:42:03] Method: llm
+[12:42:03] Total Integrals: 10
+[12:42:08] LLM Service initialized.
+[12:42:08] Generating 10 integrals...
+Submissions so far: 0/10
+Received expression for evaluation: x*sin(x**2)
+Received expression for evaluation: x*exp(x**2)
+Received expression for evaluation: x*log(x+1)
+Received expression for evaluation: sin(x)*cos(x)
+Received expression for evaluation: x*asin(x)/sqrt(1-x**2)
+Received expression for evaluation: x*exp(x)
+Received expression for evaluation: x**2*sin(x)
+Received expression for evaluation: x*cos(x**2)
+Received expression for evaluation: log(x)/x
+Received expression for evaluation: x*sqrt(1+x**2)
+Received expression for evaluation: exp(x)*sin(x)
+Received expression for evaluation: sin(log(x))/x**3
+Received expression for evaluation: 1/(1+exp(x))
+Received expression for evaluation: x*atan(x)
+Received expression for evaluation: x*log(x**2+1)
+Received expression for evaluation: x**2*exp(x)
+Received expression for evaluation: x*exp(-x**2)
+Received expression for evaluation: sin(x)**2
+Received expression for evaluation: x**2*cos(x)
+Received expression for evaluation: x*asin(x)
+Received expression for evaluation: exp(x)*cos(x)
+Received expression for evaluation: x*exp(x**3)
+Received expression for evaluation: x*sin(x**3)
+Received expression for evaluation: cos(log(x))/x**3
+Received expression for evaluation: x**3*exp(x**2)
+Received expression for evaluation: x**3*sin(x**2)
+Received expression for evaluation: x**2*log(x+1)
+Received expression for evaluation: x**2*atan(x)
+Received expression for evaluation: x**2*asin(x)
+Received expression for evaluation: x**2*asin(x)/sqrt(1-x**2)
+Received expression for evaluation: x*log(1+x**2)
+Received expression for evaluation: x*atan(x**2)
+Submitting the following expressions:
+['x*log(x+1)', 'sin(log(x))/x**3', 'x*log(x**2+1)', 'x**2*log(x+1)', 'x**2*atan(x)', 'x*atan(x**2)', 'x*atan(x)', '1/(1+exp(x))', 'x**3*exp(x**2)', 'x**3*sin(x**2)']
+Added 10 unique expressions.
+
+[12:42:52] 
+--- Final Curated Expressions ---
+[12:42:52] [1] x**2*log(x+1)
+[12:42:52] [2] x**3*exp(x**2)
+[12:42:52] [3] x**2*atan(x)
+[12:42:52] [4] x*log(x**2+1)
+[12:42:52] [5] x*atan(x**2)
+[12:42:52] [6] x*log(x+1)
+[12:42:52] [7] x**3*sin(x**2)
+[12:42:52] [8] x*atan(x)
+[12:42:52] [9] 1/(1+exp(x))
+[12:42:52] [10] sin(log(x))/x**3

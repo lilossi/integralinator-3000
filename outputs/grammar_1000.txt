@@ -1,0 +1,43 @@
+[12:41:47] Initializing generation process...
+[12:41:47] Method: grammar
+[12:41:47] Total Integrals: 1000
+[12:41:47] Probabilistic Grammar initialized.
+[12:41:47] Generating 1000 integrals...
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/philippo/integralinator-3000/cli/main.py", line 98, in <module>
+    cli()
+  File "/home/philippo/miniconda3/envs/integralinator-env/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/philippo/miniconda3/envs/integralinator-env/lib/python3.12/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/home/philippo/miniconda3/envs/integralinator-env/lib/python3.12/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/philippo/miniconda3/envs/integralinator-env/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/philippo/miniconda3/envs/integralinator-env/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/philippo/integralinator-3000/cli/main.py", line 89, in generate
+    expressions = generate_valid_expressions(num_integrals)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/philippo/integralinator-3000/probabilistic_grammar/grammar.py", line 37, in generate_valid_expressions
+    result = process_string_to_expression(sentence)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/philippo/integralinator-3000/utils/validation.py", line 63, in process_string_to_expression
+    valid_expr = clean_and_validate(expr, None, 50, use_safe_simplify=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/philippo/miniconda3/envs/integralinator-env/lib/python3.12/site-packages/func_timeout/dafunc.py", line 185, in <lambda>
+    return wraps(func)(lambda *args, **kwargs : func_timeout(defaultTimeout, func, args=args, kwargs=kwargs))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/philippo/miniconda3/envs/integralinator-env/lib/python3.12/site-packages/func_timeout/dafunc.py", line 101, in func_timeout
+    raise FunctionTimedOut('', timeout, func, args, kwargs)
+func_timeout.exceptions.FunctionTimedOut: Function clean_and_validate (args=(cos(tan(x/log(-(x + sin(tan(cos(4))))*tanh(5))**x)), None, 50)) (kwargs={'use_safe_simplify': False}) timed out after 18.000000 seconds.
+
+Generating batch of 4000 sentences...
+Attempted 100 expressions, found 37 valid ones...

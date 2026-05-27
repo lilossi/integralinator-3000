@@ -1,0 +1,19 @@
+[12:41:47] Initializing generation process...
+[12:41:47] Method: grammar
+[12:41:47] Total Integrals: 10
+[12:41:47] Probabilistic Grammar initialized.
+[12:41:47] Generating 10 integrals...
+Generating batch of 40 sentences...
+Total attempts needed: 27
+[12:41:48] 
+--- Final Valid Expressions ---
+[12:41:48] [1] exp(2*x)
+[12:41:48] [2] -x
+[12:41:48] [3] log(x)
+[12:41:48] [4] x*(sqrt(x) - 2)
+[12:41:48] [5] x*(x - 1)
+[12:41:48] [6] tan(sqrt(x))
+[12:41:48] [7] x
+[12:41:48] [8] x**x
+[12:41:48] [9] exp(x)
+[12:41:48] [10] tan(x)
