@@ -45,6 +45,7 @@ class LLMService:
             history = []
 
             while len(submitted_integrals) < target_num:
+                history = history[-10:]  # Keep only the last 10 messages to manage context length
                 print(f"Submissions so far: {len(submitted_integrals)}/{target_num}")
                 user_msg = build_user_prompt(list(submitted_integrals), target_num)
                 result = await loop.run_in_executor(

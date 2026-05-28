@@ -27,7 +27,7 @@ def try_generate_solvable_function(
 def generate_solvable_function(
     num_internal_ops: int = 7,
     max_attempts: int = 50,
-    simplify_flag: bool = True,
+    simplify_flag: bool = False,
 ) -> Expr | None:
     for _ in range(max_attempts):
         try:
