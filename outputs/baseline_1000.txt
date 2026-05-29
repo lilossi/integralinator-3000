@@ -1,1129 +1,618 @@
-[12:42:03] Initializing generation process...
-[12:42:03] Method: baseline
-[12:42:03] Total Integrals: 1000
-[12:42:03] Baseline initialized.
-[12:42:03] Generating 1000 integrals...
-    [SIMPLIFY] start: 4*cos(3/x**asin(cosh(2)/5))
-    [SIMPLIFY] done (0.42s) -> 4*cos(3/x**asin(cosh(2)/5))
-[12:42:04] [1] 4*cos(3/x**asin(cosh(2)/5))
-    [SIMPLIFY] start: log(x - x/x**(x**x) + sqrt(3)*I)
-    [SIMPLIFY] done (0.02s) -> log(x - x/x**(x**x) + sqrt(3)*I)
-    [SIMPLIFY] start: x**(sqrt(x) + 3*x - 12 + x**(-2))
-    [SIMPLIFY] done (0.02s) -> x**(sqrt(x) + 3*x - 12 + x**(-2))
-[12:42:04] [2] x**(sqrt(x) + 3*x - 12 + x**(-2))
-    [SIMPLIFY] start: atan(x*sinh(x)/(3**tan(x) + x))
-    [SIMPLIFY] done (0.03s) -> atan(x*sinh(x)/(3**tan(x) + x))
-[12:42:04] [3] atan(x*sinh(x)/(3**tan(x) + x))
-    [SIMPLIFY] start: x + tan(x**2*tan(x)/4)
-    [SIMPLIFY] done (0.03s) -> x + tan(x**2*tan(x)/4)
-[12:42:04] [4] x + tan(x**2*tan(x)/4)
-    [SIMPLIFY] start: sin(5**(x*log(5**x)) - x)
-    [SIMPLIFY] done (0.01s) -> sin(5**(x*log(5**x)) - x)
-[12:42:04] [5] sin(5**(x*log(5**x)) - x)
-    [SIMPLIFY] start: (4*x*log(x))**(-5/(x*tan(x)))
-    [SIMPLIFY] done (0.03s) -> (4*x*log(x))**(-5/(x*tan(x)))
-[12:42:04] [6] (4*x*log(x))**(-5/(x*tan(x)))
-    [SIMPLIFY] start: -4*exp(asin(5*x))
-    [SIMPLIFY] done (0.01s) -> -4*exp(asin(5*x))
-[12:42:05] [7] -4*exp(asin(5*x))
-    [SIMPLIFY] start: -4/(3*x + x**x + sinh(x))
-    [SIMPLIFY] done (0.10s) -> -4/(3*x + x**x + sinh(x))
-[12:42:05] [8] -4/(3*x + x**x + sinh(x))
-    [SIMPLIFY] start: -cosh(12*x*(1 - 3/x))
-    [SIMPLIFY] done (0.26s) -> -cosh(12*x - 36)
-[12:42:05] [9] -cosh(12*x - 36)
-    [SIMPLIFY] start: -4*atan(exp(-2))/sin(3)
-    [SIMPLIFY] done (0.02s) -> -4*atan(exp(-2))/sin(3)
-    [SIMPLIFY] start: x**2 + zoo
-    [SIMPLIFY] done (0.00s) -> x**2 + zoo
-    [SIMPLIFY] start: x - 0**(3 + 2**asin(cosh(2)))
-    [SIMPLIFY] done (0.07s) -> x - 0**(3 + 2**asin(cosh(2)))
-[12:42:06] [10] x - 0**(3 + 2**asin(cosh(2)))
-    [SIMPLIFY] start: -6*(x + sinh(cosh(3)))**x
-    [SIMPLIFY] done (0.08s) -> -6*(x + sinh(cosh(3)))**x
-[12:42:06] [11] -6*(x + sinh(cosh(3)))**x
-    [SIMPLIFY] start: cos(9*asin((I*pi)**(x**4)))
-    [SIMPLIFY] done (0.01s) -> cos(9*asin((I*pi)**(x**4)))
-    [SIMPLIFY] start: sqrt(cosh(x*asin(sin(x))/atan(3)))
-    [SIMPLIFY] done (0.04s) -> sqrt(cosh(x*asin(sin(x))/atan(3)))
-[12:42:06] [12] sqrt(cosh(x*asin(sin(x))/atan(3)))
-    [SIMPLIFY] start: x**tanh(3*x)*(-log(x) - 4)
-    [SIMPLIFY] done (0.04s) -> -x**tanh(3*x)*(log(x) + 4)
-[12:42:06] [13] -x**tanh(3*x)*(log(x) + 4)
-    [SIMPLIFY] start: sinh(x/(x/4 + 5/4))/3 + log(2)
-    [SIMPLIFY] done (0.12s) -> sinh(4*x/(x + 5))/3 + log(2)
-[12:42:06] [14] sinh(4*x/(x + 5))/3 + log(2)
-    [SIMPLIFY] start: tanh(((-1)**(x - atan(2*x)))**x)
-    [SIMPLIFY] done (0.02s) -> tanh(((-1)**(x - atan(2*x)))**x)
-[12:42:07] [15] tanh(((-1)**(x - atan(2*x)))**x)
-    [SIMPLIFY] start: 2*sqrt(-3 - 5/x)*exp(-1)
-    [SIMPLIFY] done (0.01s) -> 2*sqrt(-3 - 5/x)*exp(-1)
-[12:42:07] [16] 2*sqrt(-3 - 5/x)*exp(-1)
-    [SIMPLIFY] start: x + atan(2 + 2/asin(x**2))
-    [SIMPLIFY] done (0.02s) -> x + atan(2 + 2/asin(x**2))
-[12:42:07] [17] x + atan(2 + 2/asin(x**2))
-    [SIMPLIFY] start: -sin(x - (x - x/sqrt(x**2 + 1))**x)
-    [SIMPLIFY] done (0.06s) -> -sin(x - (x - x/sqrt(x**2 + 1))**x)
-[12:42:07] [18] -sin(x - (x - x/sqrt(x**2 + 1))**x)
-    [SIMPLIFY] start: (-1 - 1/(sinh(x)*asin(x)**3))**x
-    [SIMPLIFY] done (0.09s) -> (-1 - 1/(sinh(x)*asin(x)**3))**x
-[12:42:08] [19] (-1 - 1/(sinh(x)*asin(x)**3))**x
-    [SIMPLIFY] start: -3*sqrt((4*x + 4*log(2*x))**x)
-    [SIMPLIFY] done (0.02s) -> -3*sqrt((4*x + 4*log(2*x))**x)
-[12:42:08] [20] -3*sqrt((4*x + 4*log(2*x))**x)
-    [SIMPLIFY] start: exp(x) + 1
-    [SIMPLIFY] done (0.01s) -> exp(x) + 1
-[12:42:08] [21] exp(x) + 1
-    [SIMPLIFY] start: x - exp(x*(log(5) + I*pi))*cos(x)
-    [SIMPLIFY] done (0.03s) -> x - exp(x*(log(5) + I*pi))*cos(x)
-    [SIMPLIFY] start: cos(-tanh(1) + log(4))
-    [SIMPLIFY] done (0.05s) -> cos(-tanh(1) + log(4))
-    [SIMPLIFY] start: tanh(1)**(-12)
-    [SIMPLIFY] done (0.01s) -> tanh(1)**(-12)
-    [SIMPLIFY] start: x*asin(16/x**4) + 4*asin(x)
-    [SIMPLIFY] done (0.01s) -> x*asin(16/x**4) + 4*asin(x)
-[12:42:08] [22] x*asin(16/x**4) + 4*asin(x)
-    [SIMPLIFY] start: -x**2/24
-    [SIMPLIFY] done (0.00s) -> -x**2/24
-[12:42:08] [23] -x**2/24
-    [SIMPLIFY] start: atan(x - x/sinh(1 - sqrt(3)*I))
-    [SIMPLIFY] done (0.21s) -> atan(x - x/sinh(1 - sqrt(3)*I))
-    [SIMPLIFY] start: (x/sinh(x) - sin(x)/x)/x
-    [SIMPLIFY] done (0.12s) -> 1/sinh(x) - sin(x)/x**2
-[12:42:08] [24] 1/sinh(x) - sin(x)/x**2
-    [SIMPLIFY] start: x**((3**x/x)**x)
-    [SIMPLIFY] done (0.01s) -> x**((3**x/x)**x)
-[12:42:09] [25] x**((3**x/x)**x)
-    [SIMPLIFY] start: I*sqrt(x**2)*sqrt(tanh(1))/cos(3)
-    [SIMPLIFY] done (0.04s) -> I*sqrt(x**2)*sqrt(tanh(1))/cos(3)
-    [SIMPLIFY] start: 3/(x**(3/x))**(sqrt(5)*I*tan(2))
-    [SIMPLIFY] done (0.05s) -> 3/(x**(3/x))**(sqrt(5)*I*tan(2))
-    [SIMPLIFY] start: (sqrt(x) - 3)/sin(log(x*(x + 5)))
-    [SIMPLIFY] done (0.04s) -> (sqrt(x) - 3)/sin(log(x*(x + 5)))
-[12:42:09] [26] (sqrt(x) - 3)/sin(log(x*(x + 5)))
-    [SIMPLIFY] start: x/((x**2 - 5)**(-x - 3) + 4)
-    [SIMPLIFY] done (0.02s) -> x/((x**2 - 5)**(-x - 3) + 4)
-[12:42:09] [27] x/((x**2 - 5)**(-x - 3) + 4)
-    [SIMPLIFY] start: x + asin(log(x)) - 1/2
-    [SIMPLIFY] done (0.01s) -> x + asin(log(x)) - 1/2
-[12:42:09] [28] x + asin(log(x)) - 1/2
-    [SIMPLIFY] start: (-x/(x/5 - 2/5) + 1)*sinh(x - 2)
-    [SIMPLIFY] done (0.05s) -> -2*(2*x + 1)*sinh(x - 2)/(x - 2)
-[12:42:09] [29] -2*(2*x + 1)*sinh(x - 2)/(x - 2)
-    [SIMPLIFY] start: -exp(2/(-2*x - sqrt(2)))
-    [SIMPLIFY] done (0.03s) -> -exp(-2/(2*x + sqrt(2)))
-[12:42:09] [30] -exp(-2/(2*x + sqrt(2)))
-    [SIMPLIFY] start: 2*x - cos(x - 3*sinh(exp(x)))
-    [SIMPLIFY] done (0.09s) -> 2*x - cos(x - 3*sinh(exp(x)))
-[12:42:09] [31] 2*x - cos(x - 3*sinh(exp(x)))
-    [SIMPLIFY] start: (1/(x + 4))**x + 1
-    [SIMPLIFY] done (0.01s) -> (1/(x + 4))**x + 1
-[12:42:09] [32] (1/(x + 4))**x + 1
-    [SIMPLIFY] start: -atan(tan(x**2)) - 1
-    [SIMPLIFY] done (0.02s) -> -atan(tan(x**2)) - 1
-[12:42:09] [33] -atan(tan(x**2)) - 1
-    [SIMPLIFY] start: (-x + cosh(cos(x/5 - 7/5)))**3
-    [SIMPLIFY] done (0.13s) -> -(x - cosh(cos(x/5 - 7/5)))**3
-[12:42:10] [34] -(x - cosh(cos(x/5 - 7/5)))**3
-    [SIMPLIFY] start: x/(x - atan(15))
-    [SIMPLIFY] done (0.01s) -> x/(x - atan(15))
-[12:42:10] [35] x/(x - atan(15))
-    [SIMPLIFY] start: sinh(4**(tanh(x)/8) + x) - 4
-    [SIMPLIFY] done (0.12s) -> sinh(2**(tanh(x)/4) + x) - 4
-[12:42:10] [36] sinh(2**(tanh(x)/4) + x) - 4
-    [SIMPLIFY] start: atan(tanh(atan(sinh(x)**(x + tanh(x)))))
-    [SIMPLIFY] done (0.18s) -> atan(tanh(atan(sinh(x)**(x + tanh(x)))))
-[12:42:11] [37] atan(tanh(atan(sinh(x)**(x + tanh(x)))))
-    [SIMPLIFY] start: -x + 6/(-x + log(x) + cosh(4))
-    [SIMPLIFY] done (0.13s) -> -x + 6/(-x + log(x) + cosh(4))
-[12:42:11] [38] -x + 6/(-x + log(x) + cosh(4))
-    [SIMPLIFY] start: x/(2*x + asin(x) - 1 + 1/x)
-    [SIMPLIFY] done (0.01s) -> x**2/(x*(2*x + asin(x) - 1) + 1)
-[12:42:11] [39] x**2/(x*(2*x + asin(x) - 1) + 1)
-    [SIMPLIFY] start: (-5)**((x + 7/2 - 2/x)/x)
-    [SIMPLIFY] done (0.02s) -> (-5)**((x*(2*x + 7) - 4)/(2*x**2))
-[12:42:12] [40] (-5)**((x*(2*x + 7) - 4)/(2*x**2))
-    [SIMPLIFY] start: -tanh(log(x))/sinh(cos(4)/3)
-    [SIMPLIFY] done (0.06s) -> -tanh(log(x))/sinh(cos(4)/3)
-[12:42:12] [41] -tanh(log(x))/sinh(cos(4)/3)
-    [SIMPLIFY] start: -x*(-cos(sin(1)) - cos(4)) + x
-    [SIMPLIFY] done (0.03s) -> x*(cos(4) + cos(sin(1)) + 1)
-[12:42:12] [42] x*(cos(4) + cos(sin(1)) + 1)
-    [SIMPLIFY] start: -(-x - asin(2))/sin(16*x)
-    [SIMPLIFY] done (0.17s) -> (x + asin(2))/sin(16*x)
-[12:42:12] [43] (x + asin(2))/sin(16*x)
-    [SIMPLIFY] start: -sin((x/8 - tanh(x)/8)/sqrt(1 - (x/8 - tanh(x)/8)**2))
-    [SIMPLIFY] done (0.47s) -> -sin((x - tanh(x))/sqrt(64 - (x - tanh(x))**2))
-[12:42:13] [44] -sin((x - tanh(x))/sqrt(64 - (x - tanh(x))**2))
-    [SIMPLIFY] start: sqrt(x)*(-x + atan(atan(x)) - 4)
-    [SIMPLIFY] done (0.01s) -> sqrt(x)*(-x + atan(atan(x)) - 4)
-[12:42:13] [45] sqrt(x)*(-x + atan(atan(x)) - 4)
-    [SIMPLIFY] start: x*(-3*atan(x**2) - 3*tanh(4))
-    [SIMPLIFY] done (0.05s) -> -3*x*(atan(x**2) + tanh(4))
-[12:42:14] [46] -3*x*(atan(x**2) + tanh(4))
-    [SIMPLIFY] start: log(5)/(asin((1 - x)**2)**5 + 3)
-    [SIMPLIFY] done (0.02s) -> log(5)/(asin((x - 1)**2)**5 + 3)
-[12:42:14] [47] log(5)/(asin((x - 1)**2)**5 + 3)
-    [SIMPLIFY] start: log(3) + I*pi + 5/(tanh(x**4/625) + 4)
-    [SIMPLIFY] done (0.31s) -> ((log(3) + I*pi)*(tanh(x**4/625) + 4) + 5)/(tanh(x**4/625) + 4)
-    [SIMPLIFY] start: exp(exp(x)) - 2/(5*cosh(2))
-    [SIMPLIFY] done (0.08s) -> exp(exp(x)) - 2/(5*cosh(2))
-[12:42:14] [48] exp(exp(x)) - 2/(5*cosh(2))
-    [SIMPLIFY] start: (x + 2)*sinh(sqrt(3)*tanh(x))/x
-    [SIMPLIFY] done (0.04s) -> (x + 2)*sinh(sqrt(3)*tanh(x))/x
-[12:42:15] [49] (x + 2)*sinh(sqrt(3)*tanh(x))/x
-    [SIMPLIFY] start: cos(x - sinh(3*sin(x))) + sinh(x)
-    [SIMPLIFY] done (0.13s) -> cos(x - sinh(3*sin(x))) + sinh(x)
-[12:42:15] [50] cos(x - sinh(3*sin(x))) + sinh(x)
-    [SIMPLIFY] start: -3 - sinh(atan(2))/x
-    [SIMPLIFY] done (0.07s) -> -3 - sinh(atan(2))/x
-[12:42:16] [51] -3 - sinh(atan(2))/x
-    [SIMPLIFY] start: -2/cosh(1 - sin(4))
-    [SIMPLIFY] done (0.06s) -> -2/cosh(1 - sin(4))
-    [SIMPLIFY] start: sin(x)**(sqrt(x) + sinh(tanh(x + 2)))
-    [SIMPLIFY] done (0.26s) -> sin(x)**(sqrt(x) + sinh(tanh(x + 2)))
-[12:42:17] [52] sin(x)**(sqrt(x) + sinh(tanh(x + 2)))
-    [SIMPLIFY] start: -sinh(4 - asin(2))*cosh(cos(4))
-    [SIMPLIFY] done (0.09s) -> -sinh(4 - asin(2))*cosh(cos(4))
-    [SIMPLIFY] start: sinh(sqrt(asin(x**(1/16) + x)))
-    [SIMPLIFY] done (0.02s) -> sinh(sqrt(asin(x**(1/16) + x)))
-    [SIMPLIFY] start: -sin(x - 3*tanh(log(-x))/2)
-    [SIMPLIFY] done (0.09s) -> -sin(x - 3*tanh(log(-x))/2)
-[12:42:19] [53] -sin(x - 3*tanh(log(-x))/2)
-    [SIMPLIFY] start: asin(3 + exp(2))/cos(2)
-    [SIMPLIFY] done (0.02s) -> asin(3 + exp(2))/cos(2)
-    [SIMPLIFY] start: x**4*(cos(1) + cos(log(sin(2)) + I*pi))
-    [SIMPLIFY] done (0.16s) -> x**4*(cos(1) + cos(log(sin(2)) + I*pi))
-    [SIMPLIFY] start: -(asin(x - 5) - 5)*sin(x)
-    [SIMPLIFY] done (0.02s) -> (5 - asin(x - 5))*sin(x)
-[12:42:19] [54] (5 - asin(x - 5))*sin(x)
-    [SIMPLIFY] start: -3*x/2 - cosh(2) + 2 - asin(2)/2
-    [SIMPLIFY] done (0.04s) -> -3*x/2 - cosh(2) + 2 - asin(2)/2
-[12:42:20] [55] -3*x/2 - cosh(2) + 2 - asin(2)/2
-    [SIMPLIFY] start: (x**2 - 1 + atan(log(4) + I*pi))/x
-    [SIMPLIFY] done (0.02s) -> (x**2 - 1 + atan(log(4) + I*pi))/x
-    [SIMPLIFY] start: -(-1)**cosh(x) - 2
-    [SIMPLIFY] done (0.03s) -> -(-1)**cosh(x) - 2
-[12:42:20] [56] -(-1)**cosh(x) - 2
-    [SIMPLIFY] start: 2/(x + (2*x)**x)
-    [SIMPLIFY] done (0.01s) -> 2/(x + (2*x)**x)
-[12:42:20] [57] 2/(x + (2*x)**x)
-    [SIMPLIFY] start: x + sin(exp(x)) - cosh(x) + 2
-    [SIMPLIFY] done (0.03s) -> x + sin(exp(x)) - cosh(x) + 2
-[12:42:20] [58] x + sin(exp(x)) - cosh(x) + 2
-    [SIMPLIFY] start: sqrt(5)/(x - 1)**(1/4)
-    [SIMPLIFY] done (0.01s) -> sqrt(5)/(x - 1)**(1/4)
-[12:42:20] [59] sqrt(5)/(x - 1)**(1/4)
-    [SIMPLIFY] start: 2*x - 6
-    [SIMPLIFY] done (0.00s) -> 2*x - 6
-[12:42:20] [60] 2*x - 6
-    [SIMPLIFY] start: -5*x*(2*x)**tan(log(-tan(2)))
-    [SIMPLIFY] done (0.66s) -> -5*x*(2*x)**tan(log(-tan(2)))
-[12:42:21] [61] -5*x*(2*x)**tan(log(-tan(2)))
-    [SIMPLIFY] start: x*(3 - x**(tan(x) + 8/x))
-    [SIMPLIFY] done (0.05s) -> x*(3 - x**(tan(x) + 8/x))
-[12:42:21] [62] x*(3 - x**(tan(x) + 8/x))
-    [SIMPLIFY] start: x/(-5)**exp(exp(x + 5))
-    [SIMPLIFY] done (0.04s) -> x/(-5)**exp(exp(x + 5))
-[12:42:21] [63] x/(-5)**exp(exp(x + 5))
-    [SIMPLIFY] start: -2*x - 2*(x - sinh(2) + 4)/x
-    [SIMPLIFY] done (0.09s) -> -2*x - 2 - 8/x + 2*sinh(2)/x
-[12:42:21] [64] -2*x - 2 - 8/x + 2*sinh(2)/x
-    [SIMPLIFY] start: 5*tan(tanh(atan(x*cos(x**x))))
-    [SIMPLIFY] done (0.08s) -> 5*tan(tanh(atan(x*cos(x**x))))
-[12:42:22] [65] 5*tan(tanh(atan(x*cos(x**x))))
-    [SIMPLIFY] start: tanh(sin(log(4)**(-2/(5*x)))) + 3
-    [SIMPLIFY] done (0.10s) -> tanh(sin(log(4)**(-2/(5*x)))) + 3
-[12:42:22] [66] tanh(sin(log(4)**(-2/(5*x)))) + 3
-    [SIMPLIFY] start: exp(x**(3/2)) - 3123
-    [SIMPLIFY] done (0.02s) -> exp(x**(3/2)) - 3123
-[12:42:22] [67] exp(x**(3/2)) - 3123
-    [SIMPLIFY] start: (-3**x + 2*x + 5)**x/4
-    [SIMPLIFY] done (0.01s) -> (-3**x + 2*x + 5)**x/4
-[12:42:22] [68] (-3**x + 2*x + 5)**x/4
-    [SIMPLIFY] start: sinh(exp(exp(x/sinh(4))))
-    [SIMPLIFY] done (0.08s) -> sinh(exp(exp(x/sinh(4))))
-[12:42:22] [69] sinh(exp(exp(x/sinh(4))))
-    [SIMPLIFY] start: ((-2)**x + 2)*asin(x + 4)
-    [SIMPLIFY] done (0.01s) -> ((-2)**x + 2)*asin(x + 4)
-[12:42:22] [70] ((-2)**x + 2)*asin(x + 4)
-    [SIMPLIFY] start: cos(x**2)**(-5)
-    [SIMPLIFY] done (0.01s) -> cos(x**2)**(-5)
-[12:42:22] [71] cos(x**2)**(-5)
-    [SIMPLIFY] start: (-x + tanh(x) + exp(4))**cos(3) + 1
-    [SIMPLIFY] done (0.10s) -> (-x + tanh(x) + exp(4))**cos(3) + 1
-[12:42:23] [72] (-x + tanh(x) + exp(4))**cos(3) + 1
-    [SIMPLIFY] start: 5*sqrt(5)*sqrt(x**2)/x
-    [SIMPLIFY] done (0.01s) -> 5*sqrt(5)*sqrt(x**2)/x
-[12:42:23] [73] 5*sqrt(5)*sqrt(x**2)/x
-    [SIMPLIFY] start: x*(asin(2*x**2) + 3/(x - 4))
-    [SIMPLIFY] done (0.02s) -> x*((x - 4)*asin(2*x**2) + 3)/(x - 4)
-[12:42:23] [74] x*((x - 4)*asin(2*x**2) + 3)/(x - 4)
-    [SIMPLIFY] start: -x + (-x + log(x))/cosh(5*x)
-    [SIMPLIFY] done (0.05s) -> -(x*cosh(5*x) + x - log(x))/cosh(5*x)
-[12:42:23] [75] -(x*cosh(5*x) + x - log(x))/cosh(5*x)
-    [SIMPLIFY] start: -x*sinh(5) + sinh(tanh(x)/sqrt(x))
-    [SIMPLIFY] done (0.06s) -> -x*sinh(5) + sinh(tanh(x)/sqrt(x))
-[12:42:24] [76] -x*sinh(5) + sinh(tanh(x)/sqrt(x))
-    [SIMPLIFY] start: (x + asin(5*x)/5)/cosh(x - 1)
-    [SIMPLIFY] done (0.04s) -> (x + asin(5*x)/5)/cosh(x - 1)
-[12:42:25] [77] (x + asin(5*x)/5)/cosh(x - 1)
-    [SIMPLIFY] start: (x*asin(cos(x))**5 + 5)/x
-    [SIMPLIFY] done (0.03s) -> asin(cos(x))**5 + 5/x
-[12:42:25] [78] asin(cos(x))**5 + 5/x
-    [SIMPLIFY] start: -sqrt(1 - (4*tanh(x) + 5)**2)/asin(2)
-    [SIMPLIFY] done (0.27s) -> -sqrt(1 - (4*tanh(x) + 5)**2)/asin(2)
-[12:42:27] [79] -sqrt(1 - (4*tanh(x) + 5)**2)/asin(2)
-    [SIMPLIFY] start: x*(1 - atan(x + 4))/3
-    [SIMPLIFY] done (0.02s) -> x*(1 - atan(x + 4))/3
-[12:42:27] [80] x*(1 - atan(x + 4))/3
-    [SIMPLIFY] start: -x + cos(x**5*x**(x*sin(2)))
-    [SIMPLIFY] done (0.04s) -> -x + cos(x**(x*sin(2) + 5))
-[12:42:27] [81] -x + cos(x**(x*sin(2) + 5))
-    [SIMPLIFY] start: x + sin(x/x**(tanh(x)/2))
-    [SIMPLIFY] done (0.08s) -> x + sin(x**(1 - tanh(x)/2))
-[12:42:27] [82] x + sin(x**(1 - tanh(x)/2))
-    [SIMPLIFY] start: x + 15/4
-    [SIMPLIFY] done (0.01s) -> x + 15/4
-[12:42:27] [83] x + 15/4
-    [SIMPLIFY] start: -(x + exp(x**2) - 1)**(sqrt(3)*I)
-    [SIMPLIFY] done (0.03s) -> -(x + exp(x**2) - 1)**(sqrt(3)*I)
-    [SIMPLIFY] start: tan(1)/(x**3*(x - tan(4) + 5))
-    [SIMPLIFY] done (0.13s) -> tan(1)/(x**3*(x - tan(4) + 5))
-[12:42:27] [84] tan(1)/(x**3*(x - tan(4) + 5))
-    [SIMPLIFY] start: sinh(sinh(x**2) + atan(x)/(4*x))
-    [SIMPLIFY] done (0.11s) -> sinh(sinh(x**2) + atan(x)/(4*x))
-[12:42:28] [85] sinh(sinh(x**2) + atan(x)/(4*x))
-    [SIMPLIFY] start: (exp(sin((-2)**x)) + 1)/(-5)**(4/x)
-    [SIMPLIFY] done (0.04s) -> (exp(sin((-2)**x)) + 1)/(-5)**(4/x)
-[12:42:29] [86] (exp(sin((-2)**x)) + 1)/(-5)**(4/x)
-    [SIMPLIFY] start: -2*x + sinh(4) - 1/x
-    [SIMPLIFY] done (0.20s) -> -2*x + sinh(4) - 1/x
-[12:42:29] [87] -2*x + sinh(4) - 1/x
-    [SIMPLIFY] start: -x + (x**x)**x - tan(x - asin(x))
-    [SIMPLIFY] done (0.09s) -> -x + (x**x)**x - tan(x - asin(x))
-[12:42:29] [88] -x + (x**x)**x - tan(x - asin(x))
-    [SIMPLIFY] start: sqrt(7)*sin(x**5 + x)
-    [SIMPLIFY] done (0.02s) -> sqrt(7)*sin(x**5 + x)
-[12:42:29] [89] sqrt(7)*sin(x**5 + x)
-    [SIMPLIFY] start: exp(-x/(5*(cosh(x) + asin(4))))/x
-    [SIMPLIFY] done (0.05s) -> exp(-x/(5*(cosh(x) + asin(4))))/x
-[12:42:30] [90] exp(-x/(5*(cosh(x) + asin(4))))/x
-    [SIMPLIFY] start: x - x/(2*log(x + 5)) + 3
-    [SIMPLIFY] done (0.02s) -> x - x/(2*log(x + 5)) + 3
-[12:42:30] [91] x - x/(2*log(x + 5)) + 3
-    [SIMPLIFY] start: log(2*x/asin(3*x))
-    [SIMPLIFY] done (0.01s) -> log(2*x/asin(3*x))
-[12:42:30] [92] log(2*x/asin(3*x))
-    [SIMPLIFY] start: x*(-(I*pi)**x + tan(x) - 1/2)
-    [SIMPLIFY] done (0.04s) -> x*(-(I*pi)**x + tan(x) - 1/2)
-    [SIMPLIFY] start: x/atan(log(x) - 3)
-    [SIMPLIFY] done (0.01s) -> x/atan(log(x) - 3)
-[12:42:30] [93] x/atan(log(x) - 3)
-    [SIMPLIFY] start: sinh(x)**4/(-2 + 5**(1/4)*sqrt(I))
-    [SIMPLIFY] done (0.06s) -> -sinh(x)**4/(2 - 5**(1/4)*sqrt(I))
-    [SIMPLIFY] start: tanh(x)**(cos(x) + tanh(x + cos(x)))
-    [SIMPLIFY] done (0.20s) -> tanh(x)**(cos(x) + tanh(x + cos(x)))
-[12:42:31] [94] tanh(x)**(cos(x) + tanh(x + cos(x)))
-    [SIMPLIFY] start: x*tan(x)*tanh(x + log(x))
-    [SIMPLIFY] done (0.05s) -> x*tan(x)*tanh(x + log(x))
-[12:42:32] [95] x*tan(x)*tanh(x + log(x))
-    [SIMPLIFY] start: x**2*((-4*x - 3)**x)**sinh(1)
-    [SIMPLIFY] done (0.03s) -> x**2*((-4*x - 3)**x)**sinh(1)
-[12:42:32] [96] x**2*((-4*x - 3)**x)**sinh(1)
-    [SIMPLIFY] start: tanh(cosh(x)**2/36 - 1)
-    [SIMPLIFY] done (0.04s) -> tanh(cosh(x)**2/36 - 1)
-[12:42:32] [97] tanh(cosh(x)**2/36 - 1)
-    [SIMPLIFY] start: -3
-    [SIMPLIFY] done (0.00s) -> -3
-    [SIMPLIFY] start: -5*cos(4)*tanh(3)/(5**x*x)
-    [SIMPLIFY] done (0.02s) -> -5**(1 - x)*cos(4)*tanh(3)/x
-[12:42:32] [98] -5**(1 - x)*cos(4)*tanh(3)/x
-    [SIMPLIFY] start: -sinh(pi)
-    [SIMPLIFY] done (0.01s) -> -sinh(pi)
-    [SIMPLIFY] start: sqrt(-1/x)*sqrt(-1/sin(4))*sqrt(-tan(5))*exp(-1/2)
-    [SIMPLIFY] done (0.04s) -> sqrt(tan(5)/x)*exp(-1/2)/sqrt(-sin(4))
-[12:42:32] [99] sqrt(tan(5)/x)*exp(-1/2)/sqrt(-sin(4))
-    [SIMPLIFY] start: sqrt(log(atan(x) + log(4) + I*pi) - sinh(2))
-    [SIMPLIFY] done (0.11s) -> sqrt(log(atan(x) + log(4) + I*pi) - sinh(2))
-    [SIMPLIFY] start: x + x**(sqrt(5)*sqrt(x)/5 - 10)
-    [SIMPLIFY] done (0.02s) -> x + x**(sqrt(5)*sqrt(x)/5 - 10)
-[12:42:32] [100] x + x**(sqrt(5)*sqrt(x)/5 - 10)
-    [SIMPLIFY] start: x**x*(-x - tan(cos(4)))
-    [SIMPLIFY] done (0.03s) -> -x**x*(x + tan(cos(4)))
-[12:42:32] [101] -x**x*(x + tan(cos(4)))
-    [SIMPLIFY] start: -x - x*(-sinh(5) - 5) + 4
-    [SIMPLIFY] done (0.08s) -> 4*x + x*sinh(5) + 4
-[12:42:33] [102] 4*x + x*sinh(5) + 4
-    [SIMPLIFY] start: 2*x + atan(x - 3) - 1
-    [SIMPLIFY] done (0.01s) -> 2*x + atan(x - 3) - 1
-[12:42:33] [103] 2*x + atan(x - 3) - 1
-    [SIMPLIFY] start: cos(4*(tan(sqrt(x) + 2) + 5)/x)
-    [SIMPLIFY] done (0.07s) -> cos(4*(tan(sqrt(x) + 2) + 5)/x)
-    [SIMPLIFY] start: x**sinh(x) - tanh(2/5) + 5/x
-    [SIMPLIFY] done (0.19s) -> x**sinh(x) - tanh(2/5) + 5/x
-[12:42:35] [104] x**sinh(x) - tanh(2/5) + 5/x
-    [SIMPLIFY] start: x*(x + cosh(sqrt(2)))*cos(1)**x
-    [SIMPLIFY] done (0.03s) -> x*(x + cosh(sqrt(2)))*cos(1)**x
-[12:42:35] [105] x*(x + cosh(sqrt(2)))*cos(1)**x
-    [SIMPLIFY] start: x + sinh(x) - sinh(cos(sin(4*x)))
-    [SIMPLIFY] done (0.17s) -> x + sinh(x) - sinh(cos(sin(4*x)))
-[12:42:35] [106] x + sinh(x) - sinh(cos(sin(4*x)))
-    [SIMPLIFY] start: 2*sinh(2/x) + 5*tan(3)
-    [SIMPLIFY] done (0.08s) -> 2*sinh(2/x) + 5*tan(3)
-[12:42:36] [107] 2*sinh(2/x) + 5*tan(3)
-    [SIMPLIFY] start: ((-x - 3)**x - 3)**(tanh(x**2)**3)
-    [SIMPLIFY] done (0.06s) -> ((-x - 3)**x - 3)**(tanh(x**2)**3)
-[12:42:36] [108] ((-x - 3)**x - 3)**(tanh(x**2)**3)
-    [SIMPLIFY] start: x*atan((x - cos(4))/cosh(1))
-    [SIMPLIFY] done (0.07s) -> x*atan((x - cos(4))/cosh(1))
-[12:42:36] [109] x*atan((x - cos(4))/cosh(1))
-    [SIMPLIFY] start: (-x/4 - 2)**2/x**2
-    [SIMPLIFY] done (0.01s) -> (x + 8)**2/(16*x**2)
-[12:42:36] [110] (x + 8)**2/(16*x**2)
-    [SIMPLIFY] start: 4*exp(3) + 4*cos(x)/(pi*x)
-    [SIMPLIFY] done (0.03s) -> 4*exp(3) + 4*cos(x)/(pi*x)
-[12:42:36] [111] 4*exp(3) + 4*cos(x)/(pi*x)
-    [SIMPLIFY] start: cos(x + (atan(tanh(4)) + 2)**2)
-    [SIMPLIFY] done (0.11s) -> cos(x + (atan(tanh(4)) + 2)**2)
-[12:42:37] [112] cos(x + (atan(tanh(4)) + 2)**2)
-    [SIMPLIFY] start: tanh(cosh(tanh((-x + sin(x))*sin(2))))
-    [SIMPLIFY] done (0.09s) -> tanh(cosh(tanh((x - sin(x))*sin(2))))
-[12:42:38] [113] tanh(cosh(tanh((x - sin(x))*sin(2))))
-    [SIMPLIFY] start: -asin(1 + 3/((x + 3)*sinh(2)))
-    [SIMPLIFY] done (0.28s) -> -asin((x + 3/sinh(2) + 3)/(x + 3))
-[12:42:40] [114] -asin((x + 3/sinh(2) + 3)/(x + 3))
-    [SIMPLIFY] start: 4/(x*(x - (-4)**(5*cosh(1))*x))
-    [SIMPLIFY] done (0.06s) -> 4/(x**2*(1 - (-4)**(5*cosh(1))))
-[12:42:40] [115] 4/(x**2*(1 - (-4)**(5*cosh(1))))
-    [SIMPLIFY] start: x + 4*(-x + cos(5)**x + 1)/pi
-    [SIMPLIFY] done (0.04s) -> (-4*x + pi*x + 4*cos(5)**x + 4)/pi
-[12:42:40] [116] (-4*x + pi*x + 4*cos(5)**x + 4)/pi
-    [SIMPLIFY] start: x*exp(x - 13) + asin(x)
-    [SIMPLIFY] done (0.02s) -> x*exp(x - 13) + asin(x)
-[12:42:40] [117] x*exp(x - 13) + asin(x)
-    [SIMPLIFY] start: x*(x - cosh(cos(sin(x))**(-2))) - 2
-    [SIMPLIFY] done (0.15s) -> x*(x - cosh(cos(sin(x))**(-2))) - 2
-[12:42:41] [118] x*(x - cosh(cos(sin(x))**(-2))) - 2
-    [SIMPLIFY] start: 5/(x - tan(2*x - atan(3)) + 1)
-    [SIMPLIFY] done (0.08s) -> 5/(x - tan(2*x - atan(3)) + 1)
-[12:42:41] [119] 5/(x - tan(2*x - atan(3)) + 1)
-    [SIMPLIFY] start: 1/(x**(9/2)*atan((-5)**x))
-    [SIMPLIFY] done (0.01s) -> 1/(x**(9/2)*atan((-5)**x))
-[12:42:41] [120] 1/(x**(9/2)*atan((-5)**x))
-    [SIMPLIFY] start: sin(5/sinh(sqrt(x + tan(x)))) + 2
-    [SIMPLIFY] done (0.12s) -> sin(5/sinh(sqrt(x + tan(x)))) + 2
-[12:42:41] [121] sin(5/sinh(sqrt(x + tan(x)))) + 2
-    [SIMPLIFY] start: log(x**(x**x)) + log(2) + 4 + I*pi
-    [SIMPLIFY] done (0.01s) -> log(x**(x**x)) + log(2) + 4 + I*pi
-    [SIMPLIFY] start: cosh(sin(cos(x - asin(x))))
-    [SIMPLIFY] done (0.03s) -> cosh(sin(cos(x - asin(x))))
-[12:42:42] [122] cosh(sin(cos(x - asin(x))))
-    [SIMPLIFY] start: atan((1 + tanh(atan(log(x)))/x)/x)
-    [SIMPLIFY] done (0.05s) -> atan((x + tanh(atan(log(x))))/x**2)
-[12:42:43] [123] atan((x + tanh(atan(log(x))))/x**2)
-    [SIMPLIFY] start: tan(x + x**(2 + log(5)**(-x)))
-    [SIMPLIFY] done (0.01s) -> tan(x + x**(2 + log(5)**(-x)))
-[12:42:43] [124] tan(x + x**(2 + log(5)**(-x)))
-    [SIMPLIFY] start: sin(x*cosh(x + 4))/x
-    [SIMPLIFY] done (0.07s) -> sin(x*cosh(x + 4))/x
-    [SIMPLIFY] start: (-9)**(x*cosh(3))
-    [SIMPLIFY] done (0.01s) -> (-9)**(x*cosh(3))
-[12:42:45] [125] (-9)**(x*cosh(3))
-    [SIMPLIFY] start: 2*x - 3/tan(sqrt(tan(2)**x))
-    [SIMPLIFY] done (0.07s) -> 2*x - 3/tan(sqrt(tan(2)**x))
-[12:42:46] [126] 2*x - 3/tan(sqrt(tan(2)**x))
-    [SIMPLIFY] start: -2*x + (3 - x)/atan((-x/5)**x)
-    [SIMPLIFY] done (0.02s) -> (-2*x*atan((-x)**x/5**x) - x + 3)/atan((-x)**x/5**x)
-[12:42:46] [127] (-2*x*atan((-x)**x/5**x) - x + 3)/atan((-x)**x/5**x)
-    [SIMPLIFY] start: (x + cosh(cosh(x) + 4))*tanh(x)
-    [SIMPLIFY] done (0.11s) -> (x + cosh(cosh(x) + 4))*tanh(x)
-[12:42:46] [128] (x + cosh(cosh(x) + 4))*tanh(x)
-    [SIMPLIFY] start: -(x + 5)*tanh(1) - cos(5)
-    [SIMPLIFY] done (0.09s) -> -(x + 5)*tanh(1) - cos(5)
-[12:42:47] [129] -(x + 5)*tanh(1) - cos(5)
-    [SIMPLIFY] start: exp(4*exp(x)**(3 - x) + 4)
-    [SIMPLIFY] done (0.03s) -> exp(4*exp(x)**(3 - x) + 4)
-[12:42:47] [130] exp(4*exp(x)**(3 - x) + 4)
-    [SIMPLIFY] start: (x - asin(sin(cos(1/(256*x)))))**5
-    [SIMPLIFY] done (0.06s) -> (x - asin(sin(cos(1/(256*x)))))**5
-[12:42:47] [131] (x - asin(sin(cos(1/(256*x)))))**5
-    [SIMPLIFY] start: x**atan(2)*(-x + tan(3))
-    [SIMPLIFY] done (0.02s) -> x**atan(2)*(-x + tan(3))
-[12:42:47] [132] x**atan(2)*(-x + tan(3))
-    [SIMPLIFY] start: cosh(x**2/x**cosh(x**(-5)))
-    [SIMPLIFY] done (0.05s) -> cosh(x**(2 - cosh(x**(-5))))
-[12:42:48] [133] cosh(x**(2 - cosh(x**(-5))))
-    [SIMPLIFY] start: tanh(x) - 4 + sin(20)
-    [SIMPLIFY] done (0.04s) -> tanh(x) - 4 + sin(20)
-[12:42:48] [134] tanh(x) - 4 + sin(20)
-    [SIMPLIFY] start: (-2)**(-x/2 + (-x + log(2*x))**x)
-    [SIMPLIFY] done (0.03s) -> (-2)**(-x/2 + (-x + log(2*x))**x)
-[12:42:48] [135] (-2)**(-x/2 + (-x + log(2*x))**x)
-    [SIMPLIFY] start: (-x + x**cos(x))**(-x + tanh(x))
-    [SIMPLIFY] done (0.06s) -> (-x + x**cos(x))**(-x + tanh(x))
-[12:42:48] [136] (-x + x**cos(x))**(-x + tanh(x))
-    [SIMPLIFY] start: (5*sinh(5))**x - (x - 1)**x
-    [SIMPLIFY] done (0.04s) -> 5**x*sinh(5)**x - (x - 1)**x
-[12:42:49] [137] 5**x*sinh(5)**x - (x - 1)**x
-    [SIMPLIFY] start: -x/(tan(sqrt(x))*atan(x))
-    [SIMPLIFY] done (0.02s) -> -x/(tan(sqrt(x))*atan(x))
-[12:42:49] [138] -x/(tan(sqrt(x))*atan(x))
-    [SIMPLIFY] start: x*(3 - 3*tan(x/cos(3) + x))
-    [SIMPLIFY] done (0.10s) -> 3*x*(1 - tan(x/cos(3) + x))
-[12:42:49] [139] 3*x*(1 - tan(x/cos(3) + x))
-    [SIMPLIFY] start: 4*x - 2 + 5/x
-    [SIMPLIFY] done (0.01s) -> 4*x - 2 + 5/x
-[12:42:49] [140] 4*x - 2 + 5/x
-    [SIMPLIFY] start: cos(exp(2*x - 5/(x - 4))**x)
-    [SIMPLIFY] done (0.06s) -> cos(exp((2*x*(x - 4) - 5)/(x - 4))**x)
-[12:42:49] [141] cos(exp((2*x*(x - 4) - 5)/(x - 4))**x)
-    [SIMPLIFY] start: cosh(3/(-x + x**(-2)))
-    [SIMPLIFY] done (0.06s) -> cosh(3*x**2/(x**3 - 1))
-[12:42:49] [142] cosh(3*x**2/(x**3 - 1))
-    [SIMPLIFY] start: exp(x**(-cos(4)/tan(3))) + log(x)
-    [SIMPLIFY] done (0.05s) -> exp(x**(-cos(4)/tan(3))) + log(x)
-[12:42:50] [143] exp(x**(-cos(4)/tan(3))) + log(x)
-    [SIMPLIFY] start: 4*x**(2*x + 2) - 20/pi
-    [SIMPLIFY] done (0.02s) -> 4*x**(2*x + 2) - 20/pi
-[12:42:50] [144] 4*x**(2*x + 2) - 20/pi
-    [SIMPLIFY] start: tanh((-2*cos(2))**cos(sqrt(x)))
-    [SIMPLIFY] done (0.02s) -> tanh((-2*cos(2))**cos(sqrt(x)))
-[12:42:50] [145] tanh((-2*cos(2))**cos(sqrt(x)))
-    [SIMPLIFY] start: x*cos(sinh(4))*tan(x) - x
-    [SIMPLIFY] done (0.03s) -> x*(cos(sinh(4))*tan(x) - 1)
-[12:42:50] [146] x*(cos(sinh(4))*tan(x) - 1)
-    [SIMPLIFY] start: x/asin(2*x)
-    [SIMPLIFY] done (0.00s) -> x/asin(2*x)
-[12:42:50] [147] x/asin(2*x)
-    [SIMPLIFY] start: x**exp(2)/(9**x - 1)
-    [SIMPLIFY] done (0.01s) -> x**exp(2)/(9**x - 1)
-[12:42:50] [148] x**exp(2)/(9**x - 1)
-    [SIMPLIFY] start: (x - 5)*(asin(x) + 3)/x**x
-    [SIMPLIFY] done (0.01s) -> (x - 5)*(asin(x) + 3)/x**x
-[12:42:50] [149] (x - 5)*(asin(x) + 3)/x**x
-    [SIMPLIFY] start: asin(x + I*pi/8)
-    [SIMPLIFY] done (0.01s) -> asin(x + I*pi/8)
-    [SIMPLIFY] start: sin(x + (x**(-2))**(1/(5*(-2)**x)))
-    [SIMPLIFY] done (0.01s) -> sin(x + (x**(-2))**(1/(5*(-2)**x)))
-[12:42:50] [150] sin(x + (x**(-2))**(1/(5*(-2)**x)))
-    [SIMPLIFY] start: -3*exp(x - sqrt(x*sin(x)))
-    [SIMPLIFY] done (0.06s) -> -3*exp(x - sqrt(x*sin(x)))
-[12:42:50] [151] -3*exp(x - sqrt(x*sin(x)))
-    [SIMPLIFY] start: tan(-cosh(4) + exp(2))
-    [SIMPLIFY] done (0.04s) -> tan(-cosh(4) + exp(2))
-    [SIMPLIFY] start: x - 5 - log(2) + 2*exp(4)/x
-    [SIMPLIFY] done (0.02s) -> x - 5 - log(2) + 2*exp(4)/x
-[12:42:50] [152] x - 5 - log(2) + 2*exp(4)/x
-    [SIMPLIFY] start: sin(x) - tan(exp(-1/243)*sinh(5))
-    [SIMPLIFY] done (0.04s) -> sin(x) - tan(exp(-1/243)*sinh(5))
-[12:42:50] [153] sin(x) - tan(exp(-1/243)*sinh(5))
-    [SIMPLIFY] start: -sin(x + 4 - 1/(4*x**2))
-    [SIMPLIFY] done (0.05s) -> -sin(x + 4 - 1/(4*x**2))
-[12:42:50] [154] -sin(x + 4 - 1/(4*x**2))
-    [SIMPLIFY] start: -asin(2)
-    [SIMPLIFY] done (0.00s) -> -asin(2)
-    [SIMPLIFY] start: -x - atan(x + 4) + tan(4)
-    [SIMPLIFY] done (0.02s) -> -x - atan(x + 4) + tan(4)
-[12:42:51] [155] -x - atan(x + 4) + tan(4)
-    [SIMPLIFY] start: 1
-    [SIMPLIFY] done (0.00s) -> 1
-    [SIMPLIFY] start: exp(x**(((x + 3)/tanh(x))**(sqrt(x))))
-    [SIMPLIFY] done (0.12s) -> exp(x**(((x + 3)/tanh(x))**(sqrt(x))))
-[12:42:51] [156] exp(x**(((x + 3)/tanh(x))**(sqrt(x))))
-    [SIMPLIFY] start: sqrt(x)/(32*asin(x))
-    [SIMPLIFY] done (0.00s) -> sqrt(x)/(32*asin(x))
-[12:42:51] [157] sqrt(x)/(32*asin(x))
-    [SIMPLIFY] start: exp(-2*x)**x/x**2
-    [SIMPLIFY] done (0.01s) -> exp(-2*x)**x/x**2
-[12:42:51] [158] exp(-2*x)**x/x**2
-    [SIMPLIFY] start: sqrt(x**x - (x**2)**x)
-    [SIMPLIFY] done (0.01s) -> sqrt(x**x - (x**2)**x)
-[12:42:51] [159] sqrt(x**x - (x**2)**x)
-    [SIMPLIFY] start: x**((x + 4)*tanh((-asin(4))**x))
-    [SIMPLIFY] done (0.05s) -> x**((x + 4)*tanh((-asin(4))**x))
-[12:42:51] [160] x**((x + 4)*tanh((-asin(4))**x))
-    [SIMPLIFY] start: -x + exp(82/81)
-    [SIMPLIFY] done (0.01s) -> -x + exp(82/81)
-[12:42:51] [161] -x + exp(82/81)
-    [SIMPLIFY] start: 25*x*cosh((sqrt(5)*I*x)**x)
-    [SIMPLIFY] done (0.03s) -> 25*x*cosh((sqrt(5)*I*x)**x)
-    [SIMPLIFY] start: log(-x/2 - 5 - 10/x)
-    [SIMPLIFY] done (0.01s) -> log(-x/2 - 5 - 10/x)
-[12:42:52] [162] log(-x/2 - 5 - 10/x)
-    [SIMPLIFY] start: E*x*exp(-3*x/2) - 3
-    [SIMPLIFY] done (0.03s) -> x*exp(1 - 3*x/2) - 3
-[12:42:52] [163] x*exp(1 - 3*x/2) - 3
-    [SIMPLIFY] start: x + 1/144
-    [SIMPLIFY] done (0.00s) -> x + 1/144
-[12:42:52] [164] x + 1/144
-    [SIMPLIFY] start: cosh(sqrt(log(2) + I*pi/2) + x**(-3))
-    [SIMPLIFY] done (0.06s) -> cosh(sqrt(2*log(4) + 2*I*pi)/2 + x**(-3))
-    [SIMPLIFY] start: 9 - pi/4
-    [SIMPLIFY] done (0.00s) -> 9 - pi/4
-    [SIMPLIFY] start: 1
-    [SIMPLIFY] done (0.00s) -> 1
-    [SIMPLIFY] start: (x*sinh(x) + x*cosh(x) + x)**2
-    [SIMPLIFY] done (0.08s) -> x**2*(exp(x) + 1)**2
-[12:42:52] [165] x**2*(exp(x) + 1)**2
-    [SIMPLIFY] start: x - cos(tanh(x - 1)) - 256
-    [SIMPLIFY] done (0.03s) -> x - cos(tanh(x - 1)) - 256
-[12:42:52] [166] x - cos(tanh(x - 1)) - 256
-    [SIMPLIFY] start: x*(x - 4)*sin(3)/6 + 2
-    [SIMPLIFY] done (0.03s) -> x*(x - 4)*sin(3)/6 + 2
-[12:42:52] [167] x*(x - 4)*sin(3)/6 + 2
-    [SIMPLIFY] start: (x*(x + asin(exp(x)))**2/3)**x
-    [SIMPLIFY] done (0.01s) -> (x*(x + asin(exp(x)))**2/3)**x
-[12:42:52] [168] (x*(x + asin(exp(x)))**2/3)**x
-    [SIMPLIFY] start: (asin(x) - 4)/(x/cosh(2) + x)
-    [SIMPLIFY] done (0.04s) -> (tanh(1)**2 + 1)*(asin(x) - 4)/(2*x)
-[12:42:52] [169] (tanh(1)**2 + 1)*(asin(x) - 4)/(2*x)
-    [SIMPLIFY] start: (2 + 2*I)*(x/(x - 4) + 5) - 2
-    [SIMPLIFY] done (0.03s) -> (x*(10 + 12*I) - 32 - 40*I)/(x - 4)
-    [SIMPLIFY] start: 2*x + cosh(5**(exp(x) + 1))
-    [SIMPLIFY] done (0.03s) -> 2*x + cosh(5**(exp(x) + 1))
-[12:42:52] [170] 2*x + cosh(5**(exp(x) + 1))
-    [SIMPLIFY] start: x*(sinh(sinh(2*x))**x + sin(4))
-    [SIMPLIFY] done (0.08s) -> x*(sinh(sinh(2*x))**x + sin(4))
-[12:42:53] [171] x*(sinh(sinh(2*x))**x + sin(4))
-    [SIMPLIFY] start: exp(x*(x/10 - x**x/10))
-    [SIMPLIFY] done (0.04s) -> exp(x*(x - x**x)/10)
-[12:42:53] [172] exp(x*(x - x**x)/10)
-    [SIMPLIFY] start: sinh(2**(3 - 7*x/5))
-    [SIMPLIFY] done (0.02s) -> sinh(2**(3 - 7*x/5))
-[12:42:53] [173] sinh(2**(3 - 7*x/5))
-    [SIMPLIFY] start: sqrt(-x) + 1/sqrt(x)
-    [SIMPLIFY] done (0.01s) -> sqrt(-x) + 1/sqrt(x)
-[12:42:53] [174] sqrt(-x) + 1/sqrt(x)
-    [SIMPLIFY] start: -4**x + x + (x + pi/4)/x
-    [SIMPLIFY] done (0.03s) -> -4**x + x + 1 + pi/(4*x)
-[12:42:53] [175] -4**x + x + 1 + pi/(4*x)
-    [SIMPLIFY] start: 0**atan(log(x - 5)) - tanh(x)
-    [SIMPLIFY] done (0.06s) -> 0**atan(log(x - 5)) - tanh(x)
-[12:42:53] [176] 0**atan(log(x - 5)) - tanh(x)
-    [SIMPLIFY] start: sinh(2*x - cos(sin(1)))
-    [SIMPLIFY] done (0.03s) -> sinh(2*x - cos(sin(1)))
-[12:42:53] [177] sinh(2*x - cos(sin(1)))
-    [SIMPLIFY] start: 2/x**((-3)**(x*asin(5)**(-x - 5)))
-    [SIMPLIFY] done (0.07s) -> 2/x**((-3)**(x*asin(5)**(-x - 5)))
-[12:42:54] [178] 2/x**((-3)**(x*asin(5)**(-x - 5)))
-    [SIMPLIFY] start: cos(x**2/(tan(x)**x)**(2*x))
-    [SIMPLIFY] done (0.03s) -> cos(x**2/(tan(x)**x)**(2*x))
-[12:42:54] [179] cos(x**2/(tan(x)**x)**(2*x))
-    [SIMPLIFY] start: x*sqrt(x**3 - 2) - x - 4
-    [SIMPLIFY] done (0.01s) -> x*sqrt(x**3 - 2) - x - 4
-[12:42:54] [180] x*sqrt(x**3 - 2) - x - 4
-    [SIMPLIFY] start: x**2 - 12*x + 12*tanh(x)
-    [SIMPLIFY] done (0.05s) -> x**2 - 12*x + 12*tanh(x)
-[12:42:55] [181] x**2 - 12*x + 12*tanh(x)
-    [SIMPLIFY] start: cos(5*x*exp(x) - sin(1) + 5)
-    [SIMPLIFY] done (0.03s) -> cos(5*x*exp(x) - sin(1) + 5)
-[12:42:55] [182] cos(5*x*exp(x) - sin(1) + 5)
-    [SIMPLIFY] start: (x - 7)/(x + exp(-5) + 2)
-    [SIMPLIFY] done (0.02s) -> (x - 7)*exp(5)/((x + 2)*exp(5) + 1)
-[12:42:55] [183] (x - 7)*exp(5)/((x + 2)*exp(5) + 1)
-    [SIMPLIFY] start: log(x*(x + 2*(x + 1)/x))
-    [SIMPLIFY] done (0.01s) -> log(x**2 + 2*x + 2)
-[12:42:55] [184] log(x**2 + 2*x + 2)
-    [SIMPLIFY] start: x - cos(atan(x**(sqrt(x))) - 3/x)
-    [SIMPLIFY] done (0.06s) -> x - cos(atan(x**(sqrt(x))) - 3/x)
-[12:42:55] [185] x - cos(atan(x**(sqrt(x))) - 3/x)
-    [SIMPLIFY] start: 4*sin(-x + 2 + cosh(4))
-    [SIMPLIFY] done (0.06s) -> 4*sin(-x + 2 + cosh(4))
-[12:42:55] [186] 4*sin(-x + 2 + cosh(4))
-    [SIMPLIFY] start: (x + cosh(1))/(4*sqrt(asin(x)))
-    [SIMPLIFY] done (0.02s) -> (x + cosh(1))/(4*sqrt(asin(x)))
-[12:42:55] [187] (x + cosh(1))/(4*sqrt(asin(x)))
-    [SIMPLIFY] start: (x**2)**(x + sqrt(2*x - 3))
-    [SIMPLIFY] done (0.01s) -> (x**2)**(x + sqrt(2*x - 3))
-[12:42:56] [188] (x**2)**(x + sqrt(2*x - 3))
-    [SIMPLIFY] start: -(2*x - tanh(1))*exp(-x)*tan(2)
-    [SIMPLIFY] done (0.06s) -> -(2*x - tanh(1))*exp(-x)*tan(2)
-[12:42:56] [189] -(2*x - tanh(1))*exp(-x)*tan(2)
-    [SIMPLIFY] start: tanh(x)**(-x*sinh(2))
-    [SIMPLIFY] done (0.04s) -> tanh(x)**(-x*sinh(2))
-[12:42:56] [190] tanh(x)**(-x*sinh(2))
-    [SIMPLIFY] start: sinh(x - cosh(x) + 2)
-    [SIMPLIFY] done (0.02s) -> sinh(x - cosh(x) + 2)
-[12:42:56] [191] sinh(x - cosh(x) + 2)
-    [SIMPLIFY] start: exp(2) + tanh(log(x))**(-4*x)
-    [SIMPLIFY] done (0.09s) -> exp(2) + tanh(log(x))**(-4*x)
-[12:42:56] [192] exp(2) + tanh(log(x))**(-4*x)
-    [SIMPLIFY] start: 1/(243*(-cos(tan(1))*tanh(5))**(5*x))
-    [SIMPLIFY] done (0.14s) -> 1/(243*(-cos(tan(1))*tanh(5))**(5*x))
-[12:42:57] [193] 1/(243*(-cos(tan(1))*tanh(5))**(5*x))
-    [SIMPLIFY] start: exp(tan(x))
-    [SIMPLIFY] done (0.03s) -> exp(tan(x))
-[12:42:57] [194] exp(tan(x))
-    [SIMPLIFY] start: 2*x*(5 - 3/2**sinh(cos(x)))
-    [SIMPLIFY] done (0.07s) -> 2*x*(5 - 3/2**sinh(cos(x)))
-[12:42:57] [195] 2*x*(5 - 3/2**sinh(cos(x)))
-    [SIMPLIFY] start: x**(x + (x + 3)**2/(2*x**2))
-    [SIMPLIFY] done (0.03s) -> x**(x + (x + 3)**2/(2*x**2))
-[12:42:57] [196] x**(x + (x + 3)**2/(2*x**2))
-    [SIMPLIFY] start: -atan(asin(5*sqrt(x)))
-    [SIMPLIFY] done (0.01s) -> -atan(asin(5*sqrt(x)))
-[12:42:57] [197] -atan(asin(5*sqrt(x)))
-    [SIMPLIFY] start: (5**x + tanh(tanh(sinh(2))) + 4)**2
-    [SIMPLIFY] done (0.11s) -> (5**x + tanh(tanh(sinh(2))) + 4)**2
-[12:42:58] [198] (5**x + tanh(tanh(sinh(2))) + 4)**2
-    [SIMPLIFY] start: 4**x*x*exp(-8)
-    [SIMPLIFY] done (0.01s) -> 4**x*x*exp(-8)
-[12:42:58] [199] 4**x*x*exp(-8)
-    [SIMPLIFY] start: sqrt(3)*atan(x/(x - 9))/3
-    [SIMPLIFY] done (0.01s) -> sqrt(3)*atan(x/(x - 9))/3
-[12:42:58] [200] sqrt(3)*atan(x/(x - 9))/3
-    [SIMPLIFY] start: -sin(x*tan(4) - sinh(2) + 9)
-    [SIMPLIFY] done (0.11s) -> -sin(x*tan(4) - sinh(2) + 9)
-[12:42:58] [201] -sin(x*tan(4) - sinh(2) + 9)
-    [SIMPLIFY] start: (tanh(x) - 3 + pi/4)*sin(1)
-    [SIMPLIFY] done (0.10s) -> (tanh(x) - 3 + pi/4)*sin(1)
-[12:42:58] [202] (tanh(x) - 3 + pi/4)*sin(1)
-    [SIMPLIFY] start: 4*exp(tan(4) + cosh(4)/(4*x))
-    [SIMPLIFY] done (0.10s) -> 4*exp(tan(4) + cosh(4)/(4*x))
-[12:42:59] [203] 4*exp(tan(4) + cosh(4)/(4*x))
-    [SIMPLIFY] start: sqrt(tan(x + atan(5))**(1/9) + 4)
-    [SIMPLIFY] done (0.16s) -> sqrt(tan(x + atan(5))**(1/9) + 4)
-[12:42:59] [204] sqrt(tan(x + atan(5))**(1/9) + 4)
-    [SIMPLIFY] start: cos((-2)**(-5*x))*sinh(1)/x
-    [SIMPLIFY] done (0.02s) -> cos((-2)**(-5*x))*sinh(1)/x
-[12:43:00] [205] cos((-2)**(-5*x))*sinh(1)/x
-    [SIMPLIFY] start: (9*x - 9)*sin(tan(x))**x
-    [SIMPLIFY] done (0.03s) -> (9*x - 9)*sin(tan(x))**x
-[12:43:00] [206] (9*x - 9)*sin(tan(x))**x
-    [SIMPLIFY] start: -x*sinh(3/(3/5 - x**(x**x)))
-    [SIMPLIFY] done (0.05s) -> x*sinh(15/(5*x**(x**x) - 3))
-[12:43:00] [207] x*sinh(15/(5*x**(x**x) - 3))
-    [SIMPLIFY] start: 0**tanh(x) - 2
-    [SIMPLIFY] done (0.03s) -> 0**tanh(x) - 2
-[12:43:00] [208] 0**tanh(x) - 2
-    [SIMPLIFY] start: (sin(x**(2*I)) + 6)/x
-    [SIMPLIFY] done (0.02s) -> (sin(x**(2*I)) + 6)/x
-    [SIMPLIFY] start: (1/(tan(cosh(x)) + 8))**x
-    [SIMPLIFY] done (0.11s) -> (1/(tan(cosh(x)) + 8))**x
-[12:43:00] [209] (1/(tan(cosh(x)) + 8))**x
-    [SIMPLIFY] start: -3*x + 3 + x**(-9)
-    [SIMPLIFY] done (0.02s) -> -3*x + 3 + x**(-9)
-[12:43:00] [210] -3*x + 3 + x**(-9)
-    [SIMPLIFY] start: -3/(5*(5 - x))
-    [SIMPLIFY] done (0.01s) -> 3/(5*(x - 5))
-[12:43:00] [211] 3/(5*(x - 5))
-    [SIMPLIFY] start: x**(3**(2*x - tanh(5/x) - 4))
-    [SIMPLIFY] done (0.14s) -> x**(3**(2*x - tanh(5/x) - 4))
-[12:43:01] [212] x**(3**(2*x - tanh(5/x) - 4))
-    [SIMPLIFY] start: sin(x) - 2 + 4*asin(cosh(2))
-    [SIMPLIFY] done (0.04s) -> sin(x) - 2 + 4*asin(cosh(2))
-[12:43:01] [213] sin(x) - 2 + 4*asin(cosh(2))
-    [SIMPLIFY] start: (-2)**((-asin(2))**(tan(sin(sinh(x))) + 2))
-    [SIMPLIFY] done (0.49s) -> (-2)**((-asin(2))**(tan(sin(sinh(x))) + 2))
-[12:43:01] [214] (-2)**((-asin(2))**(tan(sin(sinh(x))) + 2))
-    [SIMPLIFY] start: x**(-tanh(x) - log(5) - 1 - I*pi)
-    [SIMPLIFY] done (0.12s) -> x**(-tanh(x) - log(5) - 1 - I*pi)
-    [SIMPLIFY] start: -2*log(x) + cosh(log(x))
-    [SIMPLIFY] done (0.02s) -> -2*log(x) + cosh(log(x))
-[12:43:02] [215] -2*log(x) + cosh(log(x))
-    [SIMPLIFY] start: x*sinh(x)/(4*(cos(x) + 5))
-    [SIMPLIFY] done (0.12s) -> x*sinh(x)/(4*(cos(x) + 5))
-[12:43:02] [216] x*sinh(x)/(4*(cos(x) + 5))
-    [SIMPLIFY] start: (-sinh(2/sin(tanh(x))) - 4)**x
-    [SIMPLIFY] done (0.23s) -> (-sinh(2/sin(tanh(x))) - 4)**x
-[12:43:02] [217] (-sinh(2/sin(tanh(x))) - 4)**x
-    [SIMPLIFY] start: (cos(x)*cosh(5*sqrt(6)*x/12))**x
-    [SIMPLIFY] done (0.04s) -> (cos(x)*cosh(5*sqrt(6)*x/12))**x
-[12:43:03] [218] (cos(x)*cosh(5*sqrt(6)*x/12))**x
-    [SIMPLIFY] start: sin((x*tanh(x))**(sinh(4)/4))
-    [SIMPLIFY] done (0.05s) -> sin((x*tanh(x))**(sinh(4)/4))
-[12:43:03] [219] sin((x*tanh(x))**(sinh(4)/4))
-    [SIMPLIFY] start: -x**5*tan(5) + x*log(x) + 4
-    [SIMPLIFY] done (0.02s) -> -x**5*tan(5) + x*log(x) + 4
-[12:43:03] [220] -x**5*tan(5) + x*log(x) + 4
-    [SIMPLIFY] start: cos(tan(1))**x + tan(x)
-    [SIMPLIFY] done (0.04s) -> cos(tan(1))**x + tan(x)
-[12:43:03] [221] cos(tan(1))**x + tan(x)
-    [SIMPLIFY] start: atan((-x - pi/(4*x))**log(sqrt(2)))
-    [SIMPLIFY] done (0.02s) -> atan((-x - pi/(4*x))**(log(2)/2))
-[12:43:03] [222] atan((-x - pi/(4*x))**(log(2)/2))
-    [SIMPLIFY] start: (x*x**x)**(-x**(3*x))
-    [SIMPLIFY] done (0.01s) -> (x**(x + 1))**(-x**(3*x))
-[12:43:03] [223] (x**(x + 1))**(-x**(3*x))
-    [SIMPLIFY] start: -x**(x - tanh(tan(tan(x))))/3
-    [SIMPLIFY] done (0.25s) -> -x**(x - tanh(tan(tan(x))))/3
-[12:43:04] [224] -x**(x - tanh(tan(tan(x))))/3
-    [SIMPLIFY] start: x**(tanh(6) + 5 - 1/x**2)
-    [SIMPLIFY] done (0.07s) -> x**(tanh(6) + 5 - 1/x**2)
-[12:43:04] [225] x**(tanh(6) + 5 - 1/x**2)
-    [SIMPLIFY] start: -3*cos(x)*tan(1)
-    [SIMPLIFY] done (0.01s) -> -3*cos(x)*tan(1)
-[12:43:04] [226] -3*cos(x)*tan(1)
-    [SIMPLIFY] start: sinh(1024)**(x**(-4*sqrt(tanh(x))))
-    [SIMPLIFY] start: -atan(sinh(3*exp(-(-3)**x)**x))
-    [SIMPLIFY] done (0.12s) -> -atan(sinh(3*exp(-(-3)**x)**x))
-[12:43:07] [227] -atan(sinh(3*exp(-(-3)**x)**x))
-    [SIMPLIFY] start: 4*x*(x**2/(tan(x) + 5) - 4)
-    [SIMPLIFY] done (0.09s) -> 4*x*(x**2 - 4*tan(x) - 20)/(tan(x) + 5)
-    [SIMPLIFY] timed out (3.03s)
-[12:43:08] [228] 4*x*(x**2 - 4*tan(x) - 20)/(tan(x) + 5)
-    [SIMPLIFY] start: -3**(-3 + sinh(4))*x
-    [SIMPLIFY] done (0.16s) -> -3**(-3 + sinh(4))*x
-[12:43:08] [229] -3**(-3 + sinh(4))*x
-    [SIMPLIFY] start: 2*sinh(x - 9) + cosh(x)
-    [SIMPLIFY] done (0.26s) -> 2*sinh(x - 9) + cosh(x)
-[12:43:10] [230] 2*sinh(x - 9) + cosh(x)
-    [SIMPLIFY] start: (x**(x*sinh(log(2 - x)) - 3))**x
-    [SIMPLIFY] done (0.15s) -> (x**(x*sinh(log(2 - x)) - 3))**x
-    [SIMPLIFY] start: -2/(x - cosh(cos(x - 1)))
-    [SIMPLIFY] done (0.56s) -> -2/(x - cosh(cos(x - 1)))
-[12:43:13] [231] -2/(x - cosh(cos(x - 1)))
-    [SIMPLIFY] start: -cos(x)**exp(8) - 2
-    [SIMPLIFY] done (0.05s) -> -cos(x)**exp(8) - 2
-[12:43:13] [232] -cos(x)**exp(8) - 2
-    [SIMPLIFY] start: x**16 - x**2*sinh(x) - 1
-    [SIMPLIFY] done (0.34s) -> x**16 - x**2*sinh(x) - 1
-[12:43:14] [233] x**16 - x**2*sinh(x) - 1
-    [SIMPLIFY] start: x - sqrt(x**exp(5) + 2)
-    [SIMPLIFY] done (0.04s) -> x - sqrt(x**exp(5) + 2)
-[12:43:14] [234] x - sqrt(x**exp(5) + 2)
-    [SIMPLIFY] start: cosh(x**x - 3*tanh(x) + cos(1))
-    [SIMPLIFY] done (0.18s) -> cosh(x**x - 3*tanh(x) + cos(1))
-    [SIMPLIFY] start: exp(cos(2 - sqrt(log(3))))
-    [SIMPLIFY] done (0.12s) -> exp(cos(2 - sqrt(log(3))))
-    [SIMPLIFY] start: 2*I/cosh(2*sqrt(2)*sqrt(-x**2))
-    [SIMPLIFY] done (0.22s) -> 2*I/cosh(2*sqrt(2)*sqrt(-x**2))
-    [SIMPLIFY] start: x*sqrt(-atan(exp(x + 2)*sin(3)))
-    [SIMPLIFY] done (0.10s) -> x*sqrt(-atan(exp(x + 2)*sin(3)))
-[12:43:17] [235] x*sqrt(-atan(exp(x + 2)*sin(3)))
-    [SIMPLIFY] start: x**cosh(sqrt((2*x + 1)**x) - 5)
-    [SIMPLIFY] done (0.20s) -> x**cosh(sqrt((2*x + 1)**x) - 5)
-[12:43:18] [236] x**cosh(sqrt((2*x + 1)**x) - 5)
-    [SIMPLIFY] start: -x - 4 + exp(-610351562500)
-    [SIMPLIFY] done (0.05s) -> -x - 4 + exp(-610351562500)
-[12:43:19] [237] -x - 4 + exp(-610351562500)
-    [SIMPLIFY] start: -1/sinh(624/625)
-    [SIMPLIFY] done (0.46s) -> -1/sinh(624/625)
-    [SIMPLIFY] start: x
-    [SIMPLIFY] done (0.01s) -> x
-[12:43:19] [238] x
-    [SIMPLIFY] start: -2/(atan(x + 3)/2 - 3)
-    [SIMPLIFY] done (0.03s) -> -4/(atan(x + 3) - 6)
-[12:43:20] [239] -4/(atan(x + 3) - 6)
-    [SIMPLIFY] start: 4**(4*x - 4*exp(2*x + 5/x))
-    [SIMPLIFY] done (0.25s) -> 2**(8*x - 8*exp((2*x**2 + 5)/x))
-[12:43:20] [240] 2**(8*x - 8*exp((2*x**2 + 5)/x))
-    [SIMPLIFY] start: (-cosh(3) + sin(1))/(3*x)**x
-    [SIMPLIFY] done (0.08s) -> (-cosh(3) + sin(1))/(3*x)**x
-[12:43:21] [241] (-cosh(3) + sin(1))/(3*x)**x
-    [SIMPLIFY] start: (exp(2) + 3/x)/cos(sinh(x)) - 2
-    [SIMPLIFY] done (0.13s) -> -2 + exp(2)/cos(sinh(x)) + 3/(x*cos(sinh(x)))
-[12:43:21] [242] -2 + exp(2)/cos(sinh(x)) + 3/(x*cos(sinh(x)))
-    [SIMPLIFY] start: cos(sinh(tan(x**2)))/(2*x - 2)
-    [SIMPLIFY] done (0.18s) -> cos(sinh(tan(x**2)))/(2*(x - 1))
-[12:43:22] [243] cos(sinh(tan(x**2)))/(2*(x - 1))
-    [SIMPLIFY] start: x**((-2)**tanh(cosh(4 - pi)))
-    [SIMPLIFY] done (0.78s) -> x**((-2)**tanh(cosh(4 - pi)))
-    [SIMPLIFY] start: (-5)**cosh(sin(log(x)))
-    [SIMPLIFY] done (0.12s) -> (-5)**cosh(sin(log(x)))
-[12:43:24] [244] (-5)**cosh(sin(log(x)))
-    [SIMPLIFY] start: exp(x - 3) + sinh(atan(x))
-    [SIMPLIFY] done (0.13s) -> exp(x - 3) + sinh(atan(x))
-[12:43:25] [245] exp(x - 3) + sinh(atan(x))
-    [SIMPLIFY] start: x + sqrt(x + 3*atan(exp(x))) + 4
-    [SIMPLIFY] done (0.03s) -> x + sqrt(x + 3*atan(exp(x))) + 4
-[12:43:25] [246] x + sqrt(x + 3*atan(exp(x))) + 4
-    [SIMPLIFY] start: atan(exp(((-4)**cosh(x) + x)**(-3)))**4
-    [SIMPLIFY] done (0.23s) -> atan(exp(((-4)**cosh(x) + x)**(-3)))**4
-    [SIMPLIFY] start: (-x - 5)*(x - 5)**sinh(x) + cos(x)
-    [SIMPLIFY] done (0.13s) -> -(x - 5)**sinh(x)*(x + 5) + cos(x)
-[12:43:28] [247] -(x - 5)**sinh(x)*(x + 5) + cos(x)
-    [SIMPLIFY] start: x**x + tan(exp(x)) - 3
-    [SIMPLIFY] done (0.03s) -> x**x + tan(exp(x)) - 3
-[12:43:28] [248] x**x + tan(exp(x)) - 3
-    [SIMPLIFY] start: 1 - x
-    [SIMPLIFY] done (0.01s) -> 1 - x
-[12:43:28] [249] 1 - x
-    [SIMPLIFY] start: x - sin(5*tanh(9))
-    [SIMPLIFY] done (0.06s) -> x - sin(5*tanh(9))
-[12:43:28] [250] x - sin(5*tanh(9))
-    [SIMPLIFY] start: sinh(5) + 16/x
-    [SIMPLIFY] done (0.26s) -> sinh(5) + 16/x
-[12:43:29] [251] sinh(5) + 16/x
-    [SIMPLIFY] start: 2*x + 2*sinh(5)/x
-    [SIMPLIFY] done (0.13s) -> 2*x + 2*sinh(5)/x
-[12:43:29] [252] 2*x + 2*sinh(5)/x
-    [SIMPLIFY] start: -1 - 1/5**(x/sin(x - 2))
-    [SIMPLIFY] done (0.17s) -> -1 - 1/5**(x/sin(x - 2))
-[12:43:30] [253] -1 - 1/5**(x/sin(x - 2))
-    [SIMPLIFY] start: -3*(-tan(12/cosh(4*x)))**x
-    [SIMPLIFY] done (0.26s) -> -3*(-tan(12/cosh(4*x)))**x
-[12:43:31] [254] -3*(-tan(12/cosh(4*x)))**x
-    [SIMPLIFY] start: 4**(x*sqrt(x*cos(x - cosh(2))))
-    [SIMPLIFY] done (0.21s) -> 4**(x*sqrt(x*cos(x - cosh(2))))
-[12:43:32] [255] 4**(x*sqrt(x*cos(x - cosh(2))))
-    [SIMPLIFY] start: -x
-    [SIMPLIFY] done (0.02s) -> -x
-[12:43:32] [256] -x
-    [SIMPLIFY] start: -x + 2*x/asin(x + 5)
-    [SIMPLIFY] done (0.04s) -> -x + 2*x/asin(x + 5)
-[12:43:33] [257] -x + 2*x/asin(x + 5)
-    [SIMPLIFY] start: sinh(cos(x*(x + log(sinh(3)) + I*pi) + 3))
-    [SIMPLIFY] done (0.59s) -> sinh(cos(x*(x + log(sinh(3)) + I*pi) + 3))
-    [SIMPLIFY] start: 7/4 + (3 - 3*x)/x
-    [SIMPLIFY] done (0.04s) -> -5/4 + 3/x
-[12:43:34] [258] -5/4 + 3/x
-    [SIMPLIFY] start: x/5 + sinh(1)/5 + 3
-    [SIMPLIFY] done (0.07s) -> x/5 + sinh(1)/5 + 3
-[12:43:34] [259] x/5 + sinh(1)/5 + 3
-    [SIMPLIFY] start: 5 - 5*x**(-x - 3/x)
-    [SIMPLIFY] done (0.04s) -> 5 - 5*x**(-x - 3/x)
-[12:43:35] [260] 5 - 5*x**(-x - 3/x)
-    [SIMPLIFY] start: -sin(x) - cosh(1/x)/3 - 5
-    [SIMPLIFY] done (0.13s) -> -sin(x) - cosh(1/x)/3 - 5
-[12:43:36] [261] -sin(x) - cosh(1/x)/3 - 5
-    [SIMPLIFY] start: x*cos((-5)**(x*sin(3))*tanh(3))
-    [SIMPLIFY] done (0.17s) -> x*cos((-5)**(x*sin(3))*tanh(3))
-[12:43:36] [262] x*cos((-5)**(x*sin(3))*tanh(3))
-    [SIMPLIFY] start: log(-x**2/4 - x/4)**(-4**x + x)
-    [SIMPLIFY] done (0.09s) -> log(x*(-x - 1)/4)**(-4**x + x)
-[12:43:36] [263] log(x*(-x - 1)/4)**(-4**x + x)
-    [SIMPLIFY] start: (-4)**(2*asin(9*x**2))
-    [SIMPLIFY] done (0.04s) -> (-4)**(2*asin(9*x**2))
-[12:43:37] [264] (-4)**(2*asin(9*x**2))
-    [SIMPLIFY] start: -cosh((-atan(x))**x) + sin(1)
-    [SIMPLIFY] done (0.09s) -> -cosh((-atan(x))**x) + sin(1)
-[12:43:37] [265] -cosh((-atan(x))**x) + sin(1)
-    [SIMPLIFY] start: -3*(4 - 20/x)/x
-    [SIMPLIFY] done (0.03s) -> 12*(5 - x)/x**2
-[12:43:37] [266] 12*(5 - x)/x**2
-    [SIMPLIFY] start: cosh(2*x/3 + x**x/3)/3 - 3
-    [SIMPLIFY] done (0.17s) -> cosh(2*x/3 + x**x/3)/3 - 3
-[12:43:38] [267] cosh(2*x/3 + x**x/3)/3 - 3
-    [SIMPLIFY] start: -2 + I*sqrt(tanh(5)) + x**(-(-3)**x)
-    [SIMPLIFY] done (0.37s) -> -2 + I*sqrt(tanh(5)) + x**(-(-3)**x)
-    [SIMPLIFY] start: cosh(2*(-x - 3)**cos(4))
-    [SIMPLIFY] done (0.07s) -> cosh(2*(-x - 3)**cos(4))
-    [SIMPLIFY] start: -20/x
-    [SIMPLIFY] done (0.03s) -> -20/x
-[12:43:40] [268] -20/x
-    [SIMPLIFY] start: (x*tan(4)/(-3 + cosh(4)))**x
-    [SIMPLIFY] done (0.17s) -> (-x*tan(4)/(3 - cosh(4)))**x
-    [SIMPLIFY] start: -log(-tan(x))**5 - 6
-    [SIMPLIFY] done (0.09s) -> -log(-tan(x))**5 - 6
-[12:43:43] [269] -log(-tan(x))**5 - 6
-    [SIMPLIFY] start: (x + 1)**(log(5) + I*pi)
-    [SIMPLIFY] done (0.04s) -> (x + 1)**(log(5) + I*pi)
-    [SIMPLIFY] start: sqrt(3)*sqrt(-1/(2*x - asin(4*x))) + 2
-    [SIMPLIFY] done (0.06s) -> sqrt(3)*sqrt(-1/(2*x - asin(4*x))) + 2
-[12:43:43] [270] sqrt(3)*sqrt(-1/(2*x - asin(4*x))) + 2
-    [SIMPLIFY] start: x**((3 - x/3)*sin(x - 4)/5)
-    [SIMPLIFY] done (0.12s) -> x**((9 - x)*sin(x - 4)/15)
-[12:43:44] [271] x**((9 - x)*sin(x - 4)/15)
-    [SIMPLIFY] start: x + asin(x) + 5 - 1/tanh(x)**5
-    [SIMPLIFY] done (0.72s) -> x + asin(x) + 5 - 1/tanh(x)**5
-[12:43:45] [272] x + asin(x) + 5 - 1/tanh(x)**5
-    [SIMPLIFY] start: cos(5)/8
-    [SIMPLIFY] done (0.03s) -> cos(5)/8
-    [SIMPLIFY] start: (5 - asin(exp(asin(x - 4) - 5)))**2
-    [SIMPLIFY] done (0.09s) -> (asin(exp(asin(x - 4) - 5)) - 5)**2
-    [SIMPLIFY] start: x - 5
-    [SIMPLIFY] done (0.02s) -> x - 5
-[12:43:47] [273] x - 5
-    [SIMPLIFY] start: (-x/4)**(tanh(x)**(6*cos(x)))
-    [SIMPLIFY] done (0.12s) -> (-x/4)**(tanh(x)**(6*cos(x)))
-[12:43:48] [274] (-x/4)**(tanh(x)**(6*cos(x)))
-    [SIMPLIFY] start: -4*x*sin(tanh(x*sqrt(x**2)))
-    [SIMPLIFY] done (0.14s) -> -4*x*sin(tanh(x*sqrt(x**2)))
-[12:43:48] [275] -4*x*sin(tanh(x*sqrt(x**2)))
-    [SIMPLIFY] start: sqrt(3)/(x**2 - atan(4))
-    [SIMPLIFY] done (0.03s) -> sqrt(3)/(x**2 - atan(4))
-[12:43:49] [276] sqrt(3)/(x**2 - atan(4))
-    [SIMPLIFY] start: 1 - 2**(1/5)/(-1/x**x)**(2/5)
-    [SIMPLIFY] done (0.04s) -> 1 - 2**(1/5)/(-1/x**x)**(2/5)
-[12:43:50] [277] 1 - 2**(1/5)/(-1/x**x)**(2/5)
-    [SIMPLIFY] start: -x
-    [SIMPLIFY] done (0.02s) -> -x
-[12:43:50] [278] -x
-    [SIMPLIFY] start: 1/(-2*x + x**x + tan(sin(x)))
-    [SIMPLIFY] done (0.18s) -> 1/(-2*x + x**x + tan(sin(x)))
-[12:43:50] [279] 1/(-2*x + x**x + tan(sin(x)))
-    [SIMPLIFY] start: ((x + 2)*cos(x + 4))**(sqrt(2)*I)
-    [SIMPLIFY] done (0.08s) -> ((x + 2)*cos(x + 4))**(sqrt(2)*I)
-    [SIMPLIFY] start: (-4)**((x + 1)/sinh(x)) - 4
-    [SIMPLIFY] done (0.14s) -> (-4)**((x + 1)/sinh(x)) - 4
-[12:43:52] [280] (-4)**((x + 1)/sinh(x)) - 4
-    [SIMPLIFY] start: x**(sqrt((5*cos(log(x)))**(1/x)))
-    [SIMPLIFY] done (0.08s) -> x**(sqrt((5*cos(log(x)))**(1/x)))
-[12:43:53] [281] x**(sqrt((5*cos(log(x)))**(1/x)))
-    [SIMPLIFY] start: -atan(sqrt(3)*x) - 4
-    [SIMPLIFY] done (0.04s) -> -atan(sqrt(3)*x) - 4
-[12:43:53] [282] -atan(sqrt(3)*x) - 4
-    [SIMPLIFY] start: atan(x - sinh(tanh(x))**(x + asin(x)))
-    [SIMPLIFY] done (0.13s) -> atan(x - sinh(tanh(x))**(x + asin(x)))
-[12:43:55] [283] atan(x - sinh(tanh(x))**(x + asin(x)))
-    [SIMPLIFY] start: tanh(x/(x + 1) + x**x)
-    [SIMPLIFY] done (0.09s) -> tanh((x + x**x*(x + 1))/(x + 1))
-[12:43:55] [284] tanh((x + x**x*(x + 1))/(x + 1))
-    [SIMPLIFY] start: x**(5*x**4/27) - 6
-    [SIMPLIFY] done (0.03s) -> x**(5*x**4/27) - 6
-[12:43:56] [285] x**(5*x**4/27) - 6
-    [SIMPLIFY] start: log(-2/(x*x**(x*atan(2))))/x
-    [SIMPLIFY] done (0.07s) -> log(-2*x**(-x*atan(2) - 1))/x
-[12:43:56] [286] log(-2*x**(-x*atan(2) - 1))/x
-    [SIMPLIFY] start: (2*x)**(sinh(2)**(20*x))
-    [SIMPLIFY] done (0.10s) -> (2*x)**(sinh(2)**(20*x))
-[12:43:57] [287] (2*x)**(sinh(2)**(20*x))
-    [SIMPLIFY] start: -asin((x - 1)*exp(x)*asin(5/x))
-    [SIMPLIFY] done (0.07s) -> -asin((x - 1)*exp(x)*asin(5/x))
-[12:43:57] [288] -asin((x - 1)*exp(x)*asin(5/x))
-    [SIMPLIFY] start: (-sinh(2))**(-asin(cosh(x) - 2))
-    [SIMPLIFY] done (0.15s) -> (-sinh(2))**(-asin(cosh(x) - 2))
-[12:43:58] [289] (-sinh(2))**(-asin(cosh(x) - 2))
-    [SIMPLIFY] start: -2*x/(3*asin(x + log(x)**x))
-    [SIMPLIFY] done (0.05s) -> -2*x/(3*asin(x + log(x)**x))
-[12:43:58] [290] -2*x/(3*asin(x + log(x)**x))
-    [SIMPLIFY] start: atan((-1)**(-8*pi - tan(1) + sinh(4)))
-    [SIMPLIFY] done (0.30s) -> atan((-1)**(-8*pi - tan(1) + sinh(4)))
-    [SIMPLIFY] start: -(-2)**sinh(x)/x + x
-    [SIMPLIFY] done (0.09s) -> -(-2)**sinh(x)/x + x
-[12:43:59] [291] -(-2)**sinh(x)/x + x
-    [SIMPLIFY] start: 4/(tanh(x**(-5)) + 3/(x - 1))
-    [SIMPLIFY] done (0.65s) -> (4*x - 4)/((x - 1)*tanh(x**(-5)) + 3)
-    [SIMPLIFY] start: x/(-x + tanh(1) + 8) + asin(3)
-    [SIMPLIFY] done (0.51s) -> (x + (-x + tanh(1) + 8)*asin(3))/(-x + tanh(1) + 8)
-    [SIMPLIFY] start: -1
-    [SIMPLIFY] done (0.02s) -> -1
-    [SIMPLIFY] start: -8*x**(3*cosh(10))
-    [SIMPLIFY] done (0.09s) -> -8*x**(3*cosh(10))
-[12:44:04] [292] -8*x**(3*cosh(10))
-    [SIMPLIFY] start: tan((-4)**(4*x) - 1/9)/(4*x)
-    [SIMPLIFY] done (0.14s) -> tan((-4)**(4*x) - 1/9)/(4*x)
-[12:44:04] [293] tan((-4)**(4*x) - 1/9)/(4*x)
-    [SIMPLIFY] start: x*sqrt(x - atan(x)/4)
-    [SIMPLIFY] done (0.03s) -> x*sqrt(4*x - atan(x))/2
-[12:44:04] [294] x*sqrt(4*x - atan(x))/2
-    [SIMPLIFY] start: sqrt(x)*sinh(1)/log(x) + x
-    [SIMPLIFY] done (0.19s) -> sqrt(x)*sinh(1)/log(x) + x
-[12:44:05] [295] sqrt(x)*sinh(1)/log(x) + x
-    [SIMPLIFY] start: x/(-3*x**2 - 3)
-    [SIMPLIFY] done (0.02s) -> -x/(3*x**2 + 3)
-[12:44:05] [296] -x/(3*x**2 + 3)
-    [SIMPLIFY] start: (-asin(cosh(x)) - 1 + tan(1))/cosh(2)
-    [SIMPLIFY] done (0.13s) -> -(asin(cosh(x)) - tan(1) + 1)/cosh(2)
-    [SIMPLIFY] start: -asin(tanh(2*x - sinh(2**x) + 4))
-    [SIMPLIFY] done (0.88s) -> -asin(tanh(2*x - sinh(2**x) + 4))
-    [SIMPLIFY] start: x**2*(-x - cosh(x)) + 3/x
-    [SIMPLIFY] done (0.15s) -> -(x**3*(x + cosh(x)) - 3)/x
-[12:44:09] [297] -(x**3*(x + cosh(x)) - 3)/x
-    [SIMPLIFY] start: 2*x*(1 - tanh(4))
-    [SIMPLIFY] done (0.13s) -> 2*x*(1 - tanh(4))
-[12:44:10] [298] 2*x*(1 - tanh(4))
-    [SIMPLIFY] start: cos(2*x/(x + log(5) + I*pi)) - 4
-    [SIMPLIFY] done (0.10s) -> cos(2*x/(x + log(5) + I*pi)) - 4
-    [SIMPLIFY] start: x*(-4*x*x**(5**(-x)) - 3)
-    [SIMPLIFY] done (0.05s) -> -x*(4*x**(1 + 5**(-x)) + 3)
-[12:44:10] [299] -x*(4*x**(1 + 5**(-x)) + 3)
-    [SIMPLIFY] start: x*tanh((-1)**sin(x)) - x - 1
-    [SIMPLIFY] done (0.17s) -> x*tanh((-1)**sin(x)) - x - 1
-    [SIMPLIFY] start: tanh(sin(x**2/5) - 1) + 1
-    [SIMPLIFY] done (0.34s) -> tanh(sin(x**2/5) - 1) + 1
-[12:44:14] [300] tanh(sin(x**2/5) - 1) + 1
-    [SIMPLIFY] start: cos(x*tanh(10/(log(5) + I*pi)))
-    [SIMPLIFY] done (0.29s) -> cos(x*tanh(10/(log(5) + I*pi)))
-    [SIMPLIFY] start: x + (x + atan(3))*atan(exp(x)/x)
-    [SIMPLIFY] done (0.05s) -> x + (x + atan(3))*atan(exp(x)/x)
-[12:44:16] [301] x + (x + atan(3))*atan(exp(x)/x)
-    [SIMPLIFY] start: exp(5*sinh(x**x))*sqrt(asin(x))
-    [SIMPLIFY] done (0.10s) -> exp(5*sinh(x**x))*sqrt(asin(x))
-[12:44:16] [302] exp(5*sinh(x**x))*sqrt(asin(x))
-    [SIMPLIFY] start: x*(3*x**2 + 3)
-    [SIMPLIFY] done (0.03s) -> 3*x*(x**2 + 1)
-[12:44:16] [303] 3*x*(x**2 + 1)
-    [SIMPLIFY] start: sinh(log(-tanh(x + tanh(1))) - 4)
-    [SIMPLIFY] done (0.61s) -> sinh(log(-tanh(x + tanh(1))) - 4)
-    [SIMPLIFY] start: x**sin((-3)**(x**2*x**(-x - 2)))
-    [SIMPLIFY] done (0.24s) -> x**sin((-3)**(x**(-x)))
-[12:44:20] [304] x**sin((-3)**(x**(-x)))
-    [SIMPLIFY] start: -2*x - 2*sin(x)*tanh(x) + 5
-    [SIMPLIFY] done (0.17s) -> -2*x - 2*sin(x)*tanh(x) + 5
-[12:44:21] [305] -2*x - 2*sin(x)*tanh(x) + 5
-    [SIMPLIFY] start: tan(2 - 1/log(x)) - 10
-    [SIMPLIFY] done (0.12s) -> tan(2 - 1/log(x)) - 10
-[12:44:22] [306] tan(2 - 1/log(x)) - 10
-    [SIMPLIFY] start: x*(x + 5)*(x + tan(1))*cos(x)
-    [SIMPLIFY] done (0.07s) -> x*(x + 5)*(x + tan(1))*cos(x)
-[12:44:23] [307] x*(x + 5)*(x + tan(1))*cos(x)
-    [SIMPLIFY] start: -4 + 2/x**5
-    [SIMPLIFY] done (0.04s) -> -4 + 2/x**5
-[12:44:23] [308] -4 + 2/x**5
-    [SIMPLIFY] start: tanh(-x + 3 + 4/(-log(2) - I*pi)**5)
-    [SIMPLIFY] start: -sinh(x/tanh(asin(3))**x - 4)
-    [SIMPLIFY] done (0.85s) -> -sinh(x/tanh(asin(3))**x - 4)
-    [SIMPLIFY] timed out (3.02s)
-    [SIMPLIFY] start: cos(sin(log(sqrt(x) + 1)) + 2)/x
-    [SIMPLIFY] done (0.37s) -> cos(sin(log(sqrt(x) + 1)) + 2)/x
-[12:44:28] [309] cos(sin(log(sqrt(x) + 1)) + 2)/x
-    [SIMPLIFY] start: 4*x - 1/((x - 3)**2*(log(x) + 4)**2)
-    [SIMPLIFY] done (0.29s) -> 4*x - 1/((x - 3)**2*(log(x) + 4)**2)
-[12:44:28] [310] 4*x - 1/((x - 3)**2*(log(x) + 4)**2)
-    [SIMPLIFY] start: asin(x + 3) - 4 + cos(3)
-    [SIMPLIFY] done (0.13s) -> asin(x + 3) - 4 + cos(3)
-[12:44:30] [311] asin(x + 3) - 4 + cos(3)
-    [SIMPLIFY] start: cos(-20*x*tanh(4) + x) + 4
-    [SIMPLIFY] done (0.81s) -> cos(-20*x*tanh(4) + x) + 4
-    [SIMPLIFY] start: cosh(2*x + sinh(x - 3) + cos(5))
-    [SIMPLIFY] done (0.69s) -> cosh(2*x + sinh(x - 3) + cos(5))
-    [SIMPLIFY] start: -((cosh(3)**x)**x)**(1 - tanh(2))
-    [SIMPLIFY] done (0.57s) -> -((cosh(3)**x)**x)**(1 - tanh(2))
-[12:44:36] [312] -((cosh(3)**x)**x)**(1 - tanh(2))
-    [SIMPLIFY] start: log(exp(atan(1/x)) + 4)
-    [SIMPLIFY] done (0.05s) -> log(exp(atan(1/x)) + 4)
-    [SIMPLIFY] start: x + sinh(x - sinh(x)) + 5
-    [SIMPLIFY] done (1.35s) -> x + sinh(x - sinh(x)) + 5
-    [SIMPLIFY] start: -(-4*x**3 + 4*x)**(4*x)
-    [SIMPLIFY] done (0.08s) -> -(-4*x*(x**2 - 1))**(4*x)
-[12:44:40] [313] -(-4*x*(x**2 - 1))**(4*x)
-    [SIMPLIFY] start: cosh(2**((-x - 1)*sinh(x)))
-    [SIMPLIFY] done (0.19s) -> cosh(2**(-(x + 1)*sinh(x)))
-[12:44:41] [314] cosh(2**(-(x + 1)*sinh(x)))
-    [SIMPLIFY] start: x**(-sin(x) - atan(4) + 4)
-    [SIMPLIFY] done (0.07s) -> x**(-sin(x) - atan(4) + 4)
-[12:44:42] [315] x**(-sin(x) - atan(4) + 4)
-    [SIMPLIFY] start: sqrt(x - 1 - 4*(-1)**(1/3)*2**(2/3))
-    [SIMPLIFY] done (0.05s) -> sqrt(x - 1 - 4*(-1)**(1/3)*2**(2/3))
-[12:44:42] [316] sqrt(x - 1 - 4*(-1)**(1/3)*2**(2/3))
-    [SIMPLIFY] start: (-3)**(-(-4)**log(cosh(x)/x) - x)
-    [SIMPLIFY] done (0.55s) -> (-3)**(-(-4)**log(cosh(x)/x) - x)
-    [SIMPLIFY] start: cos(cosh(x/sin(1) + 1)) - 3
-    [SIMPLIFY] done (0.52s) -> cos(cosh(x/sin(1) + 1)) - 3
-[12:44:46] [317] cos(cosh(x/sin(1) + 1)) - 3
-    [SIMPLIFY] start: sqrt(asin((-x - sinh(5))*atan(x)/x))
-    [SIMPLIFY] done (0.76s) -> sqrt(-asin((x + sinh(5))*atan(x)/x))
-    [SIMPLIFY] start: atan(4*exp(-(-x)**(cos(x) + 2)))
-    [SIMPLIFY] done (0.25s) -> atan(4*exp(-(-x)**(cos(x) + 2)))
-[12:44:50] [318] atan(4*exp(-(-x)**(cos(x) + 2)))
-    [SIMPLIFY] start: x**(5 - 20/(3*asin(x)))
-    [SIMPLIFY] done (0.06s) -> x**(5 - 20/(3*asin(x)))
-[12:44:50] [319] x**(5 - 20/(3*asin(x)))
-    [SIMPLIFY] start: log(asin(x))*atan(x - exp(-x))
-    [SIMPLIFY] done (0.12s) -> log(asin(x))*atan(x - exp(-x))
-[12:44:50] [320] log(asin(x))*atan(x - exp(-x))
-    [SIMPLIFY] start: exp(4*x) + 2
-    [SIMPLIFY] done (0.06s) -> exp(4*x) + 2
-[12:44:50] [321] exp(4*x) + 2
-    [SIMPLIFY] start: cos(0**(x - 3))
-    [SIMPLIFY] done (0.03s) -> cos(0**(x - 3))
-[12:44:51] [322] cos(0**(x - 3))
-    [SIMPLIFY] start: sqrt(x) + atan(log(25))
-    [SIMPLIFY] done (0.04s) -> sqrt(x) + atan(log(25))
-[12:44:51] [323] sqrt(x) + atan(log(25))
-    [SIMPLIFY] start: (-4 - sqrt(2)*I)*(2*x - exp(-atan(4)))
-    [SIMPLIFY] done (0.13s) -> -(4 + sqrt(2)*I)*(2*x*exp(atan(4)) - 1)*exp(-atan(4))
-    [SIMPLIFY] start: tan(x**2)**tanh(cos(x)) + 3
-    [SIMPLIFY] done (0.82s) -> tan(x**2)**tanh(cos(x)) + 3
-[12:44:52] [324] tan(x**2)**tanh(cos(x)) + 3
-    [SIMPLIFY] start: (11/2 - atan(sqrt(x)))/x
-    [SIMPLIFY] done (0.06s) -> (11/2 - atan(sqrt(x)))/x
-[12:44:52] [325] (11/2 - atan(sqrt(x)))/x
-    [SIMPLIFY] start: sin(log(1/(x**5*(2 - asin(5)/3)**5)))
-    [SIMPLIFY] done (0.31s) -> sin(log(243/(x**5*(6 - asin(5))**5)))
-    [SIMPLIFY] start: -1/log(x)**(4*(-5)**x)
-    [SIMPLIFY] done (0.08s) -> -1/log(x)**(4*(-5)**x)
-[12:44:55] [326] -1/log(x)**(4*(-5)**x)
+[20:14:32] Initializing generation process...
+[20:14:32] Method: baseline
+[20:14:32] Total Integrals: 1000
+[20:14:32] Baseline initialized.
+[20:14:32] Generating 1000 integrals...
+[20:14:33] [1] x*log(sqrt(sqrt(5)/8 + 5/8)/4)
+[20:14:33] [2] -x + (x**x)**cos(1)
+[20:14:33] [3] (x + 5*cosh(sqrt(5)))**2/9
+[20:14:33] [4] (x - sin(x + 1))*sinh(cosh(5))
+[20:14:33] [5] sin(exp(11*x/5))
+[20:14:33] [6] sqrt(x)*(x + cos(2**x))
+[20:14:33] [7] x**exp((-1)**(x + 2)*x)
+[20:14:34] [8] sqrt(x*sinh(tanh(x))) + tanh(x)
+[20:14:34] [9] asin(x)/4
+[20:14:34] [10] -atan(x/atan(x)**4 - sin(x))
+[20:14:34] [11] sinh(4 - 1/x)
+[20:14:34] [12] (-5)**(x**(sqrt(x)))*x + x - 3
+[20:14:34] [13] x + (asin(x) + 2)/x
+[20:14:35] [14] x + cosh(x**(x**(-4)) - tanh(5))
+[20:14:35] [15] sin(x/(-sinh(5))**x)
+[20:14:35] [16] tan(cos(5))/(x + 3)
+[20:14:36] [17] x/cosh((20 - 5*x)*tanh(x))
+[20:14:37] [18] x**(sqrt(asin(sinh(log(3))))/2)
+[20:14:37] [19] 1 + (x + x**(-4))/x**x
+[20:14:37] [20] -atan(19*x)
+[20:14:37] [21] cos(x - 4 + tanh(5))
+[20:14:38] [22] (cos(2) - 2*cosh(1)/x)**3
+[20:14:38] [23] (-3)**(-4*sin(sqrt(3)*x/(3*sqrt(-x))))
+[20:14:38] [24] sqrt(x + atan(5/x))
+[20:14:38] [25] sqrt((x + 1/2)*sin(x))
+[20:14:38] [26] sqrt(atan(atan(sin(tanh(x))))**(-5))
+[20:14:38] [27] x*(x - 3/x) + 3
+[20:14:39] [28] x*exp(-x + (4 - x)**3) + 1
+[20:14:39] [29] sqrt(1 - cos(x + exp(x + 1)))
+[20:14:40] [30] -sinh(1 - x/((-4)**x*(x - 4)))
+[20:14:40] [31] cosh(2*x) + 1
+[20:14:40] [32] -x**2*tan(x) + 16
+[20:14:40] [33] x + 1 + E
+[20:14:40] [34] exp(tan(x))/x**2
+[20:14:40] [35] x/(x + 119)
+[20:14:40] [36] -x*sinh(1) - atan(x) + 7
+[20:14:40] [37] -2*x - 12 + asin(5)
+[20:14:41] [38] (asin(x) - 4)/cos(4)**(x/5)
+[20:14:41] [39] (-2)**(-4*x - log(tanh(3)))
+[20:14:41] [40] -x - 20/(-exp(3))**x
+[20:14:42] [41] x + asin(exp(x) - 1/tan(4))
+[20:14:42] [42] 327680 - 5*cosh(x)/4
+[20:14:42] [43] (-x - 4)**(tan(4)*tan(x)**x)
+[20:14:42] [44] sin(cos(cosh(x**x - 2)))**5
+[20:14:43] [45] sin(1)/cos(x - 2)**3
+[20:14:43] [46] x**(-5*x*sinh(sin(5)))
+[20:14:43] [47] x**(-tan(sin(x/2)) - 1/x)
+[20:14:43] [48] cosh(x**(2**(x*(-3 + cosh(5)))))
+[20:14:43] [49] x*(x*cosh(4) + x/x**x)
+[20:14:43] [50] 3**x*(-x - atan(x) + 4)
+[20:14:43] [51] tanh(4*sinh(x/3))/6
+[20:14:44] [52] x/((3 - x)*(x - 5) - 3/x)
+[20:14:44] [53] -x**2*(-x + sinh(x)) - x
+[20:14:44] [54] exp(3/x) - 1/(5*x)
+[20:14:44] [55] (3**(-x - 1) - atan(x))**x
+[20:14:44] [56] (4 - tanh(x))**(exp(x)/cosh(x))
+[20:14:44] [57] x*(x + 2) - 24*x
+[20:14:45] [58] (x + sin(x)**2/5)/sqrt((x + sin(x)**2/5)**2 + 1)
+[20:14:45] [59] sqrt(x*x**(x*tanh(asin(x))))
+[20:14:45] [60] (sqrt((-x - 3)**(-3)) + 5)/(5*x)
+[20:14:45] [61] (6*x - 3)**(-4*asin(5))
+[20:14:46] [62] x*log(sinh(x))/cosh(cos(x))
+[20:14:46] [63] 3*x + x**(-2/cos(2))
+[20:14:46] [64] (4 - x)*exp(cos(x)/x)
+[20:14:46] [65] (5*x/3 - 2 + 1/(3*x**5))**x
+[20:14:46] [66] x/2 - 1/2
+[20:14:46] [67] x + (log(x - 2)*tan(x))**x
+[20:14:46] [68] sqrt(2)*exp(-x)/2
+[20:14:46] [69] -x + tanh(cos(x)) + 3
+[20:14:47] [70] (-x)**sinh(x) - 1
+[20:14:47] [71] -tan(sin(x*asin(2*x)))
+[20:14:47] [72] 4/(-x + log(x)/(-4*x - 5))
+[20:14:47] [73] cos(4)*atan(exp(x))/sinh(1)
+[20:14:47] [74] (-atan(x**2) - sin(4))**3
+[20:14:47] [75] x + (-24*x/25)**(2*x)
+[20:14:47] [76] -x*(4 - x**(2*x))**5
+[20:14:47] [77] -x + (x + x**x)/(2*x)
+[20:14:47] [78] tanh(sin(x**2/2))
+[20:14:47] [79] sqrt((-sin(1))**((-2)**(x/sin(x))))
+[20:14:48] [80] -x/3 - 10/3 + sin(x)/(3*x)
+[20:14:48] [81] 5*cos(4*x)/(x*sqrt(1 + 25*cos(4*x)**2/x**2))
+[20:14:48] [82] (-5)**((x + sin(x)/x)**(x + 2))
+[20:14:49] [83] 8*x*(x + sinh(4))/3
+[20:14:49] [84] -3*x**((x + 1)*asin(x))
+[20:14:49] [85] tan(sin(x)) - cosh(5)
+[20:14:49] [86] 5/cosh((x**(-4 - sqrt(3)))**x)
+[20:14:50] [87] -asin(2) - 5/cosh(4*x + 4)
+[20:14:51] [88] -2*asin(x*(1 - (-4)**x))/x
+[20:14:51] [89] -2*x*(-sqrt(x)/5 - log(x)/5)
+[20:14:51] [90] (sqrt(x) - 2*x + 1)**tan(x)
+[20:14:51] [91] 4 - 8*x
+[20:14:51] [92] (x + 3)**(-3)
+[20:14:51] [93] asin(x**(exp(3)*tan(sin(x))))
+[20:14:51] [94] atan(x/4)**(-4)
+[20:14:52] [95] (-x**2/sinh(sin(2/x)))**x
+[20:14:52] [96] x*(asin(x**x - 2) - 1)
+[20:14:52] [97] x**exp(x*tan(sinh(x))**5)
+[20:14:52] [98] (-1)**(2*x - x/(x**2 - 4))
+[20:14:53] [99] sin(x)*cosh(x - 3)
+[20:14:53] [100] sqrt((-x + cos(x))*(x/2 + 4))
+[20:14:53] [101] x*(x + x**x)**(3*x/5)
+[20:14:53] [102] -2*x/sqrt(1 - 4*x**2)
+[20:14:53] [103] sin((-4)**(4 - x) + x)
+[20:14:53] [104] 3/cos(x*sinh(1))
+[20:14:53] [105] 3*(-2)**(5/x)*atan(4) + x
+[20:14:53] [106] x - 3*sinh(tanh(4))/x
+[20:14:54] [107] sin(x*(-x + log(x) - 4))
+[20:14:54] [108] -sinh(x) + sqrt(2) + cosh(4)
+[20:14:54] [109] -asin(atan(x))
+[20:14:54] [110] -cos(3) + sinh(x + 5)/3**x
+[20:14:54] [111] -x + log(x**(-3*x + 3/x))
+[20:14:54] [112] log(2*x*sqrt(x**x) + 1)
+[20:14:54] [113] 4/(2**x*x**5)
+[20:14:54] [114] sqrt((-3)**sin(x) + cos(tan(4)))
+[20:14:54] [115] -4*tan(x**2) - 3
+[20:14:54] [116] x - sqrt(atan(x*(x - 1)))
+[20:14:54] [117] x**(3**x + x) + exp(-4)
+[20:14:55] [118] sinh(sin(x))*atan(atan(3))
+[20:14:55] [119] -x + tan(sinh(5))**(-sinh(1))
+[20:14:55] [120] log(-x + cos(2))
+[20:14:55] [121] -2 - x**atan(x**2)/x
+[20:14:55] [122] -x + x**(x - asin(tanh(1)))
+[20:14:55] [123] -atan(x)/(2*x*log(15))
+[20:14:55] [124] -asin(3*x*tan(x))
+[20:14:57] [125] x - sinh(x + tan(1))**(1/x)
+[20:14:57] [126] atan(x - atan(x - 1))
+[20:14:57] [127] x**2/3 - 5*x/3
+[20:14:57] [128] -12*x/pi + 5
+[20:14:57] [129] x*x**(3 - x) + 1
+[20:14:57] [130] (x*(log(4) + E))**x
+[20:14:57] [131] x**(-sinh(4) - 5 + asin(4))
+[20:14:57] [132] tanh(asin(atan(3)**(1/asin(x))))
+[20:14:57] [133] (pi/2)**(-2*x)
+[20:14:57] [134] sqrt(cosh(4*x) - 3)
+[20:14:57] [135] -1/(4 - x)**x
+[20:14:58] [136] x*(5*sinh(x)/4 + 1/1024)
+[20:14:58] [137] sqrt(tanh(cosh(cosh(x/sin(1)))))
+[20:14:59] [138] x - 2*tan(x)*tanh(2) + 5
+[20:14:59] [139] asin(cosh(x/2))
+[20:14:59] [140] 3 + tanh(5)**(-3**x)
+[20:14:59] [141] x - asin(tanh(5)**x) - 4
+[20:15:00] [142] tanh(x**(-tan(4)*tanh(sinh(2))))
+[20:15:00] [143] x/tan(x)**(x*atan(x)/3)
+[20:15:00] [144] x - sinh(1)
+[20:15:00] [145] atan(-x + sin(tan(x)) + 5)
+[20:15:00] [146] x + asin(cos(x)) - 10
+[20:15:00] [147] x**tan(cosh(2))
+[20:15:00] [148] x/5 - cosh(4*tanh(x))/5
+[20:15:01] [149] x - exp(x/(-1 - sin(2))) - 1
+[20:15:01] [150] log(x - 5/2)
+[20:15:01] [151] x**(sinh(cosh(sqrt(2)*sqrt(x)))/2)
+[20:15:01] [152] ((-2)**(1 - x))**(2/tanh(1))
+[20:15:01] [153] -3*x*sin(x) - 3*sin(4)
+[20:15:01] [154] -asin(x + 1/4)
+[20:15:01] [155] x**8*(x - 4)
+[20:15:01] [156] x + atan(x**(-x - 5))/x
+[20:15:01] [157] (x + 5/(2*x - 2))*sinh(x)
+[20:15:01] [158] sin(x**(-1 + sinh(1)))
+[20:15:01] [159] -x + tan((-1/x)**x)
+[20:15:01] [160] -tan(64*x**2 - x)
+[20:15:01] [161] 6*x/(x - 4)
+[20:15:02] [162] x + tanh(x**(x + 3)) + 5
+[20:15:02] [163] x/(-x + 2 + 1/x) + 3
+[20:15:02] [164] -tanh(asin(x))**x + 1/sqrt(x**2 + 1)
+[20:15:03] [165] -x + atan(1/sqrt(x - 3)) + 4
+[20:15:03] [166] (2 - x)**x/2
+[20:15:04] [167] -tanh((x**2 + x)/cosh(x) - 5)
+[20:15:04] [168] x**(x**(4*x*exp(-cos(3))))
+[20:15:04] [169] (-log(-x) - 2)**x
+[20:15:04] [170] x + 65537/65536
+[20:15:04] [171] cosh(-x + sin(x) + exp(-2))
+[20:15:04] [172] -2*x*(x + 2/x**x)
+[20:15:04] [173] 7 + sqrt(x + 3)/x**5
+[20:15:05] [174] (-3 - 5/cos(x + sin(4)))**x
+[20:15:05] [175] (x + exp(-2*x))*asin(tanh(x))
+[20:15:05] [176] -x + x**(5*tanh(x)) + log(2)
+[20:15:05] [177] -x - cos(x/(cosh(x) + 5))
+[20:15:06] [178] x/(3 - 2/sinh(cos(x)))
+[20:15:07] [179] sinh(cosh(tanh(x + cosh(x)/x)))
+[20:15:07] [180] x**2 + x - exp(5) + 2
+[20:15:07] [181] tan(sinh(1)/x)
+[20:15:07] [182] -x/2 + x**(x - 2) - 2
+[20:15:07] [183] cosh(x) + 2 + (2 - x/2)/x
+[20:15:07] [184] -5**x - 4
+[20:15:07] [185] 5*x + 4*tan(x)
+[20:15:07] [186] -x - x**x + 3
+[20:15:07] [187] (2**x + 2*x - 3)*sin(1)
+[20:15:07] [188] 3**(tanh(4)**(tan(cosh(x)) - 2))
+[20:15:08] [189] 4*x/(3*x + 3*cosh(5)) - 5
+[20:15:08] [190] -x + cos(x) - 7
+[20:15:08] [191] x/x**(x**2*exp(x))
+[20:15:08] [192] 12 - (1/(2*x))**x
+[20:15:08] [193] 3*x - 3*tan(cosh(x)**2)
+[20:15:08] [194] (-5)**log(x) - x*x**x - 5
+[20:15:08] [195] (x - 2)**(3*cos(1))*exp(x)
+[20:15:08] [196] 4*x/cosh((-1)**asin(x))
+[20:15:09] [197] x - sin(x) + sqrt(sin(tanh(3)))
+[20:15:09] [198] 3 - ((-5)**x)**log(x*(x + 1))
+[20:15:09] [199] sqrt(x**x - sinh(1/x))
+[20:15:09] [200] cosh(x)/(-x + asin(x))**x
+[20:15:09] [201] cos(log(2)**4)*tan(tanh(x))
+[20:15:10] [202] tan(x/tanh(x) - cosh(tanh(x)))
+[20:15:11] [203] x - (x - 1)*atan(log(-4*x))
+[20:15:11] [204] x**exp(-2) - 1
+[20:15:11] [205] sqrt(x) + log(x**x - 5) - 4
+[20:15:11] [206] tanh(cosh(x)/sin(tanh(exp(x))))
+[20:15:12] [207] cosh(x - 5) - cosh(exp(x))
+[20:15:12] [208] x + tan(x**(-1 + 1/sqrt(x**2 + 1)))
+[20:15:12] [209] (-3)**x*(x - 1) - exp(sin(x))
+[20:15:12] [210] log((x/sin(x) + 2)**x)
+[20:15:12] [211] 2**(cosh(x) - 8 + log(3))
+[20:15:12] [212] -log(-2*x) + atan(x**(1/4))
+[20:15:14] [213] asin(cosh(tan(x/tan(tanh(x)))))
+[20:15:14] [214] sqrt(-sin(sinh(x))/x)
+[20:15:14] [215] -sqrt(3)*sqrt((-5)**sin(x))/12
+[20:15:14] [216] -2*0**(x + 8) + 2*x
+[20:15:14] [217] 2**(-4*x - 36)
+[20:15:14] [218] x**(cos(x)*tan(x))
+[20:15:14] [219] x + x*asin(2)/sin(4)
+[20:15:14] [220] (4**(2*x))**(2/x)
+[20:15:14] [221] (-x/3)**(x + atan(sqrt(2))**x)
+[20:15:14] [222] -x*asin(2) - 1/81
+[20:15:14] [223] 12/(-x - 2)
+[20:15:15] [224] tanh(4)**(cosh(x)**5)/cos(1)
+[20:15:15] [225] -tan(3 - tan(x)**x/x**3)
+[20:15:15] [226] -sin(x)/(5*atan(sqrt(cos(x))))
+[20:15:16] [227] -x/cosh(log(4)**4) + 5
+[20:15:16] [228] -2*x**2*(5 - x)
+[20:15:16] [229] (-2)**x - (-3)**(x**(-5)) + 2*x
+[20:15:16] [230] -tan(sqrt(x**(-log(4))))
+[20:15:17] [231] (x/(sin(x)*tanh(x)))**atan(5)
+[20:15:17] [232] x + asin(2*x) + atan(4)
+[20:15:17] [233] log(asin(x + 5)) - sqrt(sinh(1))
+[20:15:18] [234] exp(x**3) - 2 + exp(-x)
+[20:15:18] [235] x**(x*tanh(4)*tanh(x))/x
+[20:15:18] [236] x/atan(x**2) + 2
+[20:15:18] [237] sinh(4*x + 4*atan(4))
+[20:15:18] [238] ((x - 4)**x)**x/4
+[20:15:18] [239] (x + sin(x))/(4*x)
+[20:15:18] [240] x - 1/x
+[20:15:18] [241] tan(x + cos(4)) + sinh(1/5)
+[20:15:19] [242] -2*x - sinh(4) + tanh(1) + 3
+[20:15:19] [243] sqrt(x) - exp(x) + cosh(x)/x
+[20:15:19] [244] -exp(exp(exp(-3*x))) + cosh(2)
+[20:15:19] [245] tan(sin(x) - cosh(x))/log(x)
+[20:15:19] [246] cos(x*log(x + 1)*atan(3))
+[20:15:19] [247] -x + atan(exp(x)) - 3
+[20:15:20] [248] 1 - asin(sinh(cosh(5))**x)
+[20:15:20] [249] 2*tan(sinh(sinh(x))/cosh(1))
+[20:15:20] [250] (-1/(2*x**(8*exp(2))))**x
+[20:15:20] [251] x*x**asin(2*x + 1)
+[20:15:20] [252] x*(x - 4)*(x + 5) + x - 1
+[20:15:20] [253] 2*x
+[20:15:20] [254] -x + tanh(x)
+[20:15:20] [255] (x - 2)*(tanh(4) + 2) + 3
+[20:15:20] [256] x**(sqrt((-3*cos(x))**(x/5)))
+[20:15:20] [257] x/x**(sinh(5)/(-x + tan(1)))
+[20:15:21] [258] tanh(5**(x/tan(1/cos(3))))
+[20:15:21] [259] -x*(-x*(x + 4) + sin(x))/5
+[20:15:22] [260] tan((x - atan(asin(2)))/x)
+[20:15:22] [261] exp(-3 + tan(x)**(-5))
+[20:15:22] [262] 2*x + x**x + 3 - 1/x**4
+[20:15:22] [263] -x - x**(x*x**(x + 2))
+[20:15:22] [264] log(x/(tanh(x) - 4)) - 1
+[20:15:22] [265] -5*x/(32*asin(2*x))
+[20:15:22] [266] -x + x**(x**(-asin(x)))
+[20:15:22] [267] asin(x - tan(x**log(x))) - 3
+[20:15:23] [268] log(-3*tan(x + 2**(-5*x)))
+[20:15:23] [269] cos(sqrt(sin(x/log(x**2))))
+[20:15:25] [270] (x - atan(x - tanh(x)/2))/x
+[20:15:25] [271] x - 4*log(-tanh(3125/x))
+[20:15:26] [272] -x - 4 - tanh(x)/x
+[20:15:26] [273] x + x*cosh(asin(tanh(5))) - 4
+[20:15:26] [274] (cos(tanh((-2)**x)) + 1)/x
+[20:15:26] [275] -sqrt(x) - (x + 1)**4/x
+[20:15:26] [276] x**x + sin(2**x)
+[20:15:26] [277] x/(x/5 - sin(x)/3 + 2/3)
+[20:15:26] [278] (-5)**(3*x)*x**3/125 + x + 2
+[20:15:26] [279] x*(4*x**2 + 2*x + 2)
+[20:15:26] [280] -x + asin(x) - atan(x) + 8
+[20:15:26] [281] cos(1/(5*sqrt(x)))
+[20:15:26] [282] sqrt(x) - x**4 - 2
+[20:15:26] [283] (-3)**sin(2*x)/4 + 3*x/4
+[20:15:27] [284] -5*x/(tan(x) + cosh(2))
+[20:15:27] [285] -3*x - 3
+[20:15:27] [286] -4*x - 4*sin(2)
+[20:15:27] [287] -5/(x*(2 - x)**6)
+[20:15:27] [288] -sin(x + 4 - 1/4**x)
+[20:15:27] [289] -x/3 + sqrt(2 - sinh(1))/x
+[20:15:27] [290] -sin(4)/(x*atan(x*exp(x)))
+[20:15:27] [291] -sqrt(x)*tan(1/x)
+[20:15:27] [292] x - cosh(8/sinh(tan(3)))
+[20:15:27] [293] x**(3/2)/10
+[20:15:27] [294] 16*x/tanh(1)
+[20:15:27] [295] x*sinh(x**(sqrt(x)))
+[20:15:27] [296] 1/((x + 2)**27*cos(5))
+[20:15:30] [297] -2 - (tan(x) + 3)/x**3
+[20:15:30] [298] log(cos(sin(x)/2 - cos(2)))
+[20:15:30] [299] x**2*cosh(x - 2)**(3*x)
+[20:15:30] [300] -tan(5/sqrt(tan(x)))
+[20:15:30] [301] 3**(-x + cosh(x) - 5) + 1
+[20:15:30] [302] -4*tanh(x)/x
+[20:15:31] [303] (-1)**(x*x**exp(sinh(sin(x))))
+[20:15:32] [304] x - 4/(x - 1 + cosh(4)/3)
+[20:15:32] [305] -x + sinh(4*x*sin(x)) - 5
+[20:15:32] [306] -x + sin(x) + 6
+[20:15:32] [307] -x + asin(x)**sinh(x) - 1
+[20:15:32] [308] 5 - 2*(-4 + exp(-2))/sin(x)
+[20:15:32] [309] 2*x + (-1/asin(x - 5)**3)**x
+[20:15:32] [310] -atan(cos(4*x)) + tanh(4)
+[20:15:32] [311] -x*(-x**2 + atan(x)) - 1
+[20:15:33] [312] -exp(x/(-2*x)**x)
+[20:15:33] [313] -4*x*(x/sqrt(1 - x**2) + log(x))
+[20:15:33] [314] -atan(tanh(asin(2*x**2)))
+[20:15:33] [315] -5**(2 - 2*x)
+[20:15:33] [316] 1/(x*x**(2*cosh(4)))
+[20:15:33] [317] x/atan(atan(x)) + 3
+[20:15:33] [318] x - cos(x - cosh(3) + 5)
+[20:15:34] [319] -4/(x - 1)**log(sinh(x)/x)
+[20:15:34] [320] x**2*(-x**x + exp(-x))
+[20:15:34] [321] (x - tanh(1))/asin(log(x))
+[20:15:34] [322] (-2)**(exp(-5*x)*sqrt(asin(x)))
+[20:15:34] [323] x**(2/(sin(5) - 1/4)) + 1
+[20:15:35] [324] 4*x*(3*x + tan(x))
+[20:15:35] [325] (-3)**(5*cos(x - x**x)) - x
+[20:15:35] [326] (-cos(3**x) - 4/x)**3
+[20:15:35] [327] 5*x**atan(cos(x)**3)
+[20:15:35] [328] x**((-4)**x*x)
+[20:15:36] [329] cosh(1/(2*x + asin(5)))
+[20:15:36] [330] 5*x/4 + tan(x)
+[20:15:36] [331] log(sqrt(2 + 1/(4*x)))
+[20:15:36] [332] (x + 1)/(5*x - 15) + 2
+[20:15:36] [333] x/((-1 + exp(2))*log(5))
+[20:15:36] [334] -sqrt(x) + cos(x*sin(x))
+[20:15:36] [335] x*(x - 3) + 2*atan(x + 3)
+[20:15:38] [336] 2*x - tan(x + 5)/log(x)
+[20:15:39] [337] tanh(cosh(atan(x**(-x**3 + x))))
+[20:15:39] [338] x**(-1 + cos(sqrt(2)))
+[20:15:39] [339] x**4 - x + sqrt(-x - 5)
+[20:15:41] [340] -2*x + 2/(-4)**(x*sin(4))
+[20:15:42] [341] sinh(atan(x - tan(x)) - 1)
+[20:15:42] [342] log((-2)**x)**atan(x) + cos(1)
+[20:15:42] [343] exp(-4*tanh(sinh(x)))**x
+[20:15:42] [344] -4*x/sin(4)
+[20:15:42] [345] log(x - cosh(x)/(5*x)) - 3
+[20:15:42] [346] -5*(cos(x) + 625)/x
+[20:15:42] [347] x**(5*cos(2)) + 2
+[20:15:43] [348] asin(x*(x - sinh(3/x)))
+[20:15:43] [349] ((-2)**(-atan(4)))**x + exp(2)
+[20:15:44] [350] cosh(x**(-x + exp(-3) + 1))
+[20:15:44] [351] -5 + (x + cos(x**cos(1)))/x
+[20:15:44] [352] -x/(x + 3)
+[20:15:44] [353] 1/x
+[20:15:44] [354] (-1)**(2*x) - x*(x + 4)
+[20:15:44] [355] -x/3 + log(3*x/2)/3
+[20:15:44] [356] (-tanh(5))**(cos(x + x**x)/x)
+[20:15:44] [357] -x - x**x - 3/(x + 5)
+[20:15:44] [358] -2*(x - 1)**(1/4) + log(x)
+[20:15:44] [359] -12 + (5 - pi/4)/4**x
+[20:15:44] [360] -x - sinh(1)
+[20:15:44] [361] -x*atan(4)/(3*(-x - 4))
+[20:15:44] [362] -12/cos(tan(log(x)))
+[20:15:44] [363] (-1)**(x/5 - exp(x)/5)
+[20:15:44] [364] (-x/2 - 1)/x
+[20:15:44] [365] -7*x/6 - 3
+[20:15:44] [366] x**2/sqrt(2 - x**3)
+[20:15:44] [367] sinh(x/(x + 3/2 + sqrt(5)))
+[20:15:44] [368] x - tan(exp(-x)) + 3
+[20:15:44] [369] 5**(-(asin(x) - 1)*log(2))
+[20:15:45] [370] x**(sqrt(-exp(x))/2) + 1
+[20:15:45] [371] 3/(x - 1/2)
+[20:15:45] [372] -x*cosh(atan(x)/4)
+[20:15:45] [373] -x*(x*tanh(1) + x)/2
+[20:15:45] [374] -(log(x - 3) - 4)**3/x**3
+[20:15:46] [375] x*sin(sin(x)**x + 4/x)
+[20:15:46] [376] tanh(x - 5*atan(5) + 10)
+[20:15:46] [377] 5**(exp(1/81)*sin(x))
+[20:15:47] [378] -asin(4*x**2 - 79/5)
+[20:15:47] [379] (x - 3)**x*(x + 5)**atan(2)
+[20:15:47] [380] -3*sqrt(x**(asin(x)/sqrt(asin(x)**2 + 1)))
+[20:15:47] [381] x/cosh(x**(1/3) + 5)
+[20:15:47] [382] x/log(log(tan(1))) - x - 4
+[20:15:47] [383] x*tan(1)/(sqrt(x) - 4) - 4
+[20:15:47] [384] x - (-x - 2)*exp(x)/sin(x)
+[20:15:47] [385] log(3/x)*asin(x**(x - 3))
+[20:15:48] [386] x/sinh(x) - sin(x**x - 5)
+[20:15:48] [387] -sin(4*asin(x))
+[20:15:48] [388] 0**x*(asin(x) - 1/5)
+[20:15:48] [389] exp(asin(4/x))*log(x)
+[20:15:48] [390] -x - 1 - 2*exp(-x)
+[20:15:49] [391] x*x**x/log((-5)**x + x)
+[20:15:49] [392] -x - sinh(x*(x - cos(x)))
+[20:15:49] [393] -cosh(asin(x)) - 2
+[20:15:49] [394] (x + log(x + 2) - 3)*asin(x)
+[20:15:49] [395] exp(tan(x + 3))/2 + 3/2
+[20:15:50] [396] tanh(x/log(x)) + atan(4)
+[20:15:50] [397] -sqrt((-atan(cosh(5)))**x)
+[20:15:50] [398] -3*x**x + 3*atan(3)**sin(x)
+[20:15:50] [399] cos(x)/(4*x/3 - 7/3)
+[20:15:50] [400] cos(tan(x))**(x - 1)
+[20:15:52] [401] -atan(4 - sin(cosh(2))/sinh(x))
+[20:15:53] [402] cos(sin(x)/tanh(x*exp(-x)))
+[20:15:53] [403] tanh(x - 1)/sinh(x**x)
+[20:15:53] [404] 2*(x - 1)/(-x - 2)
+[20:15:53] [405] (-x*exp(-1)/sinh(1))**x
+[20:15:53] [406] -(x + x**x - log(x))/sqrt(1 - (x + x**x - log(x))**2)
+[20:15:53] [407] (x*(x**2)**(sqrt(2)))**x
+[20:15:53] [408] cosh(x*x**x) - 5
+[20:15:53] [409] tanh(3*atan(x))
+[20:15:53] [410] -5*x*(x + cosh(5) - 4/x)
+[20:15:53] [411] (-1)**x*tan(1)
+[20:15:54] [412] -8*x/3 + 8*cos(x)/3 - 32/3
+[20:15:54] [413] -x**2 + x**x + atan(3*x)
+[20:15:55] [414] tan(x - log(x*(x + tanh(x))))
+[20:15:55] [415] x - 4/sqrt((x + 6)**x)
+[20:15:55] [416] 64**(5/(-sqrt(x))**x)
+[20:15:55] [417] 4/(-(-4)**(x**4))**x
+[20:15:55] [418] asin(x*log(asin(x))/4 + 1)
+[20:15:55] [419] x/(-x)**(x**(5*x))
+[20:15:55] [420] -x + 2*tanh(exp(4))
+[20:15:55] [421] (-3)**((2*x)**exp(-cosh(x)))
+[20:15:56] [422] -asin(3*x - 4)/3
+[20:15:56] [423] -x + (5*x + 7)**sinh(x)
+[20:15:56] [424] sinh(x - sin(1))/x
+[20:15:56] [425] exp(x - cosh(4*exp(3)))
+[20:15:56] [426] sin(x) + x**(-tan(5))
+[20:15:56] [427] (-x + x**(-asin(x) + exp(-1)))**(-5)
+[20:15:56] [428] x**2*sinh(tan(4))
+[20:15:57] [429] (-x - 4)*asin(x - 3)/log(2)
+[20:15:57] [430] sin(3*x + 10)
+[20:15:57] [431] -tanh(5)*atan(x)/asin(2)
+[20:15:57] [432] -atan(4**((x - 5)**(x/2)))
+[20:15:57] [433] -asin(x/5 + x**(-x + x**x))
+[20:15:57] [434] sqrt((2*x + 5)/(-x + atan(x)))
+[20:15:57] [435] x + (-x - cosh(1))**(x - 2)
+[20:15:57] [436] 0**x*x
+[20:15:57] [437] sinh(x)*sinh(x**x) - asin(4)
+[20:15:58] [438] exp(x*cosh(4))/3
+[20:15:59] [439] atan(x**(-tanh(2) + 2 + x**(-4)))
+[20:16:01] [440] sin(tanh(x)**(2 - x**4))
+[20:16:01] [441] -asin(sqrt(2)*x/(4*sqrt(x**3)))
+[20:16:02] [442] cosh(tanh(1/sqrt(x**4 + 1)) + 4)
+[20:16:02] [443] log(sinh(tanh(x**(sin(3)/2))))
+[20:16:03] [444] 2*(-2)**(x**(-3*x - 2))
+[20:16:03] [445] x*exp(x**2/3)
+[20:16:03] [446] ((x - 3)/sqrt(x**2 + 1))**(1/4)
+[20:16:03] [447] (-x + sin(atan(x)/x))/sqrt(x)
+[20:16:03] [448] 2*exp(5*x)*tanh(4) + 1
+[20:16:03] [449] 1 - sin(x**atan(4))
+[20:16:03] [450] asin(x/4**x) + sin(cos(5))
+[20:16:03] [451] tan(cos(x**2/3) + log(4))
+[20:16:04] [452] -x + x**(3 - x) + cos(3) + 5
+[20:16:04] [453] x**3 + x - 243 - tan(3)
+[20:16:04] [454] -tanh(asin(asin(x))) - 1
+[20:16:04] [455] cos(x**(sqrt(x))/5 + 4/5)
+[20:16:04] [456] sqrt(x)*sin(2*x + exp(x))
+[20:16:04] [457] cosh(5 - sin(x)/(x*tan(x)))
+[20:16:04] [458] 5 - 5*x**x/244
+[20:16:04] [459] -2/((-x + log(2))*(x**2 + 4))
+[20:16:05] [460] (-3)**(1/x) - 2*x + 7
+[20:16:05] [461] (x + sin(cos(x)))**(x - 2) + 3
+[20:16:05] [462] -x**(2*x)/sinh(2) - 4
+[20:16:06] [463] x/(x - asin(sinh(sin(3*x))))
+[20:16:06] [464] -3**x + (2*x + 2)**(-5)
+[20:16:07] [465] exp(-tanh(x) - 1/(-x)**x)
+[20:16:07] [466] -x*sinh(atan(atan(x*atan(4))))
+[20:16:07] [467] x + 4/(x*sqrt(4*x**2 + 1))
+[20:16:07] [468] (x**(-10))**asin(5)
+[20:16:07] [469] -6*2**x + 6*x + 3*cosh(1)
+[20:16:07] [470] log(tan(x - 3) - sin(5)/5)
+[20:16:07] [471] 2*x + 2*tanh(2**(x - 4))
+[20:16:08] [472] (-tanh(x))**(sqrt(log(tanh(3))))
+[20:16:08] [473] x - 2 + 4*asin(cosh(1))
+[20:16:08] [474] (-1 + pi/2)/x
+[20:16:08] [475] sinh(x/(4*sinh(x))) - 5
+[20:16:08] [476] -x - sin(tan(x)) - 4/x
+[20:16:08] [477] x + 4*tan(tan(x)) + 10
+[20:16:08] [478] 9*x + 9*exp(cos(x))
+[20:16:09] [479] x - sin(x - atan(x)**cos(2))
+[20:16:09] [480] exp(-x + cos(x - 5 + atan(5)))
+[20:16:09] [481] cosh(x**(-atan(log(tanh(1)))/3))
+[20:16:10] [482] (asin(x) - 4 - asin(5))*cos(x)
+[20:16:10] [483] x/atan(4**(pi/2))
+[20:16:10] [484] x - 5 - 5/(-2*x - 2)
+[20:16:10] [485] 32*sqrt(13)*sqrt(-x)/2197
+[20:16:12] [486] exp((-5)**(-exp(cos(x))*sin(4)))
+[20:16:12] [487] cosh(3/(x*sinh(4)))
+[20:16:12] [488] (-atan(x) - 4)**sinh((-5)**(sqrt(x)))
+[20:16:12] [489] (-1)**(4*exp(cosh(3))/x)
+[20:16:12] [490] sqrt(x) + sin(sinh(sin(x)) + 5)
+[20:16:13] [491] -4*exp(x)**(x**2 - cosh(x))
+[20:16:14] [492] 1/((-3)**sinh(x/(3*asin(x)))*x)
+[20:16:14] [493] (-sinh(2))**(x**x) - 2
+[20:16:16] [494] x - (x - 1/x**8)/sinh(x)
+[20:16:17] [495] 1 - 1/cos(x/sin(sin(x)))
+[20:16:17] [496] sqrt(2)*sqrt(-sinh(cos(2*x)))/2
+[20:16:18] [497] (-4 + cos(4) + atan(3))**x
+[20:16:18] [498] x/(-x)**(3/atan(x**(-5)))
+[20:16:18] [499] (asin(tanh(3))/(-5)**sin(x))**x
+[20:16:18] [500] (x + 2)**(x + sinh(2)) - 5
+[20:16:18] [501] 10*x + 8
+[20:16:19] [502] -atan(2 - (1 - x)/x)
+[20:16:19] [503] x + (3*x)**tan(2) + 5
+[20:16:19] [504] 2*x*sqrt((-4)**x + 1) + 1
+[20:16:20] [505] sin(sinh(asin(cosh(x**2))))
+[20:16:20] [506] x - 248832/x**25
+[20:16:20] [507] ((tanh(x) - asin(x + 5))/x)**x
+[20:16:20] [508] -sin(2*x*x**x/15)
+[20:16:20] [509] x*exp(-sqrt(2)*sqrt(x)/4 + x)
+[20:16:20] [510] tan(atan(x + 1) - 4)
+[20:16:20] [511] (-3)**(x**(x + 2))/x - 5
+[20:16:20] [512] tanh(x)**(x + atan(x))
+[20:16:21] [513] -sinh(x**(2/cos(tan(4)))) - 3
+[20:16:21] [514] (1/x)**((-10)**(2*x)*x)
+[20:16:21] [515] log(pi/(8*sin(x + 5)))
+[20:16:21] [516] (2*x + x**x)*exp(x**4)
+[20:16:21] [517] (-atan(2))**tan(2*x) + log(5)
+[20:16:22] [518] -5*x + cos(cosh(x + 1)**(-5))
+[20:16:22] [519] -(tanh(x) + 2)*sinh(x - 3) - 5
+[20:16:22] [520] cos(cosh(x + x**x)**(-5*x))
+[20:16:22] [521] cosh(atan(cosh(x + 1 + sqrt(2))))
+[20:16:23] [522] -x*(-tan(2))**x + x - x**x
+[20:16:23] [523] x + x**x + 4/x**2
+[20:16:23] [524] sinh((3 - x)**4/tan(3))
+[20:16:23] [525] 5 - 3/x**x
+[20:16:23] [526] x*(12*x + cosh(x))
+[20:16:23] [527] cos((-atan(x))**(4*x))
+[20:16:23] [528] x/sin(16)**4
+[20:16:23] [529] sqrt((x**2/8)**(x**5))
+[20:16:23] [530] tan(2) - asin(exp(4))/cos(x)
+[20:16:24] [531] cos(sqrt(x) - x) - exp(-1)
+[20:16:24] [532] -x + cos(2*x)
+[20:16:24] [533] -(-x - 5 + cos(1/8))**3
+[20:16:24] [534] -x + x*cosh(x)/sqrt(log(x))
+[20:16:24] [535] 5**(-2*x**(5 - x) - 3)
+[20:16:24] [536] (-x + x**(-4))/cosh(exp(x))**4
+[20:16:24] [537] (cosh(x**x) + 2)**exp(x)
+[20:16:25] [538] sqrt(cosh(5*exp(-x))**(2*x))
+[20:16:25] [539] (-1)**(tan(sin(x)) + 2)/2 - 1
+[20:16:25] [540] 3*log(x)**x + 9
+[20:16:25] [541] log(tanh((x**3)**cos(x)))
+[20:16:25] [542] atan(x**(x - 10)*atan(x))
+[20:16:25] [543] sin((x + asin(x))/(x**2 - x))
+[20:16:25] [544] 189/5 - 7*x/5
+[20:16:25] [545] 0**(x + sqrt(asin(x)) + 3)
+[20:16:25] [546] cos(1)/(x**x*(-x + sinh(x)))
+[20:16:26] [547] atan((tan(x**2) - 4)**12)
+[20:16:26] [548] -1/(9*x)
+[20:16:26] [549] log(x*(-x)**(sin(x)**3))
+[20:16:26] [550] (-5*0**x*x + x)/x
+[20:16:26] [551] log(-(-3)**(4*x) + sinh(x))
+[20:16:26] [552] -20*x/sinh(x)
+[20:16:27] [553] -pi/(2*sinh(x**x - 1/x**5))
+[20:16:27] [554] (2*x**2)**((x - 3)**x)
+[20:16:27] [555] exp(asin(x + (x*x**x)**x))
+[20:16:28] [556] cosh(4*x - 3)**(-7)
+[20:16:28] [557] -x*(x + tanh(exp(-7))) - 2
+[20:16:28] [558] -x + exp(sqrt(x)) - exp(x)
+[20:16:28] [559] -x + log(x**2 - 1)/2
+[20:16:28] [560] x**2/5 - 5*sinh(4) - 25
+[20:16:28] [561] -x**2
+[20:16:28] [562] 2*log(x) + sinh(pi/4)/3
+[20:16:28] [563] x**(x/(-sqrt(x) - x/5))
+[20:16:28] [564] 0**x + 2
+[20:16:28] [565] cos(5)/(-(-1)**x - x - 5)
+[20:16:28] [566] (cosh(sqrt(x))**(-5))**x
+[20:16:29] [567] sinh(x)**(2/x**tanh(exp(5)))
+[20:16:30] [568] atan(5*(tanh(x) + 1)/x)
+[20:16:30] [569] (-tanh(1))**cosh(asin(x - 9))
+[20:16:30] [570] x*(1 - x)/5
+[20:16:31] [571] asin(x - tan(2)/4 + cosh(5))
+[20:16:31] [572] exp(3*x**3 + 1)
+[20:16:31] [573] 3*sqrt(x)*atan(x) + 15
+[20:16:32] [574] -5*log(x*cosh(4)**x)**x
+[20:16:32] [575] -2*x + 2*cos(x + 5)
+[20:16:32] [576] x*(1 + 4*tanh(3))
+[20:16:32] [577] -log(x)*cosh(5)/5
+[20:16:32] [578] 1/(x**2*(x + cosh(x) + 5)**2)
+[20:16:32] [579] -tan(log(3))/(2*x)
+[20:16:32] [580] -x + cosh(x - 5)/(x - 1)
+[20:16:32] [581] x - 3*log(x) + sinh(cos(3))
+[20:16:32] [582] sin(sinh(2))**(-tan(x))
+[20:16:32] [583] sin(x) - 2
+[20:16:32] [584] (4**x*x)**(-6*tan(2))
+[20:16:32] [585] (-2*x + (x - 4)**x/x)**(-2)
+[20:16:32] [586] log(-1/(5*x*atan(x)))
+[20:16:33] [587] -3 - 2/(x - 6/sin(x))
+[20:16:33] [588] 2*x + tan(cos(3 + exp(3)))
+[20:16:33] [589] -x*(x**x - exp(2))*sinh(1)
+[20:16:33] [590] -sin(tanh(cosh(2)))**(x**x) - 1
+[20:16:33] [591] sinh(sqrt(4**(x - 2) + x))
+[20:16:33] [592] -2*x**2*exp(x)
+[20:16:33] [593] -3*(x + 4)/(sinh(1)*asin(x))
+[20:16:33] [594] x - 5 - 1/tan(x)**(x**2/5)
+[20:16:34] [595] -x**(-tanh(x)**(x**x) - 2)
+[20:16:34] [596] -6*x*exp(x) + 5
+[20:16:34] [597] tanh(x**(4*x/cos(x) - 3))
+[20:16:35] [598] sinh(cos(x/3 - 4/3) + pi/4)
+[20:16:35] [599] -3*sin(tan(sqrt(x) - 1))**x
+[20:16:35] [600] -x + ((-5)**x - 10)/atan(x)
+[20:16:35] [601] -2*5**(asin(x) + exp(5))/x
+[20:16:35] [602] (-4)**(x**9) + (-5)**x
+[20:16:36] [603] exp(x + (-5 - sqrt(2))**(-1/1024))
+[20:16:36] [604] x**(3/2)/cos(x + 3)
+[20:16:36] [605] (-4)**(-x - exp(x) + 3)
+[20:16:36] [606] x**(sqrt(-x**x)*sqrt(atan(4)))/x
+[20:16:36] [607] x/sin(x - 1/32)
+[20:16:36] [608] (-asin(5))**(x*x**(x - 5)/2)
+[20:16:37] [609] x/sinh(x + 4) - cos(x + 5)
+[20:16:38] [610] -x - tanh(3*exp(tan(x + 5)))
+[20:16:38] [611] cos(5*x**2/9)
+[20:16:38] [612] exp(asin(3)**(exp(x) - 1)) - 2
+[20:16:38] [613] cos(1/(x*x**tanh(atan(3)/3)))
