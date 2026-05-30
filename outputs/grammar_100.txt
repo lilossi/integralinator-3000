@@ -1,112 +1,112 @@
-[12:41:47] Initializing generation process...
-[12:41:47] Method: grammar
-[12:41:47] Total Integrals: 100
-[12:41:47] Probabilistic Grammar initialized.
-[12:41:47] Generating 100 integrals...
+[20:18:34] Initializing generation process...
+[20:18:34] Method: grammar
+[20:18:34] Total Integrals: 100
+[20:18:34] Probabilistic Grammar initialized.
+[20:18:34] Generating 100 integrals...
 Generating batch of 400 sentences...
-Attempted 100 expressions, found 32 valid ones...
-Attempted 200 expressions, found 63 valid ones...
-Attempted 300 expressions, found 95 valid ones...
-Total attempts needed: 323
-[12:42:08] 
+Attempted 100 expressions, found 31 valid ones...
+Attempted 200 expressions, found 57 valid ones...
+Attempted 300 expressions, found 85 valid ones...
+Total attempts needed: 328
+[20:19:04] 
 --- Final Valid Expressions ---
-[12:42:08] [1] sin(log(-x - cos(1)*sinh(sin(4))))
-[12:42:08] [2] -1 + pi/2 - sqrt(exp(x)/x)*exp(-x)*asin(sqrt(x))/x
-[12:42:08] [3] log(x**x)
-[12:42:08] [4] log(tan(tanh(tanh(x)/sin(exp(-3))) + 1))
-[12:42:08] [5] (sin(x)/(sinh(x) - 4/cos(sin(x/2))))**x
-[12:42:08] [6] sqrt(x)
-[12:42:08] [7] sqrt(-x)/2
-[12:42:08] [8] 2/sin(x)
-[12:42:08] [9] cos(x**(asin(x)**x))
-[12:42:08] [10] sin(log(x))
-[12:42:08] [11] (5**x)**x
-[12:42:08] [12] (-log(sinh(x/2)) - 5)**x
-[12:42:08] [13] log(x*atan(sqrt(x)))**(5**sin(x))
-[12:42:08] [14] -3*x/cos(x)
-[12:42:08] [15] tanh(x**2)
-[12:42:08] [16] sqrt(sin(x)**5)
-[12:42:08] [17] cosh(asin(x))
-[12:42:08] [18] sinh(x)
-[12:42:08] [19] asin(asin(x))
-[12:42:08] [20] log(cos(cos(x)))
-[12:42:08] [21] sin(x**x)
-[12:42:08] [22] x/2
-[12:42:08] [23] log(tan(x))
-[12:42:08] [24] cosh(sin(x))
-[12:42:08] [25] x
-[12:42:08] [26] sin(x)/(x + atan(5))
-[12:42:08] [27] exp(x/4 + 3) - 1
-[12:42:08] [28] sqrt(1 - log(x)**2)
-[12:42:08] [29] cosh(exp(x)/x)
-[12:42:08] [30] x/log(-1 + pi/2)
-[12:42:08] [31] tan(log(x))
-[12:42:08] [32] x**x
-[12:42:08] [33] log(cos(x))
-[12:42:08] [34] 4*exp(sin(x)*sin(tan(2))/2)
-[12:42:08] [35] asin(x)**x
-[12:42:08] [36] x**2
-[12:42:08] [37] 3/x
-[12:42:08] [38] 2*log(x)/x
-[12:42:08] [39] exp(-x)*cosh(x/(x - sin(exp(-x/3)/x)))
-[12:42:08] [40] cosh(x)
-[12:42:08] [41] -sin(x + tanh(4))
-[12:42:08] [42] 2*x
-[12:42:08] [43] asin(x)
-[12:42:08] [44] sinh(atan(exp(x)**sin(x)))
-[12:42:08] [45] atan(log(log(cos(cosh(E/x)))**3))
-[12:42:08] [46] log(x)
-[12:42:08] [47] atan(x)
-[12:42:08] [48] sin(0**log(x))
-[12:42:08] [49] x - atan(x)
-[12:42:08] [50] x**2*exp(sin(1))
-[12:42:08] [51] exp(sin(x))
-[12:42:08] [52] x - sin(x)
-[12:42:08] [53] atan(x + exp(cos(5)))
-[12:42:08] [54] sqrt(log(cos(x)))
-[12:42:08] [55] 1/(sqrt(x)*tanh(x)**x)
-[12:42:08] [56] exp((-x/3)**(-asin(4)))
-[12:42:08] [57] cos(x**2*sin(4))
-[12:42:08] [58] -x
-[12:42:08] [59] log(log(x))
-[12:42:08] [60] log(x) + 1
-[12:42:08] [61] -(2*x)**(x/cos(x)) - 4
-[12:42:08] [62] sin(x)
-[12:42:08] [63] cos(3 - sinh(x)/x)
-[12:42:08] [64] 2*x**2
-[12:42:08] [65] -atan(sqrt(x)/3)
-[12:42:08] [66] log((x**2/exp(x)**sin(tanh(log(2))))**cos(x*log(3)))
-[12:42:08] [67] cos(x - 5)
-[12:42:08] [68] (x - 5)/x
-[12:42:08] [69] cos(5*x/6 + exp(x) - 2)
-[12:42:08] [70] atan(x**2)
-[12:42:08] [71] sin(sin(x*(asin(x) + asin(exp(x**2 + exp(x)))/tan(exp(x)))))
-[12:42:08] [72] sqrt(x/sqrt(1 - x**2))
-[12:42:08] [73] x - 1
-[12:42:08] [74] cosh(1/sqrt(atan(x)**2 + 1))
-[12:42:08] [75] log(x**(-sinh(3/x)))
-[12:42:08] [76] x**cosh(x)
-[12:42:08] [77] -log(log(x))/cosh(x/tanh(x))
-[12:42:08] [78] exp(sinh(log(-x + exp(pi/4))))
-[12:42:08] [79] sin(2)/x**(x/2)
-[12:42:08] [80] 5*x
-[12:42:08] [81] cos((x*cosh(x))**tanh(2*x))
-[12:42:08] [82] x**(x*asin(x*log(x)))
-[12:42:08] [83] x + 2
-[12:42:08] [84] exp(sqrt(-tan(5*x/log(-x))))
-[12:42:08] [85] cosh(tan(x)*tanh(x))
-[12:42:08] [86] exp(cos(x))
-[12:42:08] [87] -tanh(asin(exp(sqrt(x))))
-[12:42:08] [88] cos(cos(x/(x - 4)))/sqrt(x)
-[12:42:08] [89] exp(cosh(sin(x)))
-[12:42:08] [90] -(x**2)**cos(x)
-[12:42:08] [91] -x*sin(5)
-[12:42:08] [92] x**cosh(exp(x + tan(sin(x/2))))
-[12:42:08] [93] tan(x)
-[12:42:08] [94] tanh(x)
-[12:42:08] [95] -x*asin(2/(x*(x - asin(x))))
-[12:42:08] [96] log(-atan(tan(exp(x))))
-[12:42:08] [97] cos(x)
-[12:42:08] [98] sin(log(cos(x)))
-[12:42:08] [99] log(sin(x)) - 1
-[12:42:08] [100] exp(x)
+[20:19:04] [1] exp(x/(1 - cos(x)))
+[20:19:04] [2] sin(exp(cos(x)**x))
+[20:19:04] [3] tanh(tan(sin(log(x + exp(x))))**tan(x))
+[20:19:04] [4] 5*tan(x)
+[20:19:04] [5] sqrt(2)*sqrt(x)
+[20:19:04] [6] x*x**x
+[20:19:04] [7] sin(log(x*sinh(log(atan(2**x)))))**cos(x)
+[20:19:04] [8] x**3
+[20:19:04] [9] -4*x*exp(-x)
+[20:19:04] [10] log(cos(x))
+[20:19:04] [11] 2**x
+[20:19:04] [12] x**x
+[20:19:04] [13] (sqrt(x) - x*(2**(x*tanh(exp(x))) + x))/x
+[20:19:04] [14] cos(x*cos(cos(x)))
+[20:19:04] [15] exp(cos(1/(2*cosh(x)*atan(log(x)))))
+[20:19:04] [16] 2*x
+[20:19:04] [17] x + atan(cos(x))**x
+[20:19:04] [18] x/(-sqrt(x) + pi/2)
+[20:19:04] [19] tan(x)
+[20:19:04] [20] log(cos(sin(asin(2*asin(x + 5) - 1)/x))**(tan(x)/4))
+[20:19:04] [21] sqrt(x**x)
+[20:19:04] [22] atan(sin(tan(x)))
+[20:19:04] [23] -x/2
+[20:19:04] [24] x - sin(5)
+[20:19:04] [25] cosh(2*x)
+[20:19:04] [26] cosh(x)
+[20:19:04] [27] asin(x)
+[20:19:04] [28] sqrt(cos(1 + x**(-3)))
+[20:19:04] [29] tan(x)**x
+[20:19:04] [30] cos(sqrt(x))
+[20:19:04] [31] x/3 - tanh(log(-3*cos(x*atan(x))))
+[20:19:04] [32] 1/sqrt(x)
+[20:19:04] [33] tan(sqrt(-asin(x**2)))
+[20:19:04] [34] x + sin(x)/4
+[20:19:04] [35] log(sin(exp(asin(4*sin(log(exp(x*exp(atan(x)))))))))
+[20:19:04] [36] -x/3
+[20:19:04] [37] log(-x + atan(x))
+[20:19:04] [38] log(x)*sinh(x**x)
+[20:19:04] [39] cos(log(log(x))) + tan(x) - atan(exp(x)) + 1
+[20:19:04] [40] exp(cos(x))
+[20:19:04] [41] 2/sqrt(x)
+[20:19:04] [42] sinh(x)
+[20:19:04] [43] -tan(tan(x/4))
+[20:19:04] [44] x*log(x)
+[20:19:04] [45] tan(log(x))
+[20:19:04] [46] -exp(x)
+[20:19:04] [47] -asin(exp(-sin(x)))
+[20:19:04] [48] log(x)
+[20:19:04] [49] sin(cosh(x))/sin(x**2)
+[20:19:04] [50] cos(sin(exp(exp(x))/x)**log(x))/x
+[20:19:04] [51] sin(x)
+[20:19:04] [52] 1 - asin(3*x)
+[20:19:04] [53] log(exp(asin(x**3)))
+[20:19:04] [54] x/log(x)
+[20:19:04] [55] 5/(x*tan(log(x)))
+[20:19:04] [56] exp(-sinh(x + 1))**x
+[20:19:04] [57] sinh(x)/x
+[20:19:04] [58] cos(tan(2*x)/atan(log(x*sqrt((pi/2)**x))))
+[20:19:04] [59] sqrt(tanh(x**x))
+[20:19:04] [60] atan(x**2*sinh(x) + x)
+[20:19:04] [61] x**exp(-E*sqrt(x))
+[20:19:04] [62] cos(x/log(x))
+[20:19:04] [63] cos(x)
+[20:19:04] [64] -sin(x**x)
+[20:19:04] [65] x*tan(x)
+[20:19:04] [66] -sin(x**2)
+[20:19:04] [67] atan(x)
+[20:19:04] [68] cos(x*atan(exp(x)))/4
+[20:19:04] [69] x**2
+[20:19:04] [70] exp(exp(x/atan(sin(tan(x))))/x)
+[20:19:04] [71] exp(x)
+[20:19:04] [72] log(-tan(12/sqrt(x)))
+[20:19:04] [73] exp(-5)*cos(log(tan(x)))
+[20:19:04] [74] log(sin(x))
+[20:19:04] [75] tanh(cos(x))
+[20:19:04] [76] sin(cos(x))*cos(4)
+[20:19:04] [77] sqrt(x*cosh(sin(tanh(atan(exp(x))) - asin(x)/3)))
+[20:19:04] [78] sinh(sqrt(atan(x*exp(-x))))/(cosh(atan(x)) + 4)
+[20:19:04] [79] -x*(-exp(tan(x**(1/x)/x**2)) + atan(cos(2)))
+[20:19:04] [80] cos(x - 1)
+[20:19:04] [81] x*cos(x)/5
+[20:19:04] [82] cos(tan(x))**log(4)
+[20:19:04] [83] (pi/4)**x
+[20:19:04] [84] x*(exp(-exp(x))*cos(1)/(2*x))**x
+[20:19:04] [85] sqrt(log(exp(x)))
+[20:19:04] [86] x
+[20:19:04] [87] sqrt(exp(x))
+[20:19:04] [88] cos(sinh(tan(x)))
+[20:19:04] [89] sqrt(x)/log(sin(x))
+[20:19:04] [90] 1 - x
+[20:19:04] [91] x**3/tan(x)
+[20:19:04] [92] tanh(x + tan(2))
+[20:19:04] [93] cosh(sqrt(x))
+[20:19:04] [94] atan(x)**(sqrt(cos(tan(2*x))))
+[20:19:04] [95] sqrt(cos(x))
+[20:19:04] [96] cos(4**(-x))
+[20:19:04] [97] -asin(x)
+[20:19:04] [98] exp(x) + pi*exp(-exp(x))/4
+[20:19:04] [99] sin(exp(5))**log(x)
+[20:19:04] [100] -sqrt(x)
