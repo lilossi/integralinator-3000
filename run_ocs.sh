@@ -4,8 +4,8 @@
 #SBATCH --error=/home/philippo/integralinator-3000/logs/run_%A_%a.err
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
-#SBATCH --time=12:00:00
+#SBATCH --mem=48G
+#SBATCH --time=36:00:00
 #SBATCH --array=0-14
 
 source ~/miniconda3/etc/profile.d/conda.sh
