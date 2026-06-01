@@ -17,7 +17,7 @@ mkdir -p $OUTDIR
 
 cd $REPO
 
-METHODS=(baseline)
+METHODS=(baseline_solvable)
 COUNTS=(1000)
 
 METHOD=${METHODS[$SLURM_ARRAY_TASK_ID]}
