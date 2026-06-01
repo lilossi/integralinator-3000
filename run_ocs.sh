@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=48G
 #SBATCH --time=36:00:00
-#SBATCH --array=0-14
+#SBATCH --array=0-0
 
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate integralinator-env
@@ -17,8 +17,8 @@ mkdir -p $OUTDIR
 
 cd $REPO
 
-METHODS=(llm llm llm baseline baseline baseline baseline_solvable baseline_solvable baseline_solvable genetic genetic genetic grammar grammar grammar)
-COUNTS=(10 100 1000 10 100 1000 10 100 1000 10 100 1000 10 100 1000)
+METHODS=(baseline)
+COUNTS=(1000)
 
 METHOD=${METHODS[$SLURM_ARRAY_TASK_ID]}
 COUNT=${COUNTS[$SLURM_ARRAY_TASK_ID]}
