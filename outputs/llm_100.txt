@@ -1,14 +1,5 @@
-[20:14:32] Initializing generation process...
-[20:14:32] Method: llm
-[20:14:32] Total Integrals: 100
-[20:14:36] LLM Service initialized.
-[20:14:36] Generating 100 integrals...
-Submissions so far: 0/100
-Received expression for evaluation: x**3 * sin(x**2)
-Received expression for evaluation: x**3 * cos(x**2)
-Received expression for evaluation: x**5 * exp(x**3)
-Received expression for evaluation: x * log(x**2 + 1)
-Received expression for evaluation: x**2 * exp(-x**2)
-[20:14:51] 
---- Final Curated Expressions ---
-[20:14:51] [1] Failed to process prompt with agent: Error code: 402 - {'error': {'message': "This request requires more credits, or fewer max_tokens. You requested up to 32768 tokens, but can only afford 16483. To increase, visit https://openrouter.ai/workspaces/default/keys/3a3bd6728d24457105b4d8e1181eda45944004f15fcce9e7675db87f751b0913 and adjust the key's total limit", 'code': 402, 'metadata': {'provider_name': None}}, 'user_id': 'user_3920gIMwGDM06WD97wVpzoNt74x'}
+[11:55:33] Initializing generation process...
+[11:55:33] Method: llm
+[11:55:33] Total Integrals: 100
+[11:55:34] LLM Service initialized.
+[11:55:34] Generating 100 integrals...

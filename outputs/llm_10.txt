@@ -1,17 +1,393 @@
-[20:14:32] Initializing generation process...
-[20:14:32] Method: llm
-[20:14:32] Total Integrals: 10
-[20:14:36] LLM Service initialized.
-[20:14:36] Generating 10 integrals...
+[19:00:00] Initializing generation process...
+[19:00:00] Method: llm
+[19:00:00] Total Integrals: 10
+[19:00:03] LLM Service initialized.
+[19:00:03] Generating 10 integrals...
 Submissions so far: 0/10
-Received expression for evaluation: x**3 * sin(x**2)
+Received expression for evaluation: x*sin(x**2)
+Received expression for evaluation: x*cos(x**2)
+Received expression for evaluation: x*exp(x**2)
+Received expression for evaluation: x**2*sin(x)
+Received expression for evaluation: x*log(x+1)
+Submissions so far: 0/10
+Received expression for evaluation: x**2*exp(x)
+Received expression for evaluation: x**2*cos(x)
+Received expression for evaluation: sin(log(x))/x
+Received expression for evaluation: x*asin(x)/sqrt(1-x**2)
+Received expression for evaluation: cos(log(x))/x
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x*atan(x)
+Received expression for evaluation: x*log(x+1)
+Received expression for evaluation: exp(x)*sin(x)
+Received expression for evaluation: x**2*log(1+x**2)
+Received expression for evaluation: x*exp(-x**2)
+Submissions so far: 0/10
+Received expression for evaluation: sin(x)*cos(x)**3
+Received expression for evaluation: x**3*exp(x**2)
+Received expression for evaluation: log(1+x**2)/x**2
+Received expression for evaluation: x*atan(x**2)
+Received expression for evaluation: exp(x)*sin(exp(x))
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**2*sin(x**3)
+Received expression for evaluation: x**3*cos(x**4)
+Received expression for evaluation: x**5*exp(x**3)
+Received expression for evaluation: sin(x)*cos(cos(x))
+Received expression for evaluation: x*log(x**2+1)
+Submissions so far: 0/10
+Received expression for evaluation: x*atan(x**2)
+Received expression for evaluation: exp(x)*sin(exp(x))
+Received expression for evaluation: x**2*cos(x**3+1)
+Received expression for evaluation: x*exp(x**2)*sin(x**2)
+Received expression for evaluation: sin(x)*cos(x)*exp(sin(x)**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**3*exp(x**2)
+Received expression for evaluation: x*log(1+x**2)
+Received expression for evaluation: x*exp(x)*sin(x**2)
+Received expression for evaluation: x*acos(x**2)
+Received expression for evaluation: sin(log(x))/x
+Submissions so far: 0/10
+Received expression for evaluation: x*sin(x)*cos(x)
+Received expression for evaluation: x**2*exp(x**3)
+Received expression for evaluation: x**2*atan(x)
+Received expression for evaluation: x*log(x+sqrt(1+x**2))
+Received expression for evaluation: x*sin(x)*exp(x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x*cos(x**2)
+Received expression for evaluation: x**2*sin(x**3)
+Received expression for evaluation: x*asin(x)/sqrt(1-x**2)
+Received expression for evaluation: x*log(1+x**2)
+Received expression for evaluation: x**2*exp(x)
+Submissions so far: 0/10
+Received expression for evaluation: x*exp(x**2)
+Received expression for evaluation: x**3*cos(x**4)
+Received expression for evaluation: x*log(x+1)
+Received expression for evaluation: x*atan(x)
+Received expression for evaluation: x*cos(1-x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**2*exp(x)
+Received expression for evaluation: exp(x)*sin(x)
+Received expression for evaluation: x*sin(x**2)*cos(x)
+Received expression for evaluation: x**2*sin(x)
+Received expression for evaluation: sqrt(1+x**2)
+Submissions so far: 0/10
+Received expression for evaluation: x*log(x+1)
+Received expression for evaluation: x*exp(x**2)
+Received expression for evaluation: sin(x)**2
+Received expression for evaluation: tan(x)
+Received expression for evaluation: x*cos(x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x*asin(x)/sqrt(1-x**2)
+Received expression for evaluation: x*atan(x)/sqrt(1+x**2)
+Received expression for evaluation: x*log(x**2+1)
+Received expression for evaluation: x**2*exp(x**2)
+Received expression for evaluation: sin(x)**3
+Submissions so far: 0/10
+Received expression for evaluation: x*cos(x**2)
+Received expression for evaluation: x*exp(x**2)
+Received expression for evaluation: x**3*sin(x**2)
+Received expression for evaluation: x*log(x)/sqrt(x**2+1)
+Received expression for evaluation: x*atan(x)/(1+x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x*cos(x**2)
+Received expression for evaluation: x*exp(x**2)
+Received expression for evaluation: x**3*sin(x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**3*exp(x**2)
+Received expression for evaluation: x*sin(x)*cos(x)
+Received expression for evaluation: x*log(x**2+1)
+Received expression for evaluation: x**2*cos(x**3)
+Submissions so far: 0/10
+Received expression for evaluation: x**3*sin(x**2)
+Received expression for evaluation: x**5*exp(x**3)
+Received expression for evaluation: x*atan(x)
+Received expression for evaluation: x*log(1+x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**2*sin(x**3)*cos(x**3)
+Received expression for evaluation: x**2*sqrt(1+x**3)
+Received expression for evaluation: x/sqrt(1-x**4)
+Received expression for evaluation: x**3*exp(x**2)
+Submissions so far: 0/10
+Received expression for evaluation: x*exp(x**2)*sin(x**2)
+Received expression for evaluation: x*atan(x)/sqrt(1+x**2)
+Received expression for evaluation: sin(log(x))/x
+Received expression for evaluation: x**2*log(1+x**3)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**2*exp(x**3)
+Received expression for evaluation: x*cos(x**2)*exp(sin(x**2))
+Received expression for evaluation: log(x+sqrt(1+x**2))/sqrt(1+x**2)
+Received expression for evaluation: x*asin(x)/sqrt(1-x**2)
+Received expression for evaluation: x*(1+x**2)**(3/2)
+Submissions so far: 0/10
+Received expression for evaluation: x**3*exp(x**2)
+Received expression for evaluation: x*log(1+x**2)
+Received expression for evaluation: x**2*cos(x**3)
+Received expression for evaluation: sin(sqrt(x))/sqrt(x)
+Received expression for evaluation: cos(x)*log(sin(x))
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x*atan(x)
+Received expression for evaluation: x*asin(x)/sqrt(1-x**2)
+Received expression for evaluation: x*exp(-x**2)*sin(x**2)
+Received expression for evaluation: tan(x)*log(cos(x))
+Received expression for evaluation: x**3*cos(x**2)
+Submissions so far: 0/10
+Received expression for evaluation: x**2*exp(x)
+Received expression for evaluation: x*log(x+1)
+Received expression for evaluation: exp(sin(x))*cos(x)
+Received expression for evaluation: x**2*sin(x**3)
+Received expression for evaluation: x*exp(x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x*sin(x**2)
+Received expression for evaluation: log(x)**2
+Received expression for evaluation: tan(x)
+Received expression for evaluation: sin(x)*cos(x)
+Received expression for evaluation: x*atan(x)
+Received expression for evaluation: x*asin(x)
+Received expression for evaluation: x**3*exp(x**2)
+Received expression for evaluation: x*log(1+x**2)
+Received expression for evaluation: exp(x)*sin(x)
+Received expression for evaluation: x**3*cos(x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**3 * cos(x**4)
+Received expression for evaluation: x * sqrt(1 - x**2)
+Received expression for evaluation: sin(x) * cos(cos(x))
+Received expression for evaluation: x * exp(x**2)
 Received expression for evaluation: x * log(1 + x**2)
-Received expression for evaluation: sqrt(1 + x**2) * x**3
+Submissions so far: 0/10
+Received expression for evaluation: x**2 * sin(x**3)
+Received expression for evaluation: x * exp(-x**2)
+Received expression for evaluation: x * sin(1 + x**2)
+Received expression for evaluation: sin(x)**2 * cos(x)
 Received expression for evaluation: x**2 * exp(x**3)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x * exp(x**2)
+Received expression for evaluation: x**3 * cos(x**4)
+Received expression for evaluation: log(x) / x
+Received expression for evaluation: x * sqrt(1 + x**2)
+Received expression for evaluation: x * cos(x**2)
+Submissions so far: 0/10
+Received expression for evaluation: x * exp(x) * sin(exp(x))
+Received expression for evaluation: x**2 * exp(x**3)
+Received expression for evaluation: x * log(1 + x**2)
+Received expression for evaluation: sin(x) * cos(sin(x))
+Received expression for evaluation: x * asin(x) / sqrt(1 - x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
 Received expression for evaluation: x * cos(x**2) * exp(sin(x**2))
-Received expression for evaluation: x * atan(x) / (1 + x**2)
 Received expression for evaluation: x**3 * exp(x**2)
+Received expression for evaluation: x * sin(x**2) * cos(x**2)
+Received expression for evaluation: x * log(x) / (x**2 + 1)
+Received expression for evaluation: x / (1 + x**4)
+Submissions so far: 0/10
+Received expression for evaluation: x * exp(-x**2) * sin(x**2)
+Received expression for evaluation: x * atan(x) / (1 + x**2)
+Received expression for evaluation: x**2 * exp(x) * sin(x)
+Received expression for evaluation: x * asin(x) / sqrt(1 - x**2)
+Received expression for evaluation: sqrt(x) * log(x)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x * cos(x**2) * exp(sin(x**2))
+Received expression for evaluation: x**3 * exp(x**2)
+Received expression for evaluation: x * acos(x) / sqrt(1 - x**2)
 Received expression for evaluation: log(x) / (x * sqrt(1 + log(x)))
-[20:15:02] 
+Received expression for evaluation: exp(x) * sin(exp(x)) * cos(exp(x))
+Submissions so far: 0/10
+Received expression for evaluation: x * atan(x) / (1 + x**2)
+Received expression for evaluation: sin(x) * cos(cos(x))
+Received expression for evaluation: log(x)**2 / x
+Received expression for evaluation: x**2 * exp(x**3)
+Received expression for evaluation: x * asin(x) / sqrt(1 - x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**2 * cos(x**3)
+Received expression for evaluation: sin(sqrt(x))
+Received expression for evaluation: x * exp(x**2) * sin(exp(x**2))
+Received expression for evaluation: x * sqrt(1 + x**2)
+Received expression for evaluation: log(x) / (x * (1 + log(x)))
+Received expression for evaluation: x * log(1 + x**2)
+Received expression for evaluation: x**3 * sin(x**2)
+Received expression for evaluation: exp(x) * sin(exp(x))
+Received expression for evaluation: x * atan(x) * sqrt(1 + x**2)
+Received expression for evaluation: sin(x) * cos(sin(x))
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x*sin(x**2)
+Received expression for evaluation: sin(x)*cos(cos(x))
+Received expression for evaluation: x**2 * cos(x**3)
+Received expression for evaluation: exp(x)*sin(exp(x))
+Submissions so far: 0/10
+Received expression for evaluation: x*exp(x**2)
+Received expression for evaluation: log(x)/x
+Received expression for evaluation: x**3 * sin(x**4)
+Received expression for evaluation: x * sin(x) * cos(x)
+Submissions so far: 0/10
+Received expression for evaluation: x * sin(x**2)
+Received expression for evaluation: x * log(1 + x**2)
+Received expression for evaluation: sin(x)**2 * cos(x)
+Received expression for evaluation: x * asin(x) / sqrt(1 - x**2)
+Received expression for evaluation: exp(x) * sin(exp(x))
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**3 * sin(x**4)
+Received expression for evaluation: x**2 * exp(x**3)
+Received expression for evaluation: x * atan(x) / (1 + x**2)
+Received expression for evaluation: x * log(x + sqrt(1 + x**2))
+Received expression for evaluation: x**2 * cos(x**3)
+Submissions so far: 0/10
+Received expression for evaluation: x**3 * exp(x**2)
+Received expression for evaluation: sin(log(x)) / x
+Received expression for evaluation: x * log(1 + x**2)
+Received expression for evaluation: sin(sqrt(x)) / sqrt(x)
+Received expression for evaluation: exp(x) * sin(x)
+Received expression for evaluation: x * asin(x)
+Received expression for evaluation: x * sin(x) * cos(x)
+Received expression for evaluation: x**2 / (1 + x**6)
+Submissions so far: 0/10
+Received expression for evaluation: x**5 * exp(x**3)
+Received expression for evaluation: log(x) / sqrt(x)
+Received expression for evaluation: x**2 * log(1 + x**3)
+Received expression for evaluation: x**3 * sin(x**2)
+Received expression for evaluation: x * atan(x)
+Received expression for evaluation: x * exp(x) * sin(x)
+Received expression for evaluation: exp(x) * cos(x)
+Received expression for evaluation: x * log(x + sqrt(1 + x**2))
+Received expression for evaluation: x * cos(x**2) * sin(x**2)
+Received expression for evaluation: x * sqrt(1 + x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**3 * cos(x**2)
+Received expression for evaluation: x**2 * sin(x)**2
+Received expression for evaluation: x * log(1 + x**2) / (1 + x**2)
+Received expression for evaluation: x * atan(x) / sqrt(1 + x**2)
+Received expression for evaluation: sin(x) * log(1 + sin(x))
+Submissions so far: 0/10
+Received expression for evaluation: x * exp(x**2)
+Received expression for evaluation: x**3 * sqrt(1 + x**2)
+Received expression for evaluation: x * log(x + sqrt(1 + x**2)) / sqrt(1 + x**2)
+Received expression for evaluation: x * asin(x) / sqrt(1 - x**2)
+Received expression for evaluation: x**2 * exp(x**3)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x * sin(x**2)
+Received expression for evaluation: cos(x) * exp(sin(x))
+Received expression for evaluation: log(x)**2 / x
+Received expression for evaluation: x * cos(x**2) * exp(sin(x**2))
+Received expression for evaluation: x**2 * exp(-x**3)
+Submissions so far: 0/10
+Received expression for evaluation: x * sqrt(1 + x**2)
+Received expression for evaluation: sin(x)**3 * cos(x)
+Received expression for evaluation: tan(x) * log(cos(x))
+Received expression for evaluation: x * exp(x**2) * cos(exp(x**2))
+Received expression for evaluation: x**3 * cos(x**4)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x * sin(x**2) * cos(x**2)
+Received expression for evaluation: x * exp(x) * sin(exp(x))
+Received expression for evaluation: x**2 * sin(x**3) * cos(x**3)
+Received expression for evaluation: sqrt(x) * cos(sqrt(x))
+Received expression for evaluation: cos(x) * log(sin(x))
+Submissions so far: 0/10
+Received expression for evaluation: x**3 * sin(x**4)
+Received expression for evaluation: x * exp(x**2) * cos(exp(x**2))
+Received expression for evaluation: x * atan(x) / sqrt(1 - x**2)
+Received expression for evaluation: x * log(x**2 + 1) / (x**2 + 1)
+Received expression for evaluation: x * acos(x) / sqrt(1 - x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**2 * exp(x**3)
+Received expression for evaluation: x**2 * sin(x**3)
+Received expression for evaluation: x * log(x) / (x**2 + 1)
+Received expression for evaluation: x * sqrt(1 - x**2) * asin(x)
+Received expression for evaluation: x * exp(x) / (1 + exp(x))**2
+Received expression for evaluation: x**3 * exp(x**4)
+Received expression for evaluation: x * sin(x**2) * cos(x**2)
+Received expression for evaluation: x * atan(x) / (1 + x**2)
+Received expression for evaluation: x * log(1 + x**2)
+Received expression for evaluation: x * exp(x**2) * sin(x**2)
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**5 * exp(x**3)
+Received expression for evaluation: x * cos(x**2) / sqrt(1 + sin(x**2))
+Received expression for evaluation: log(x) / (x * (1 + log(x)**2))
+Received expression for evaluation: x**2 * exp(-x**3)
+Received expression for evaluation: x * sqrt(1 + x**2) * exp(x**2)
+Submissions so far: 0/10
+Received expression for evaluation: x * atan(x**2) / (1 + x**4)
+Received expression for evaluation: x**2 * sin(x**3) * cos(x**3)
+Received expression for evaluation: x**3 * cos(x**4) * sqrt(1 + sin(x**4))
+Received expression for evaluation: x * exp(-x**2) * sin(x**2)
+Received expression for evaluation: exp(x) * sin(exp(x)) * cos(exp(x))
+Submissions so far: 0/10
+Submissions so far: 0/10
+Received expression for evaluation: x**3 * exp(-x**2) * sin(x**2)
+Received expression for evaluation: x * log(1 + x**2) / (1 + x**2)
+Received expression for evaluation: x * cos(x)**2
+Received expression for evaluation: x**5 * exp(x**3)
+Received expression for evaluation: x**2 * atan(x) / (1 + x**2)
+Submissions so far: 0/10
+Received expression for evaluation: x * asin(x) / sqrt(1 - x**2)
+Received expression for evaluation: x * sqrt(1 + x**2) * exp(x**2)
+Received expression for evaluation: x * tan(x**2)
+Received expression for evaluation: sin(sqrt(x))
+Received expression for evaluation: x**2 * sin(x**3) * exp(x**3)
+Received expression for evaluation: x * exp(-x**2) * cos(x**2)
+Received expression for evaluation: log(x) / (x * sqrt(1 + log(x)))
+Received expression for evaluation: x**2 * sin(x) / (1 + x**2)
+Received expression for evaluation: sqrt(x) * log(x)**2
+Received expression for evaluation: x**3 * exp(x**2) * cos(x**2)
+Received expression for evaluation: x**2 * exp(x) / (1 + x**2)
+Received expression for evaluation: x * log(x + sqrt(1 + x**2)) / sqrt(1 + x**2)
+Received expression for evaluation: x * asin(x**2)
+Received expression for evaluation: x**3 * cos(x**2) * exp(x**2)
+Received expression for evaluation: x * atan(x) / (1 + x**2)**2
+Received expression for evaluation: x * sqrt(1 - x**4)
+Received expression for evaluation: x**3 / sqrt(1 - x**8)
+Received expression for evaluation: x * acos(x)**2 / sqrt(1 - x**2)
+Received expression for evaluation: x**2 * exp(x) / (1 + exp(x))
+Received expression for evaluation: x * log(1 + x) / (1 + x**2)
+Received expression for evaluation: x**3 * sin(x**4) * exp(x**4)
+Received expression for evaluation: x * log(1 + x**2) * exp(x**2)
+Received expression for evaluation: x * atan(sqrt(x)) / (1 + x)
+Received expression for evaluation: x**5 * exp(x**2)
+Received expression for evaluation: exp(sqrt(x))
+Submitting the following expressions:
+['x**5 * exp(x**3)', 'x * cos(x)**2', 'x**2 * atan(x) / (1 + x**2)', 'x * asin(x) / sqrt(1 - x**2)', 'sin(sqrt(x))', 'x * tan(x**2)', 'x * exp(-x**2) * cos(x**2)', 'sqrt(x) * log(x)**2', 'x * asin(x**2)', 'x**5 * exp(x**2)']
+Added 10 unique expressions.
+
+[19:15:52] 
 --- Final Curated Expressions ---
-[20:15:02] [1] Failed to process prompt with agent: Error code: 402 - {'error': {'message': "This request requires more credits, or fewer max_tokens. You requested up to 32768 tokens, but can only afford 15632. To increase, visit https://openrouter.ai/workspaces/default/keys/3a3bd6728d24457105b4d8e1181eda45944004f15fcce9e7675db87f751b0913 and adjust the key's total limit", 'code': 402, 'metadata': {'provider_name': None}}, 'user_id': 'user_3920gIMwGDM06WD97wVpzoNt74x'}
+[19:15:52] [1] x * cos(x)**2
+[19:15:52] [2] sin(sqrt(x))
+[19:15:52] [3] x * exp(-x**2) * cos(x**2)
+[19:15:52] [4] sqrt(x) * log(x)**2
+[19:15:52] [5] x * asin(x**2)
+[19:15:52] [6] x * asin(x) / sqrt(1 - x**2)
+[19:15:52] [7] x**5 * exp(x**3)
+[19:15:52] [8] x * tan(x**2)
+[19:15:52] [9] x**2 * atan(x) / (1 + x**2)
+[19:15:52] [10] x**5 * exp(x**2)
