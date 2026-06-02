@@ -18,7 +18,13 @@ async def main():
 
    #ex = -exp(x)*log(27)*cos(exp(x))/27**sin(exp(x))
    #ex = x**2+2*x+1
-   ex = 4*(x*sinh(x) + cosh(x))*sin(sinh(x*cosh(x)) + 1)*cosh(x*cosh(x))
+   #ex = 4*(x*sinh(x) + cosh(x))*sin(sinh(x*cosh(x)) + 1)*cosh(x*cosh(x))
+   ex: Expr = x**2 * exp(x) + sin(x/3)
+   print(ex)
+   for node in preorder_traversal(ex):
+      print(node)
+      print(type(node))
+      print(node.args)
    print(get_entire_evaluation(ex))
    
    #ai = llm_service()

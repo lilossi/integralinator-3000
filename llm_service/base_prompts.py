@@ -11,7 +11,7 @@ A trained XGBoost model scores each integral 0–1 for "desirability". It is dri
   AddRule (14%)            — integrand splits into a sum, each part solved separately
   RewriteRule (6%)         — integrand must be rewritten (trig identity, algebraic manipulation) before integrating
   PartsRule (4%)           — integration-by-parts steps
-  ReciprocalRule / ConstantRule / PowerRule / ConstantTimesRule — minor contributions, but very important contributions
+  ReciprocalRule / ConstantRule / PowerRule / ConstantTimesRule — minor contributions
 
   DontKnowRule = 0 importance, but any expression that triggers it scores 0 (SymPy cannot solve it — do not submit).
 
@@ -48,28 +48,32 @@ Use Python/SymPy notation: **, *, sin, cos, tan, exp, log, sqrt, asin, acos, ata
   Wrong:     x^2, e^x, arcsin
 
 ━━━ WORKFLOW ━━━
-1. Generate a batch of candidate expressions using the patterns above.
-2. Evaluate each with `get_entire_evaluation_tool`. Read the score and tree carefully.
-3. If a score is low, diagnose why (few URule steps? shallow tree?) and adjust.
-4. Once you have expressions scoring above 0.8, submit them with `submit_generated_integrals`. You MUST evaluate every expression before submitting.
-5. Aim to submit at least 3–5 expressions per round."""
+1. Propose several candidate expressions.
+2. Evaluate each with `get_entire_evaluation_tool` and read the score.
+3. Call `submit_generated_integrals` with every candidate that scored above 0.8.
+   If no candidate scored above 0.8, submit the best ones you found anyway.
+4. You MUST call `submit_generated_integrals` before ending your turn - never finish with only text."""
+
+
+_MAX_SHOWN_INTEGRALS = 20
 
 
 def build_user_prompt(already_submitted: list[str], target: int) -> str:
     remaining = target - len(already_submitted)
+
     if already_submitted:
-        submitted_block = (
-            "Already submitted integrals (DO NOT resubmit or make trivial variations):\n"
-            + "\n".join(f"  • {e}" for e in already_submitted)
-            + "\n\n"
+        shown = already_submitted[-_MAX_SHOWN_INTEGRALS:]
+        header = (
+            f"Already collected {len(already_submitted)} of {target}"
+            + (f" (showing last {len(shown)})" if len(already_submitted) > _MAX_SHOWN_INTEGRALS else "")
+            + " — do NOT repeat these:\n"
         )
+        submitted_block = header + "\n".join(f"  • {e}" for e in shown) + "\n\n"
     else:
-        submitted_block = "No integrals have been submitted yet.\n\n"
+        submitted_block = "No integrals collected yet.\n\n"
 
     return (
-        f"Generate {remaining} more high-scoring integral(s). {target - remaining} of {target} done.\n\n"
-        + submitted_block
-        + "You MUST evaluate every candidate with `get_entire_evaluation_tool` before submitting. Do not submit any expression that has not been evaluated first. "
-        "Only submit expressions with a desirability score above 0.8. "
-        "Use `submit_generated_integrals` to save your final selections."
+        submitted_block
+        + f"Generate {min(remaining, 20)} more integrals. "
+        "Evaluate each, then call `submit_generated_integrals` — you must call it before ending your turn."
     )
