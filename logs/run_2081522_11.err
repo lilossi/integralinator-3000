@@ -1,0 +1,2 @@
+/var/spool/slurm/job2081534/slurm_script: Zeile 30:  4881 Getötet                python -m cli.main generate --method $METHOD --num-integrals $COUNT > $OUTFILE 2>&1
+[2026-05-31T01:46:34.365] error: Detected 1 oom_kill event in StepId=2081534.batch. Some of the step tasks have been OOM Killed.

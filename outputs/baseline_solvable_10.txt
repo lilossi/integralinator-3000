@@ -1,15 +1,15 @@
-[20:14:32] Initializing generation process...
-[20:14:32] Method: baseline_solvable
-[20:14:32] Total Integrals: 10
-[20:14:32] Baseline Solvable initialized.
-[20:14:32] Generating 10 integrals...
-[20:14:33] [1] (x + 4)*sin(x)*atan(3) - cos(x)*atan(3)
-[20:14:35] [2] (-x + 2*cosh(4))**cos(x)*(-log(-x + 2*cosh(4))*sin(x) - cos(x)/(-x + 2*cosh(4)))
-[20:14:35] [3] (2 - x)**(-2) + 3/x**2
-[20:14:35] [4] 1 + x**exp(-sinh(15))*exp(-sinh(15))/x
-[20:14:36] [5] -10*x*exp(x**2*sinh(5))*sinh(5)
-[20:14:36] [6] sinh(x)/x - (cosh(x) - 5)/x**2
-[20:14:40] [7] -cosh(log(-x - log(2) + E))/(-x - log(2) + E)
-[20:14:42] [8] 8*x**7 + cos(x)
-[20:14:43] [9] 1 + 4*cos(x)/(log(sin(x))**5*sin(x)) - 1/x**2
-[20:14:47] [10] cos(x**(-5))/(x*log(x)) + 5*log(log(x))*sin(x**(-5))/x**6
+[00:08:23] Initializing generation process...
+[00:08:23] Method: baseline_solvable
+[00:08:23] Total Integrals: 10
+[00:08:23] Baseline Solvable initialized.
+[00:08:23] Generating 10 integrals...
+[00:08:23] [1] -cosh(x) - tanh(x)**2
+[00:08:24] [2] -2*x**x*(log(x) + 1)*cosh(1)
+[00:08:24] [3] (-x - 1)/(x + 4)**2 - cos(x) + 1 + 1/(x + 4)
+[00:08:25] [4] (-5*sinh(log(x))/(x**6*cosh(log(x))**2) - 25/(x**6*cosh(log(x))))*exp(5/(x**5*cosh(log(x))))
+[00:08:25] [5] -3*exp(x*(-3 + 2/(3*x))/4)/4
+[00:08:26] [6] (x*(-1 - 5/(x**6*tan(5)**5))/(x - 1/(x**5*tan(5)**5))**2 + 1/(x - 1/(x**5*tan(5)**5)))*sinh(x/(x - 1/(x**5*tan(5)**5)))
+[00:08:26] [7] (-2**(x + 2) + log(x))**4*(-5*2**(x + 2)*log(2) + 5/x)
+[00:08:26] [8] -2/x**2
+[00:08:26] [9] (4*exp(x))**(-x + cosh(2/3))*(-x - log(4*exp(x)) + cosh(2/3))
+[00:08:27] [10] ((-(-x - 3)*exp(-x) - exp(-x))*log(log(x)) + (-x - 3)*exp(-x)/(x*log(x)))*log(x)**((-x - 3)*exp(-x))

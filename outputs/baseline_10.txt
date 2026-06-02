@@ -1,15 +1,15 @@
-[20:14:32] Initializing generation process...
-[20:14:32] Method: baseline
-[20:14:32] Total Integrals: 10
-[20:14:32] Baseline initialized.
-[20:14:32] Generating 10 integrals...
-[20:14:33] [1] (-5)**(2*x)/(sqrt(-(-5)**(4*x)/cos(x)**4 + 1)*cos(x)**2)
-[20:14:33] [2] sqrt(-sinh(5*x))
-[20:14:33] [3] asin(x**(5*(2*x)**x) + 4)
-[20:14:33] [4] x - sin(tanh(4)/tanh(2))
-[20:14:33] [5] atan((3*x + 12)**x)
-[20:14:33] [6] x**x
-[20:14:33] [7] -tan(3*(x + 7)*asin(x))
-[20:14:34] [8] x - asin(exp(x**(-5)) - sin(x))
-[20:14:35] [9] (x + cosh(atan(x**(-2))))**x
-[20:14:35] [10] -x + (-4/(-4)**x)**x
+[00:08:23] Initializing generation process...
+[00:08:23] Method: baseline
+[00:08:23] Total Integrals: 10
+[00:08:23] Baseline initialized.
+[00:08:23] Generating 10 integrals...
+[00:08:23] [1] sqrt(5/4 + exp(-3*x)/4) - 5
+[00:08:25] [2] x**x - atan(x - sinh(x))
+[00:08:27] [3] cosh(x)**cosh(x**tanh(x - 4))
+[00:08:27] [4] cos(tan(2*x)*tanh(3)) + 3
+[00:08:27] [5] 2*(cosh(x) + 4)*cos(5) + 4
+[00:08:27] [6] -7/(x**2 + x**(x + 5))
+[00:08:27] [7] -asin(25*x)
+[00:08:27] [8] -(2*x + asin(x) + 1)*sin(2)
+[00:08:28] [9] (x - tanh(sinh(x)))**(-4)
+[00:08:28] [10] cosh(x + x**(-2 + 2/x))

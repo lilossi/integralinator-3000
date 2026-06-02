@@ -1,19 +1,19 @@
-[20:18:34] Initializing generation process...
-[20:18:34] Method: grammar
-[20:18:34] Total Integrals: 10
-[20:18:34] Probabilistic Grammar initialized.
-[20:18:34] Generating 10 integrals...
+[00:08:23] Initializing generation process...
+[00:08:23] Method: grammar
+[00:08:23] Total Integrals: 10
+[00:08:23] Probabilistic Grammar initialized.
+[00:08:23] Generating 10 integrals...
 Generating batch of 40 sentences...
-Total attempts needed: 21
-[20:18:37] 
+Total attempts needed: 18
+[00:08:23] 
 --- Final Valid Expressions ---
-[20:18:37] [1] sqrt(atan(log(x*exp(x**x)*sinh(2))))
-[20:18:37] [2] x
-[20:18:37] [3] cos(exp(x)) + atan(log(2*x))
-[20:18:37] [4] atan(x)
-[20:18:37] [5] tanh(x + pi/2)
-[20:18:37] [6] sin(exp(sin(cos((x/2 - 3/2)*log(log(tan(3*x)))))))
-[20:18:37] [7] sqrt(x*exp(x))
-[20:18:37] [8] sqrt(tanh(sin(log(x + 1)/x)))
-[20:18:37] [9] sqrt(-exp(2*sin(x))/sin(4**x)**2 + 1)
-[20:18:37] [10] log(x)
+[00:08:23] [1] x + 1
+[00:08:23] [2] x
+[00:08:23] [3] -exp(-3/2)*sqrt(asin(x))
+[00:08:23] [4] cosh(x)
+[00:08:23] [5] log(x)
+[00:08:23] [6] 2*x
+[00:08:23] [7] tan(sin(cosh(x)))
+[00:08:23] [8] -exp(x)
+[00:08:23] [9] exp(2*x)
+[00:08:23] [10] -x*asin(x)/4 + exp(sin(x + 1))
