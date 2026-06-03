@@ -1,3 +1,6 @@
+[tool.setuptools.packages.find]
+include = ["cli*", "llm_service*", "genetic_algorithm*", "baseline_integrals*", "probabilistic_grammar*", "utils*"]
+
 [project]
 name = "integralinator-3000"
 version = "0.1.0"
