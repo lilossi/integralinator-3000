@@ -17,7 +17,9 @@ mkdir -p $OUTDIR
 
 cd $REPO
 
-METHODS=(baseline_solvable)
+export PYTHONUNBUFFERED=1
+
+METHODS=(llm)
 COUNTS=(1000)
 
 METHOD=${METHODS[$SLURM_ARRAY_TASK_ID]}

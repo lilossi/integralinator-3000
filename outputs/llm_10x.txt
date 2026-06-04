@@ -1,0 +1,4 @@
+Usage: python -m cli.main generate [OPTIONS]
+Try 'python -m cli.main generate --help' for help.
+
+Error: Invalid value for '--num-integrals' / '-n': '10x' is not a valid integer.
