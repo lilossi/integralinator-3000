@@ -18,29 +18,23 @@ class LLMService:
         load_dotenv()
         self.model_name = "deepseek/deepseek-v4-pro" #"deepseek/deepseek-v4-flash" #"openrouter/owl-alpha", "deepseek/deepseek-v4-pro"
         self.api_key = os.getenv("OPENROUTER_API_KEY")
-        self.agent = None
 
-        if self.api_key:
-            try:
-                model = ChatOpenAI(
-                    model_name=self.model_name,
-                    api_key=self.api_key,
-                    base_url="https://openrouter.ai/api/v1",
-                    #reasoning={"effort": "xhigh", "summary": "auto"},
-                )
-
-                self.agent = create_agent(
-                    model=model,
-                    tools=[get_entire_evaluation_tool, submit_generated_integrals],
-                    middleware=[handle_tool_errors],
-                    system_prompt=BASE_PROMPT_GENERATE,
-                )
-
-            except Exception as e:
-                print(f"Failed to initialize LLM: {e}")
+    def _create_agent(self):
+        model = ChatOpenAI(
+            model_name=self.model_name,
+            api_key=self.api_key,
+            base_url="https://openrouter.ai/api/v1",
+            #reasoning={"effort": "xhigh", "summary": "auto"},
+        )
+        return create_agent(
+            model=model,
+            tools=[get_entire_evaluation_tool, submit_generated_integrals],
+            middleware=[handle_tool_errors],
+            system_prompt=BASE_PROMPT_GENERATE,
+        )
 
     async def generate_expression(self, target_num: int) -> list[str]:
-        if self.agent is None:
+        if not self.api_key:
             return ["LLM not configured. Check the API key."]
 
         reset_submitted_integrals()
@@ -54,10 +48,11 @@ class LLMService:
                 print(f"Submissions so far: {before}/{target_num}")
 
                 reset_pending_evaluations()
-                user_msg = build_user_prompt(list(submitted_integrals), target_num) 
+                user_msg = build_user_prompt(list(submitted_integrals), target_num)
+                agent = self._create_agent()
                 await loop.run_in_executor(
                     None,
-                    lambda msg=user_msg: self.agent.invoke(
+                    lambda msg=user_msg, a=agent: a.invoke(
                         {"messages": [{"role": "user", "content": msg}]}
                     ),
                 )

@@ -55,7 +55,7 @@ Use Python/SymPy notation: **, *, sin, cos, tan, exp, log, sqrt, asin, acos, ata
 4. You MUST call `submit_generated_integrals` before ending your turn - never finish with only text."""
 
 
-_MAX_SHOWN_INTEGRALS = 20
+_MAX_SHOWN_INTEGRALS = 1000
 
 
 def build_user_prompt(already_submitted: list[str], target: int) -> str:
