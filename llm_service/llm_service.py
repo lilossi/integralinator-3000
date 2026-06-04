@@ -16,7 +16,7 @@ _MAX_STALLED = 30
 class LLMService:
     def __init__(self):
         load_dotenv()
-        self.model_name = "deepseek/deepseek-v4-pro" #"deepseek/deepseek-v4-flash" #"openrouter/owl-alpha", "deepseek/deepseek-v4-pro"
+        self.model_name = "deepseek/deepseek-v4-flash" #"deepseek/deepseek-v4-flash" #"openrouter/owl-alpha", "deepseek/deepseek-v4-pro"
         self.api_key = os.getenv("OPENROUTER_API_KEY")
 
     def _create_agent(self):
