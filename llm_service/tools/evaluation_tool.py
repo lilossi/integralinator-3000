@@ -1,5 +1,6 @@
 from langchain_core.tools import tool
 from sympy import sympify, SympifyError
+from func_timeout import FunctionTimedOut
 from evaluation.evaluation import get_entire_evaluation
 
 pending_evaluations: dict[str, float] = {}
@@ -33,5 +34,7 @@ def get_entire_evaluation_tool(expression: str) -> str:
         except (ValueError, IndexError):
             pending_evaluations[expression] = 0.0
         return result
+    except FunctionTimedOut:
+        return f"Error: Evaluation of '{expression}' timed out (>30s). SymPy could not solve it in time — skip this expression."
     except Exception as e:
         return f"Error evaluating expression '{expression}': {str(e)}"

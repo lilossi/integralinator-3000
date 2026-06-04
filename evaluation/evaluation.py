@@ -39,6 +39,7 @@ def return_vector_evaluation(expr: Expr) -> pd.DataFrame:
     return vector
 
 # also important
+@func_set_timeout(30.0)
 def get_entire_evaluation(expr: Expr) -> str:
     """
     Returns the entire evaluation suite (solution, tree, scores) as a formatted string.
