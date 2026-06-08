@@ -4999,3 +4999,181 @@ llm,x**5 / (1 + x**12)
 llm,x * exp(x**2) * (1 + exp(x**2))**(2/3) * log(1 + exp(x**2))
 llm,x * sin(log(x**2 + 1))**7 * cos(log(x**2 + 1)) / (x**2 + 1)
 llm,sin(sqrt(x))
+hand_labeled,x/(x**2 + 1)
+hand_labeled,tan(x)*sec(x)**2
+hand_labeled,(x + exp(x))*(exp(x) + 1)
+hand_labeled,sin(sin(x) + 1)*cos(x)
+hand_labeled,exp(x + exp(x))
+hand_labeled,(log(x) + 1/log(x))/x
+hand_labeled,(2*x + 1)*(x**2 + x + 1)
+hand_labeled,(x + 1)**2024
+hand_labeled,1/(x**(1/3) - 2024)
+hand_labeled,exp(x)/(exp(2*x) + 1)
+hand_labeled,(exp(x) + cos(x) + 1)/(x + exp(x) + sin(x))
+hand_labeled,sin(x)*cos(x)/(sin(x)**2 + 1)
+hand_labeled,(x + 1)*exp(x**2 + 2*x)
+hand_labeled,sin(log(x))/x
+hand_labeled,tan(x)
+hand_labeled,(1 + 1/x)*log(x*exp(x))
+hand_labeled,cot(x - 1)*csc(x - 1)
+hand_labeled,exp(x)/(exp(x) + 2024)
+hand_labeled,exp(x)/(exp(x) + 1)**2
+hand_labeled,1/(exp(x) + 1)
+hand_labeled,(exp(x) + 1)/(x + exp(x) + 1)
+hand_labeled,(exp(x) + exp(-x))**4
+hand_labeled,exp(x)*sin(exp(x))
+hand_labeled,(exp(7*x) + exp(4*x))/(exp(5*x) + exp(2*x))
+hand_labeled,sqrt(1 - exp(2*x))*exp(x)
+hand_labeled,(exp(2*x) + exp(x))/(exp(2*x) + 1)
+hand_labeled,(1 + exp(-x))*(exp(x) + 1)
+hand_labeled,1/(exp(x) + exp(-x))
+hand_labeled,exp(x)/((exp(x) - 1)*log(exp(x) - 1))
+hand_labeled,exp(2*x)*cos(exp(2*x))**2
+hand_labeled,(exp(2*x) + exp(x))*exp(exp(x))
+hand_labeled,1
+hand_labeled,(sin(x) + cos(x))/cos(x)
+hand_labeled,sin(x)**2*cos(x)
+hand_labeled,sin(x)**2*cos(x)**3
+hand_labeled,tan(x)**2*sec(x)**2
+hand_labeled,tan(x)*sec(x)**3
+hand_labeled,tan(x)**2
+hand_labeled,cot(x)*csc(x)/(csc(x) + 1)
+hand_labeled,(sin(x) - cos(x))/(sin(x) + cos(x))
+hand_labeled,sin(x)**3
+hand_labeled,(sin(x) + cos(x))**2
+hand_labeled,(tan(x) + sec(x))**2
+hand_labeled,(sin(x) + 1)*(cos(x) + 1)
+hand_labeled,(-csc(x) + sec(x))*(csc(x) + sec(x))/(tan(x) + cot(x))
+hand_labeled,x**2*exp(x)
+hand_labeled,log(x)
+hand_labeled,x*sin(x)
+hand_labeled,x*exp(-x)
+hand_labeled,x*sec(x)**2
+hand_labeled,x*log(x)
+hand_labeled,x**2*exp(2*x)
+hand_labeled,(x + exp(x))**2
+hand_labeled,log(x)/x**2
+hand_labeled,(x + 1)**2*cos(x)
+hand_labeled,atan(x)
+hand_labeled,sqrt(x)*log(x)
+hand_labeled,log(x**2 + 1)/x**2
+hand_labeled,asin(x)
+hand_labeled,x*tan(x)*sec(x)**2
+hand_labeled,x*(sin(x) + cos(x))
+hand_labeled,log(x)/sqrt(x)
+hand_labeled,1/(x*sqrt(x**2 - 1))
+hand_labeled,1/(x**2*sqrt(x**2 - 1))
+hand_labeled,(x**2 + 1)**(-3/2)
+hand_labeled,1/(x**2 + 4)
+hand_labeled,x**2/(1 - x**2)**(3/2)
+hand_labeled,1/sqrt(9 - x**2)
+hand_labeled,sqrt(x**2 - 1)/x
+hand_labeled,1/(x*(x + sqrt(x**2 - 1))*sqrt(x**2 - 1))
+hand_labeled,1/((x + sqrt(x**2 + 1))*(x**2 + 1))
+hand_labeled,1/(x*(x + 1))
+hand_labeled,1/(x**2*(x + 1))
+hand_labeled,1/((x + 1)*(x + 2))
+hand_labeled,1/(x*(2*x - 1))
+hand_labeled,1/(x**2 - 1)
+hand_labeled,(x + 2)/(x**2 + 4*x + 3)
+hand_labeled,1/(x**3 - x)
+hand_labeled,x/((x + 1)*(x + 2)*(x + 3))
+hand_labeled,1/(x**2*(x**2 + 1))
+hand_labeled,1/(x*(x + 1)**2)
+hand_labeled,(x + 1)*(x + 4)/((x + 2)*(x + 3))
+hand_labeled,exp(2*x)/(exp(2*x) + 3*exp(x) + 2)
+hand_labeled,(x**2 - x)/(x**3 + x**2 + x + 1)
+hand_labeled,3*x/(x**2 + 2*x - 8)
+hand_labeled,(x + 5)/(x**2 + x - 2)
+hand_labeled,x**2/(x**2 + 1)
+hand_labeled,1/((x + 2)**2*(x**2 + 4*x + 5))
+hand_labeled,x**4/(x + 1)
+hand_labeled,x**7/(x**2 - 1)
+hand_labeled,1/(x**2 + x + 1)
+hand_labeled,(5*x**2 + 3*x - 2)/(x**3 + 2*x**2)
+hand_labeled,2/(1 + 1/(exp(x) + 1))
+hand_labeled,(x + 3)/((x + 2)**2*(x + 4)**2)
+hand_labeled,(x + 1)**2/((x + 2)*(x**2 + x + 1))
+hand_labeled,x/(x**4 + 1)
+hand_labeled,1/(sqrt(x)*(x + 1))
+hand_labeled,x**3*exp(x**2)
+hand_labeled,x/sqrt(x - 1)
+hand_labeled,cos(sqrt(x))/sqrt(x)
+hand_labeled,exp(1/x)/x**2
+hand_labeled,1/sqrt(-x**2 + x)
+hand_labeled,sqrt(x)*sin(x**(3/2))
+hand_labeled,x**2*sqrt(x - 1)
+hand_labeled,(x + 5)/sqrt((x + 2)*(x + 8))
+hand_labeled,exp(2*x)/(exp(4*x) + 1)
+hand_labeled,log(tan(x) + sec(x))*sec(x)
+hand_labeled,1/(sqrt(x)*(2*sqrt(x) + x + 1))
+hand_labeled,(log(x) + 1)/(x*log(x) + 1)
+hand_labeled,log(x)*cos(x) + sin(x)/x
+hand_labeled,(sin(x) + cos(x))*exp(x)
+hand_labeled,log(x)**2 + 2*log(x)
+hand_labeled,exp(x) + 1
+hand_labeled,x**(4/5)
+hand_labeled,log(x**(1/4))/(4*x) + log(x**(1/3))/(3*x) + log(sqrt(x))/(2*x) + log(x)/x
+hand_labeled,sec(x)**6
+hand_labeled,sin(2*x)*cos(3*x)
+hand_labeled,cos(5*x)*cos(7*x)
+hand_labeled,-sin(x)**4 + cos(x)**4
+hand_labeled,tan(x)/tan(2*x)
+hand_labeled,tan(x)**3
+hand_labeled,sqrt(1 - x)/(1 - sqrt(x))
+hand_labeled,(sqrt(x - 1) + sqrt(x + 1))/sqrt(x - 1)
+hand_labeled,1/(exp(x) + 1)
+hand_labeled,(exp(x) + 1)**(-2)
+hand_labeled,exp(x + exp(x))
+hand_labeled,1/(sqrt(x)*(x + 1) + 2*x)
+hand_labeled,exp(sqrt(x))
+hand_labeled,sin(log(x))
+hand_labeled,1/sqrt(sqrt(x) + 1)
+hand_labeled,x*(2*x - 1)**(1/3)
+hand_labeled,atan(sqrt(x))
+hand_labeled,log(x)**3
+hand_labeled,(sqrt(x) + 1)**(-2)
+hand_labeled,1/sqrt(2021*x - 1)
+hand_labeled,1/((x + 1)**(1/3) - 1)
+hand_labeled,1/(2*sqrt(x) + x + 3)
+hand_labeled,(2*x + 1)**(1/3)
+hand_labeled,x*log(x)**5
+hand_labeled,sqrt(1 - sqrt(x))
+hand_labeled,x*log(x + 1)
+hand_labeled,log(x)**2/x**3
+hand_labeled,log(x + 1)/x**(3/2)
+hand_labeled,atan(x)/x**2
+hand_labeled,x*asin(x)/sqrt(1 - x**2)
+hand_labeled,sin(log(x))/x**3
+hand_labeled,sec(x)
+hand_labeled,x*log(x)/sqrt(x**2 - 1)
+hand_labeled,log(x**4 + 1)/x**3
+hand_labeled,sin(x)**3 + cos(x)**3
+hand_labeled,-sin(x + pi/4)*cos(x + pi/4)
+hand_labeled,2*tan(x)/(1 - tan(x)**2)
+hand_labeled,x**(17/24)
+hand_labeled,(tan(x)**2*sec(x) + sec(x)**3)*tan(x)
+hand_labeled,(2*x + 1)*exp(x)/sqrt(x)
+hand_labeled,sqrt(1 - sqrt(x))/x
+hand_labeled,sqrt(x*exp(x))*(1 + 1/x)
+hand_labeled,sqrt(x)/(x**3 + 1)
+hand_labeled,1/(x**4 + x)
+hand_labeled,log(x)*log(2*x)*log(sqrt(2)*sqrt(x))/x
+hand_labeled,x*(log(x) + 1)**2*(log(x)**2 + 1)
+hand_labeled,log(x)*log(1 - log(x))
+hand_labeled,x*exp(x)*log(1 - x)
+hand_labeled,(3*x**2 - 1)*atan(x)/(2*x**(3/2))
+hand_labeled,1/((x**2 + 6*x + 10)*(x**2 + 6*x + 13))
+hand_labeled,1/(x**3 + x**2 + x + 1)
+hand_labeled,1/((x + 1)**2*(x + 4))
+hand_labeled,x**5*exp(x)
+hand_labeled,x*(exp(x) + sin(x) + 1)
+hand_labeled,sin(x)**3 + cos(x)**3 + tan(x)**3
+hand_labeled,(x**2 + x + 1 + 1/x + x**(-2))/(x**2 + 1)
+hand_labeled,x*(x + 1)/(x*(x - 1) + 1)
+hand_labeled,(2*x**3 - 1)/(x**4 + x)
+hand_labeled,(1 - 2*log(x))/(x*(x**2 + log(x)))
+hand_labeled,-sin(x)**8 + cos(x)**8
+hand_labeled,tan(x)*tan(2*x)*tan(3*x)
+hand_labeled,cos(x)**6
+hand_labeled,x**3/(x**3/6 + x**2/2 + x + 1)
